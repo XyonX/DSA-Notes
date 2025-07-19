@@ -1,0 +1,1 @@
+First I understood that perfect squares are like n*n where n is an integer. So I tried brute-force by checking each number using sqrt and floor. Then I realized we can use math directly: Total perfect squares from ceil(sqrt(a)) to floor(sqrt(b)).

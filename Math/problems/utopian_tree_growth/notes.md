@@ -1,0 +1,1 @@
+This was fun — I tracked growth by checking if it’s an odd or even cycle. Odd → double, Even → add 1

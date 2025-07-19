@@ -1,0 +1,191 @@
+Here's your updated version with improved comments that still retain your personal first-person reasoning style. I've made the grammar tighter and more readable, while keeping the tone authentic to your learning voice.
+
+---
+
+# 🧠 MATH PROBLEMS
+
+---
+
+## 🦘 Problem 1: Kangaroo Jump
+
+**📜 Problem Statement:**
+Two kangaroos start at different positions `x1` and `x2`, and jump at constant rates `v1` and `v2`. Will they land at the same position after the same number of jumps?
+
+```cpp
+// I really liked this one as it shows how cleanly we can use math to avoid loops.
+// I started by forming an equation using n jumps:
+// x1 + v1*n = x2 + v2*n
+// Rearranged it: (v1 - v2)*n = x2 - x1
+// So, n = (x2 - x1) / (v1 - v2)
+// Since n is a number of jumps, it must be a non-negative integer.
+// So (x2 - x1) % (v1 - v2) must be 0 and result should be ≥ 0.
+
+string kangaroo(int x1, int v1, int x2, int v2) {
+    if (v1 == v2) return (x1 == x2) ? "YES" : "NO";
+    
+    int diff = x2 - x1;
+    int speedDiff = v1 - v2;
+
+    if ((diff % speedDiff == 0) && ((diff / speedDiff) >= 0))
+        return "YES";
+    
+    return "NO";
+}
+```
+
+---
+
+## 🧮 Problem 2: Sherlock and Squares
+
+**📜 Problem Statement:**
+Given two integers `a` and `b`, count how many perfect squares lie between them (inclusive).
+
+```cpp
+// First I understood that perfect squares are like n*n where n is an integer.
+// So I tried brute-force by checking each number using sqrt and floor.
+
+int perfectSquare(int a,int b){
+    int count=0;
+    for(int i=a;i<=b;i++){
+        if(sqrt(i)==floor(sqrt(i))) count++;
+    }
+    return count;
+}
+
+// Then I realized we can use math directly:
+// Total perfect squares from ceil(sqrt(a)) to floor(sqrt(b)).
+
+int perfectSquare1(int a,int b){
+    return floor(sqrt(b)) - ceil(sqrt(a)) + 1;
+}
+```
+
+---
+
+## 🔢 Problem 3: Find Digits
+
+**📜 Problem Statement:**
+Given an integer `n`, count how many of its digits divide `n` evenly. Ignore 0.
+
+```cpp
+// Straightforward digit analysis — I took each digit and checked if it divides the number.
+// Ignored zeroes to avoid divide-by-zero errors.
+
+int findDigit(long long num) {
+    long long temp = num;
+    int count = 0;
+
+    while (temp != 0) {
+        int digit = temp % 10;
+        if (digit != 0 && num % digit == 0) {
+            count++;
+        }
+        temp /= 10;
+    }
+
+    return count;
+}
+```
+
+---
+
+## 📈 Problem 4: Viral Advertising
+
+**📜 Problem Statement:**
+Each day, 5 people see an ad. Half of them like and share it with 3 friends. This process repeats for `n` days. Return the total number of likes.
+
+```cpp
+// This is like a chain-reaction growth.
+// I kept track of how many like it each day and used that to get new viewers.
+
+int viralAd(int startingViewers, int numDays){
+    int viewers = startingViewers;
+    int likesCount = 0;
+    
+    for(int i = 0; i < numDays; i++){
+        int half = viewers / 2;
+        likesCount += half;
+        viewers = half * 3;
+    }
+    return likesCount;
+}
+```
+
+---
+
+## 🍫 Problem 5: Chocolate Feast
+
+**📜 Problem Statement:**
+You have `n` rupees. Each chocolate costs `c`, and you can exchange `m` wrappers for 1 chocolate. How many total chocolates can you eat?
+
+```cpp
+// First I calculated how many chocolates I could buy directly.
+// Then kept exchanging wrappers for extra chocolates until I couldn’t anymore.
+
+int chocolateFeast(int totalAmount, int cost, int wrapperReq){
+    int chocolatePurchased = totalAmount / cost;
+    int numWrapper = chocolatePurchased;
+
+    while(numWrapper >= wrapperReq){
+        int exchangeNumber = numWrapper / wrapperReq;
+        chocolatePurchased += exchangeNumber;
+        numWrapper = exchangeNumber + (numWrapper % wrapperReq);
+    }
+    return chocolatePurchased;
+}
+```
+
+---
+
+## 😠 Problem 6: Angry Professor
+
+**📜 Problem Statement:**
+Given arrival times of students and a threshold `k`, return whether class is cancelled (less than `k` students on time).
+
+```cpp
+// Simple counting problem. I just counted how many came on or before 0.
+
+bool angryProfessor(int minStudent, vector<int> arrivalTimes) {
+    int numOnTime = 0;
+
+    for (int i = 0; i < arrivalTimes.size(); i++) {
+        if (arrivalTimes[i] <= 0) {
+            numOnTime++;
+        }
+    }
+
+    return numOnTime < minStudent;
+}
+```
+
+---
+
+## 🌳 Problem 7: Utopian Tree Growth
+
+**📜 Problem Statement:**
+A tree grows in 2 cycles every year:
+
+* Spring → double height
+* Summer → +1 height
+  Starts at height 1. Return height after `n` cycles.
+
+```cpp
+// This was fun — I tracked growth by checking if it’s an odd or even cycle.
+// Odd → double, Even → add 1
+
+int utopianTree(int numCycles){
+    int treeGrowth = 1;
+    for(int i = 1; i <= numCycles; i++){
+        if (i % 2 == 1){
+            treeGrowth *= 2;
+        } else {
+            treeGrowth += 1;
+        }
+    }
+    return treeGrowth;
+}
+```
+
+---
+
+Let me know if you'd like these exported into Markdown or PDF, or if you want visual explanations or diagrams added!

@@ -1,0 +1,1 @@
+Simple counting problem. I just counted how many came on or before 0.

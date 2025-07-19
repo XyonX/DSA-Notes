@@ -1,0 +1,1 @@
+Straightforward digit analysis — I took each digit and checked if it divides the number. Ignored zeroes to avoid divide-by-zero errors.

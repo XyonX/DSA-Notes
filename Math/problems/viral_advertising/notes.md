@@ -1,0 +1,1 @@
+This is like a chain-reaction growth. I kept track of how many like it each day and used that to get new viewers.
