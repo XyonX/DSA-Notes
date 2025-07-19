@@ -11,7 +11,7 @@ Gemini CLI automates the organization of code and notes, ensuring consistency an
 
 ## Folder Structure
 The root folder is `DSA/`, which contains:
-- **`recent_codes.txt`**: A temporary file where Joy dumps new or recent code snippets with metadata (topic, problem, notes).
+- **`recent_codes.txt`**: A temporary file where Joy dumps new or recent code snippets, either with explicit metadata or in an unstructured format.
 - **`logs/`**: A folder containing daily log files (e.g., `2025-07-19.md`), created only on days when code is added.
 - **`progress.md`**: A manual tracker for problem status (e.g., solved, attempted, unsolved).
 - **Topic Folders** (e.g., `Strings/`, `Sliding_Window/`): Each topic folder contains:
@@ -53,61 +53,70 @@ DSA/
 ## Gemini CLI's Role and Instructions
 Gemini CLI is responsible for automating the organization of DSA notes and code based on the content of `recent_codes.txt`. When Joy says "update my notes," Gemini CLI will:
 
-1. **Read `recent_codes.txt`**:
-   - The file contains code snippets with metadata in the following format:
-     ```cpp
-     // Topic: <topic>
-     // Problem: <problem>
-     // Notes: <notes>
-     <code>
-     // END OF SNIPPET
-     ```
-   - Multiple snippets can be added, separated by `// END OF SNIPPET`.
+### For Structured Code Dumps
+If the code in `recent_codes.txt` includes explicit metadata:
+```cpp
+// Topic: <topic>
+// Problem: <problem>
+// Notes: <notes>
+<code>
+// END OF SNIPPET
+```
+- Gemini CLI will extract the `topic`, `problem`, `notes`, and `code` directly.
 
-2. **Process Each Snippet**:
-   - Extract the `topic`, `problem`, `notes`, and `code`.
-   - **Create or Update Folders**:
-     - If the `topic` folder does not exist, create it (e.g., `Strings/`).
-     - If the `problems/<problem>/` folder does not exist, create it (e.g., `problems/two_sum/`).
-   - **Save the Code**:
-     - Write the `code` to `problems/<problem>/code.cpp`. If the file already exists, overwrite it with the latest solution.
-   - **Append Notes**:
-     - If `notes` are provided, append them to `problems/<problem>/notes.md`. If the file does not exist, create it.
-   - **Update Summaries and Discussions**:
-     - Append a new entry to `compact_version.md` in the topic  topic folder:
-       ```
-       ## <problem>
-       - Notes: <notes>
-       ```
-     - Append a new section to `discussion.md` in the topic folder:
-       ```
-       ## <problem>
-       - <notes>
-       ```
-   - **Log the Activity**:
-     - Create or update the daily log file in `logs/` (e.g., `2025-07-19.md`) with:
-       ```
-       - Added/Updated <topic>/<problem>
-       ```
+### For Unstructured Code Dumps
+If the code lacks explicit metadata, Gemini CLI will:
+1. **Identify Functions and Comments**:
+   - Parse the code to find individual functions and associated comments (e.g., above or within the function).
+2. **Infer Topic and Problem**:
+   - **Topic**: Determined by analyzing function names, comments, and code patterns (e.g., string operations suggest "Strings").
+   - **Problem**: Based on function names or key operations (e.g., `checkAnagrams` suggests "Check Anagrams").
+3. **Extract Notes**:
+   - Interpret comments as notes (e.g., "logic was quite easy" becomes part of the notes).
+4. **Handle Multiple Functions**:
+   - Process each function separately, creating or updating individual problem folders.
 
-3. **Commit to Git**:
-   - After processing all snippets, commit the changes to Git with a message like:
-     ```
-     git add .
-     git commit -m "Added/Updated <topic>/<problem>"
-     ```
-
-4. **Clear `recent_codes.txt`**:
-   - Empty the file to indicate that the code has been processed.
+### Common Processing Steps
+For both structured and unstructured dumps:
+- **Create or Update Folders**:
+  - Create `topic` and `problems/<problem>/` folders if they don’t exist.
+- **Save the Code**:
+  - Write the `code` to `problems/<problem>/code.cpp` (overwrite if exists).
+- **Append Notes**:
+  - Append extracted or provided `notes` to `problems/<problem>/notes.md`.
+- **Update Summaries and Discussions**:
+  - Append to `compact_version.md`:
+    ```
+    ## <problem>
+    - Notes: <notes>
+    ```
+  - Append to `discussion.md`:
+    ```
+    ## <problem>
+    - <notes>
+    ```
+- **Log the Activity**:
+  - Update the daily log in `logs/<today's date>.md`:
+    ```
+    - Added/Updated <topic>/<problem>
+    ```
+- **Commit to Git**:
+  - Commit changes with:
+    ```
+    git add .
+    git commit -m "Added/Updated <topic>/<problem>"
+    ```
+- **Clear `recent_codes.txt`**:
+  - Empty the file after processing.
 
 ### Explicit Instructions for Gemini CLI
-- **Do Not Modify the Code**: Gemini CLI must not change the code in `recent_codes.txt`, even if there are errors or potential improvements. It can add comments but must preserve Joy's original coding style and errors, as these are personal notes.
-- **Append, Do Not Overwrite**: When updating `notes.md`, `compact_version.md`, and `discussion.md`, always append new information rather than overwriting existing content to preserve previous notes.
-- **Create Logs Only When Necessary**: Daily log files are created or updated only on days when code is added via `recent_codes.txt`. If no code is added, no log file is created for that day.
+- **Do Not Modify the Code**: Preserve Joy's original code, including errors or style. Only organize and extract information.
+- **Append, Do Not Overwrite**: Always append to `notes.md`, `compact_version.md`, and `discussion.md` to preserve history.
+- **Create Logs Only When Necessary**: Log files are created only on days when code is added.
 
 ## Additional Notes
-- **Version Control**: Git is used for versioning. After processing `recent_codes.txt`, Gemini CLI commits the changes, allowing Joy to track progress over time.
-- **Manual Updates**: Joy manually updates `progress.md` to track problem status (e.g., solved, attempted, unsolved).
+- **Version Control**: Git tracks changes, with commits made after processing.
+- **Manual Updates**: Joy manually updates `progress.md` for problem status.
 
 ## About the User
 - **Name**: Joy

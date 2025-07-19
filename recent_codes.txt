@@ -1,0 +1,67 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+//logic was quite easy
+//what i have learned how to use array as map for string
+//how to work wiht string asccii and the 'a' subtraction
+bool checkAnagrams(string a, string b){
+    
+    //base case to check size mismatch
+    if(a.size() !=b.size())return false;
+    
+    vector<int>fA(26,0);
+    vector<int>fB(26,0);
+
+    for( int i=0;i<a.size();i++){
+        fA[a[i]-'a']++;
+        fB[b[i]-'a']++;
+    }
+    
+    for(char c : a){
+        if(fA[c-'a'] != fB[c-'a'])return false;
+    }
+    return true;
+    
+    
+    
+    
+}
+
+//the basic code of palindrome
+//i did impkemented first whihc was wrokign for the ony same caps
+// later i have learned to use trhe tolower to make it work for any case 
+bool isPalindrome(string s){
+    int n=s.size();
+    for(int i=0;i<n/2;i++){
+        if(tolower(s[i])!= tolower(s[n-i-1]))return false;
+    }
+    return true;
+}
+
+//i later implemented the recursivce code to practicve  my recursion skill
+bool isP(int i, string& s){
+    
+    if(i>s.size()/2){
+        return true;
+    }
+    if(tolower(s[i])!= tolower(s[s.size()-i-1]))return false;
+    return isP(i+1,s);
+}
+
+//its anotehr  code to get the first char non repeating char
+char firstNonRepeatChar(string s){
+    vector<int>arr(26,0);
+    for(int i=0;i<s.size();i++){
+        arr[s[i]-'a']++;
+    }
+    char firstNonRepeating;
+    char c=' ';
+    for(int i=s.size()-1;i>=0;i--){
+        if(arr[s[i]-'a'] ==1)c=s[i];
+    }
+    return c;
+}
+ int main(){}
