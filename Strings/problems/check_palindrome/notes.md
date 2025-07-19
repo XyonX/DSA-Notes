@@ -1,0 +1,4 @@
+- the basic code of palindrome
+- i did impkemented first whihc was wrokign for the ony same caps
+- later i have learned to use trhe tolower to make it work for any case
+- i later implemented the recursivce code to practicve my recursion skill
