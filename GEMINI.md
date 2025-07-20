@@ -1,56 +1,101 @@
-# Gemini CLI Configuration for DSA Notes
+# Gemini CLI Configuration for Coding Buddy
 
 ## Project Overview
-This project is designed to help Joy, a BTech CSE student, organize and manage Data Structures and Algorithms (DSA) notes and code. The primary objectives are:
-- **Prepare for technical job interviews** by maintaining structured and accessible notes.
-- **Keep records for future reference** to revisit concepts and solutions.
-- **Practice coding skills** by documenting personal solutions and approaches.
-- **Support potential career switches** by providing a reliable reference of DSA knowledge.
+This project is designed to help Joy, a BTech CSE student, organize and manage coding notes and code across multiple areas, including Data Structures and Algorithms (DSA), Object-Oriented Programming (OOP), Python, and SQL. The primary objectives are:
+- **Prepare for technical job interviews** by maintaining structured and accessible notes across various coding topics.
+- **Keep records for future reference** to revisit concepts and solutions in DSA, OOP, Python, and SQL.
+- **Practice coding skills** by documenting personal solutions and approaches in multiple programming languages.
+- **Support potential career switches** by providing a reliable reference of coding knowledge across different domains.
 
 Gemini CLI serves two key roles:
-1. **Automate note organization**: Processes code dumps from `recent_codes.txt`, organizes them into topic folders, updates logs, creates or updates `progress.md`, and commits changes to Git.
-2. **Act as a coding mentor**: Provides guidance on what to practice, discusses specific problems, conducts mock tests, and offers feedback on solutions.
+1. **Automate note organization**: Processes code dumps from `recent_codes.txt`, organizes them into topic folders under the appropriate topic area, updates logs, creates or updates `progress.md`, and commits changes to Git.
+2. **Act as a coding mentor**: Provides guidance on what to practice, discusses specific problems, conducts mock tests, and offers feedback on solutions across all supported topic areas.
 
 ## Folder Structure
-The root folder is `DSA/`, which contains:
+The root folder is `CodingBuddy/`, which contains:
 - **`recent_codes.txt`**: A temporary file for code snippets (with or without metadata).
 - **`logs/`**: Daily logs of coding activities (e.g., `2025-07-19.md`).
-- **`progress.md`**: Tracks problem status (e.g., solved, attempted, unsolved), created or updated automatically.
+- **`progress.md`**: Tracks problem status (e.g., solved, attempted, unsolved) across all topic areas, created or updated automatically.
 - **`update_status.json`**: A temporary file to track the progress of the "update my notes" command (created during processing and deleted upon completion).
-- **Topic Folders** (e.g., `Strings/`): Each contains:
-  - **`problems/`**: Subfolders for each problem (e.g., `two_sum/`), with:
-    - **`code.cpp`**: Solution code.
-    - **`notes.md`**: Problem-specific notes.
-  - **`compact_version.md`**: Summarizes solutions.
-  - **`discussion.md`**: Detailed problem discussions.
+- **Topic Area Folders** (e.g., `DSA/`, `OOP/`, `Python/`, `SQL/`): Each contains:
+  - **Topic Folders** (e.g., `Strings/` under `DSA/`, `Classes/` under `OOP/`): Each contains:
+    - **`problems/`**: Subfolders for each problem (e.g., `two_sum/` under `DSA/Strings/`), with:
+      - **`code.<ext>`**: Solution code, where `<ext>` is based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL).
+      - **`notes.md`**: Problem-specific notes.
+    - **`compact_version.md`**: Summarizes solutions for the topic.
+    - **`discussion.md`**: Detailed problem discussions for the topic.
 
 ### Example Structure
 ```
-DSA/
+CodingBuddy/
 ├── recent_codes.txt
 ├── logs/
 │   ├── 2025-07-19.md
 │   └── 2025-07-20.md
 ├── progress.md
 ├── update_status.json (temporary)
-├── Strings/
-│   ├── problems/
-│   │   ├── two_sum/
-│   │   │   ├── code.cpp
-│   │   │   └── notes.md
-│   │   └── reverse_string/
-│   │       ├── code.cpp
-│   │       └── notes.md
-│   ├── compact_version.md
-│   └── discussion.md
-├── Sliding_Window/
-│   └── ...
+├── DSA/
+│   ├── Strings/
+│   │   ├── problems/
+│   │   │   ├── two_sum/
+│   │   │   │   ├── code.cpp
+│   │   │   │   └── notes.md
+│   │   │   └── reverse_string/
+│   │   │       ├── code.cpp
+│   │   │       └── notes.md
+│   │   ├── compact_version.md
+│   │   └── discussion.md
+│   └── Sliding_Window/
+│       └── ...
+├── OOP/
+│   ├── Classes/
+│   │   ├── problems/
+│   │   │   ├── inheritance_example/
+│   │   │   │   ├── code.cpp
+│   │   │   │   └── notes.md
+│   │   │   └── polymorphism_example/
+│   │   │       ├── code.cpp
+│   │   │       └── notes.md
+│   │   ├── compact_version.md
+│   │   └── discussion.md
+│   └── Design_Patterns/
+│       └── ...
+├── Python/
+│   ├── Basics/
+│   │   ├── problems/
+│   │   │   ├── list_comprehension/
+│   │   │   │   ├── code.py
+│   │   │   │   └── notes.md
+│   │   │   └── decorators/
+│   │   │       ├── code.py
+│   │   │       └── notes.md
+│   │   ├── compact_version.md
+│   │   └── discussion.md
+│   └── Advanced/
+│       └── ...
+└── SQL/
+    ├── Queries/
+    │   ├── problems/
+    │   │   ├── select_basics/
+    │   │   │   ├── code.sql
+    │   │   │   └── notes.md
+    │   │   └── joins/
+    │   │       ├── code.sql
+    │   │       └── notes.md
+    │   ├── compact_version.md
+    │   └── discussion.md
+    └── Optimization/
+        └── ...
 ```
 
 ## File Naming Conventions
-- **Topic Folders**: DSA topics (e.g., `Strings`, `Sliding_Window`).
-- **Problem Folders**: Descriptive problem names (e.g., `two_sum`).
-- **Code Files**: Always `code.cpp`.
+- **Topic Area Folders**: Broad coding areas (e.g., `DSA`, `OOP`, `Python`, `SQL`).
+- **Topic Folders**: Specific topics within each area (e.g., `Strings` under `DSA`, `Classes` under `OOP`).
+- **Problem Folders**: Descriptive problem names (e.g., `two_sum` under `DSA/Strings`, `inheritance_example` under `OOP/Classes`).
+- **Code Files**: Named `code.<ext>`, where `<ext>` is:
+  - `cpp` for DSA and OOP.
+  - `py` for Python.
+  - `sql` for SQL.
 - **Notes Files**: `notes.md`.
 - **Log Files**: Date-based (e.g., `2025-07-19.md`).
 - **Progress File**: `progress.md` in the root directory.
@@ -64,10 +109,10 @@ When you say **"update my notes"**, Gemini CLI:
   - If `update_status.json` exists, it resumes processing from the last checkpoint by analyzing which snippets from `recent_codes.txt` have already been processed.
   - If `update_status.json` does not exist, it **creates a new `update_status.json` file** before starting the processing of `recent_codes.txt`. This file will track the progress of the update process.
 - Processes each snippet in `recent_codes.txt` (structured or unstructured).
-- Organizes code into topic/problem folders.
+- Organizes code into the appropriate topic area, topic, and problem folders.
 - Appends notes to `notes.md`, `compact_version.md`, and `discussion.md`.
 - Logs activities in `logs/<today's date>.md`.
-- Creates or updates `progress.md` to reflect problem statuses.
+- Creates or updates `progress.md` to reflect problem statuses across all topic areas.
 - Commits changes to Git after all snippets are processed.
 - Clears `recent_codes.txt` and **deletes `update_status.json`** upon successful completion.
 
@@ -98,33 +143,47 @@ When you say **"update my notes"**, Gemini CLI:
 #### For Structured Code Dumps
 Include metadata:
 ```cpp
-// Topic: <topic>
+// Topic: <topic_area>/<topic>
 // Problem: <problem>
 // Notes: <notes>
 <code>
 // END OF SNIPPET
 ```
+**Example:**
+```cpp
+// Topic: OOP/Classes
+// Problem: inheritance_example
+// Notes: Demonstrates basic inheritance in C++
+class Parent { ... };
+class Child : public Parent { ... };
+// END OF SNIPPET
+```
 
 #### For Unstructured Code Dumps
 Gemini CLI will:
-- Parse functions and comments.
-- Infer `topic`, `problem`, and `notes` based on code and comments (e.g., `checkAnagrams` suggests "Strings/Check Anagrams").
+- Parse functions, comments, and code patterns to infer the topic area, topic, and problem.
+- Use language-specific patterns:
+  - **OOP**: Look for class definitions, inheritance, etc.
+  - ** Tokyo**: Detect function definitions, list comprehensions, decorators, etc.
+  - **SQL**: Identify SQL keywords like `SELECT`, `INSERT`, `JOIN`, etc.
+- Infer the appropriate topic area and topic based on these patterns.
 
 #### Common Processing Steps
 For both structured and unstructured dumps:
+- **Determine File Extension**: Based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL).
 - **Create or Update Folders**:
-  - Create `topic` and `problems/<problem>/` folders if they don’t exist.
+  - Create `topic_area`, `topic`, and `problems/<problem>/` folders if they don’t exist.
 - **Save the Code**:
-  - Write the `code` to `problems/<problem>/code.cpp` (overwrite if exists).
+  - Write the `code` to `problems/<problem>/code.<ext>` (overwrite if exists).
 - **Append Notes**:
   - Append extracted or provided `notes` to `problems/<problem>/notes.md`.
 - **Update Summaries and Discussions**:
-  - Append to `compact_version.md`:
+  - Append to `compact_version.md` in the topic folder:
     ```
     ## <problem>
     - Notes: <notes>
     ```
-  - Append to `discussion.md`:
+  - Append to `discussion.md` in the topic folder:
     ```
     ## <problem>
     - <notes>
@@ -132,27 +191,40 @@ For both structured and unstructured dumps:
 - **Log the Activity**:
   - Update the daily log in `logs/<today's date>.md`:
     ```
-    - Added/Updated <topic>/<problem>
+    - Added/Updated <topic_area>/<topic>/<problem>
     ```
 - **Handle progress.md**:
-  - If `progress.md` doesn’t exist, create it and analyze the entire note base (`problems/` folders) to list all problems with a default status of "solved" (since code exists).
+  - If `progress.md` doesn’t exist, create it and analyze the entire note base to list all problems with a default status of "solved" (since code exists).
   - If `progress.md` exists, update it to include new or updated problems from `recent_codes.txt` as "solved" and maintain existing statuses.
   - Format:
     ```
     # Progress
 
-    ## Strings
+    ## DSA
+    ### Strings
     - two_sum: solved
     - reverse_string: solved
 
-    ## Sliding_Window
-    - max_subarray: unsolved
+    ## OOP
+    ### Classes
+    - inheritance_example: solved
+    - polymorphism_example: attempted
+
+    ## Python
+    ### Basics
+    - list_comprehension: solved
+    - decorators: unsolved
+
+    ## SQL
+    ### Queries
+    - select_basics: solved
+    - joins: attempted
     ```
 - **Commit to Git**:
   - Commit changes with:
     ```
     git add .
-    git commit -m "Added/Updated <topic>/<problem>"
+    git commit -m "Added/Updated <topic_area>/<topic>/<problem>"
     ```
 - **Clear `recent_codes.txt`**:
   - Empty the file only after all snippets are successfully processed.
@@ -160,43 +232,45 @@ For both structured and unstructured dumps:
   - Remove the temporary status file upon completion.
 
 ### 2. Mentor Features
-Gemini CLI acts as a coding mentor, using `progress.md` and `logs/` to suggest practice and provide feedback.
+Gemini CLI acts as a coding mentor, using `progress.md` and `logs/` to suggest practice and provide feedback across all topic areas.
 
 #### Available Commands
 - **Suggest Practice**: Say "What should I practice today?" or "Suggest problems to solve."
-  - Analyzes `logs/` for recent activity and `progress.md` for unsolved or infrequently practiced problems.
-  - Suggests 1-2 problems, prioritizing topics not practiced recently (e.g., "You studied Sliding Window on 2025-07-19 but haven’t practiced since. Try max_subarray.").
-- **Discuss Problem**: Say "Let's discuss <problem_name>."
-  - Retrieves `code.cpp`, `notes.md`, and `discussion.md` for `<problem_name>`.
-  - If solved, discusses the code, comments, and time complexity.
+  - Analyzes `logs/` for recent activity and `progress.md` for unsolved or infrequently practiced problems across all topic areas.
+  - Suggests 1-2 problems, prioritizing topics not practiced recently (e.g., "You studied SQL on 2025-07-19 but haven’t practiced since. Try joins.").
+- **Discuss Problem**: Say "Let's discuss <topic_area>/<topic>/<problem>."
+  - Retrieves `code.<ext>`, `notes.md`, and `discussion.md` for the specified problem.
+  - If solved, discusses the code, comments, and relevant aspects (e.g., time complexity for DSA, design patterns for OOP, query optimization for SQL).
   - If unsolved (per `progress.md`), informs you and suggests approaches.
 - **Start Mock Test**: Say "Start a mock test."
-  - Suggests 1-3 problems (unsolved from `progress.md` or new industry-standard problems).
-  - After solving, add code to `recent_codes.txt` with `// Mock Test Problem: <problem>`.
-  - Run "update my notes" to process and get feedback (e.g., correctness, time complexity, comparison to prior solutions).
+  - Suggests 1-3 problems from unsolved items in `progress.md` or new industry-standard problems across any topic area.
+  - After solving, add code to `recent_codes.txt` with `// Mock Test Problem: <topic_area>/<topic>/<problem>`.
+  - Run "update my notes" to process and get feedback (e.g., correctness, efficiency, comparison to prior solutions).
 - **Help**: Say "List commands" or "Help."
   - Displays:
     ```
     Available Commands:
     - "update my notes": Organize recent_codes.txt into folders, update logs and progress.md, commit to Git.
-    - "What should I practice today?" or "Suggest problems to solve": Recommend problems based on logs and progress.
-    - "Let's discuss <problem_name>": Discuss code, notes, and complexity for a problem.
+    - "What should I practice today?" or "Suggest problems to solve": Recommend problems based on logs and progress across all areas.
+    - "Let's discuss <topic_area>/<topic>/<problem>": Discuss code, notes, and relevant aspects for a problem.
     - "Start a mock test": Suggest problems and provide feedback after submission.
     - "List commands" or "Help": Show this list.
     ```
 
 #### Mock Test Process
-- **Starting a Test**: Suggests problems from `progress.md` (unsolved) or new topics.
-- **Submitting Solutions**: Add to `recent_codes.txt` with `// Mock Test Problem: <problem>`.
-- **Feedback**: Analyzes solution for correctness, efficiency, and compares to prior solutions in the note base (e.g., "Your solution uses O(n^2); consider a hash map for O(n).").
+- **Starting a Test**: Suggests problems from `progress.md` (unsolved) or new problems in any topic area.
+- **Submitting Solutions**: Add to `recent_codes.txt` with `// Mock Test Problem: <topic_area>/<topic>/<problem>`.
+- **Feedback**: Analyzes solution for correctness, efficiency, and provides topic-specific feedback (e.g., "Your SQL query could use an index for better performance").
 
 ### Explicit Instructions for Gemini CLI
 - **Do Not Generate or Overwrite**: Preserve Joy's original code, including errors.
 - **Append, Do Not Overwrite**: Append to `notes.md`, `compact_version.md`, and `discussion.md`.
 - **Logs**: Create logs only when code is added.
-- **Progress**: Create `progress.md` if missing, analyze note base, and update after processing `recent_codes.txt`.
-- **Feedback**: Provide constructive feedback without modifying code.
+- **Progress**: Create `progress.md` if missing, analyze the entire note base, and update after processing `recent_codes.txt`.
+- **Feedback**: Provide constructive feedback without modifying code, tailored to the topic area.
 - **Checkpoint System**: Use `update_status.json` to track and resume processing if interrupted.
+- **File Extensions**: Save code as `.cpp` for DSA and OOP, `.py` for Python, `.sql` for SQL, based on the topic area or metadata.
+- **Inference**: Recognize patterns in unstructured code to determine the topic area (e.g., class definitions for OOP, SQL keywords for SQL).
 
 ## Additional Notes
 - **Version Control**: Git tracks changes with commits after processing.
@@ -205,4 +279,4 @@ Gemini CLI acts as a coding mentor, using `progress.md` and `logs/` to suggest p
 ## About the User
 - **Name**: Joy
 - **Background**: BTech CSE student
-- **Purpose**: Preparing for technical job interviews, keeping records for future reference, practicing coding skills, and supporting potential career switches by maintaining a structured DSA notes repository.
+- **Purpose**: Preparing for technical job interviews across various coding areas, keeping records for future reference, practicing coding skills in multiple languages, and supporting potential career switches by maintaining a structured coding notes repository.
