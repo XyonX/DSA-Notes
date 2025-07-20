@@ -7,19 +7,21 @@ This project is designed to help Joy, a BTech CSE student, organize and manage D
 - **Practice coding skills** by documenting personal solutions and approaches.
 - **Support potential career switches** by providing a reliable reference of DSA knowledge.
 
-Gemini CLI automates the organization of code and notes, ensuring consistency and efficiency. Joy will only need to update the `recent_codes.txt` file with code dumps, and Gemini CLI will handle the rest, including folder creation, file updates, logging, and version control.
+Gemini CLI serves two key roles:
+1. **Automate note organization**: Processes code dumps from `recent_codes.txt`, organizes them into topic folders, updates logs, creates or updates `progress.md`, and commits changes to Git.
+2. **Act as a coding mentor**: Provides guidance on what to practice, discusses specific problems, conducts mock tests, and offers feedback on solutions.
 
 ## Folder Structure
 The root folder is `DSA/`, which contains:
-- **`recent_codes.txt`**: A temporary file where Joy dumps new or recent code snippets, either with explicit metadata or in an unstructured format.
-- **`logs/`**: A folder containing daily log files (e.g., `2025-07-19.md`), created only on days when code is added.
-- **`progress.md`**: A manual tracker for problem status (e.g., solved, attempted, unsolved).
-- **Topic Folders** (e.g., `Strings/`, `Sliding_Window/`): Each topic folder contains:
-  - **`problems/`**: Subfolders for each problem (e.g., `two_sum/`), which include:
-    - **`code.cpp`**: The solution code.
-    - **`notes.md`**: Optional problem-specific notes.
-  - **`compact_version.md`**: A concise summary of solutions or key points for the topic.
-  - **`discussion.md`**: Detailed notes or discussions about the problems in the topic.
+- **`recent_codes.txt`**: A temporary file for code snippets (with or without metadata).
+- **`logs/`**: Daily logs of coding activities (e.g., `2025-07-19.md`).
+- **`progress.md`**: Tracks problem status (e.g., solved, attempted, unsolved), created or updated automatically.
+- **Topic Folders** (e.g., `Strings/`): Each contains:
+  - **`problems/`**: Subfolders for each problem (e.g., `two_sum/`), with:
+    - **`code.cpp`**: Solution code.
+    - **`notes.md`**: Problem-specific notes.
+  - **`compact_version.md`**: Summarizes solutions.
+  - **`discussion.md`**: Detailed problem discussions.
 
 ### Example Structure
 ```
@@ -44,17 +46,27 @@ DSA/
 ```
 
 ## File Naming Conventions
-- **Topic Folders**: Named after DSA topics (e.g., `Strings`, `Sliding_Window`, `Recursion`).
-- **Problem Folders**: Named descriptively based on the problem (e.g., `two_sum`, `reverse_string`).
-- **Code Files**: Always named `code.cpp` for consistency.
-- **Notes Files**: Named `notes.md` for problem-specific notes.
-- **Log Files**: Named by date (e.g., `2025-07-19.md`) in the `logs/` folder.
+- **Topic Folders**: DSA topics (e.g., `Strings`, `Sliding_Window`).
+- **Problem Folders**: Descriptive problem names (e.g., `two_sum`).
+- **Code Files**: Always `code.cpp`.
+- **Notes Files**: `notes.md`.
+- **Log Files**: Date-based (e.g., `2025-07-19.md`).
+- **Progress File**: `progress.md` in the root directory.
 
 ## Gemini CLI's Role and Instructions
-Gemini CLI is responsible for automating the organization of DSA notes and code based on the content of `recent_codes.txt`. When Joy says "update my notes," Gemini CLI will:
 
-### For Structured Code Dumps
-If the code in `recent_codes.txt` includes explicit metadata:
+### 1. Note Organization
+When you say **"update my notes"**, Gemini CLI:
+- Processes `recent_codes.txt` (structured or unstructured).
+- Organizes code into topic/problem folders.
+- Appends notes to `notes.md`, `compact_version.md`, and `discussion.md`.
+- Logs activities in `logs/<today's date>.md`.
+- Creates or updates `progress.md` to reflect problem statuses.
+- Commits changes to Git.
+- Clears `recent_codes.txt`.
+
+#### For Structured Code Dumps
+Include metadata:
 ```cpp
 // Topic: <topic>
 // Problem: <problem>
@@ -62,21 +74,13 @@ If the code in `recent_codes.txt` includes explicit metadata:
 <code>
 // END OF SNIPPET
 ```
-- Gemini CLI will extract the `topic`, `problem`, `notes`, and `code` directly.
 
-### For Unstructured Code Dumps
-If the code lacks explicit metadata, Gemini CLI will:
-1. **Identify Functions and Comments**:
-   - Parse the code to find individual functions and associated comments (e.g., above or within the function).
-2. **Infer Topic and Problem**:
-   - **Topic**: Determined by analyzing function names, comments, and code patterns (e.g., string operations suggest "Strings").
-   - **Problem**: Based on function names or key operations (e.g., `checkAnagrams` suggests "Check Anagrams").
-3. **Extract Notes**:
-   - Interpret comments as notes (e.g., "logic was quite easy" becomes part of the notes).
-4. **Handle Multiple Functions**:
-   - Process each function separately, creating or updating individual problem folders.
+#### For Unstructured Code Dumps
+Gemini CLI will:
+- Parse functions and comments.
+- Infer `topic`, `problem`, and `notes` based on code and comments (e.g., `checkAnagrams` suggests "Strings/Check Anagrams").
 
-### Common Processing Steps
+#### Common Processing Steps
 For both structured and unstructured dumps:
 - **Create or Update Folders**:
   - Create `topic` and `problems/<problem>/` folders if they don’t exist.
@@ -100,6 +104,20 @@ For both structured and unstructured dumps:
     ```
     - Added/Updated <topic>/<problem>
     ```
+- **Handle progress.md**:
+  - If `progress.md` doesn’t exist, create it and analyze the entire note base (`problems/` folders) to list all problems with a default status of "solved" (since code exists).
+  - If `progress.md` exists, update it to include new or updated problems from `recent_codes.txt` as "solved" and maintain existing statuses.
+  - Format:
+    ```
+    # Progress
+
+    ## Strings
+    - two_sum: solved
+    - reverse_string: solved
+
+    ## Sliding_Window
+    - max_subarray: unsolved
+    ```
 - **Commit to Git**:
   - Commit changes with:
     ```
@@ -109,14 +127,47 @@ For both structured and unstructured dumps:
 - **Clear `recent_codes.txt`**:
   - Empty the file after processing.
 
+### 2. Mentor Features
+Gemini CLI acts as a coding mentor, using `progress.md` and `logs/` to suggest practice and provide feedback.
+
+#### Available Commands
+- **Suggest Practice**: Say "What should I practice today?" or "Suggest problems to solve."
+  - Analyzes `logs/` for recent activity and `progress.md` for unsolved or infrequently practiced problems.
+  - Suggests 1-2 problems, prioritizing topics not practiced recently (e.g., "You studied Sliding Window on 2025-07-19 but haven’t practiced since. Try max_subarray.").
+- **Discuss Problem**: Say "Let's discuss <problem_name>."
+  - Retrieves `code.cpp`, `notes.md`, and `discussion.md` for `<problem_name>`.
+  - If solved, discusses the code, comments, and time complexity.
+  - If unsolved (per `progress.md`), informs you and suggests approaches.
+- **Start Mock Test**: Say "Start a mock test."
+  - Suggests 1-3 problems (unsolved from `progress.md` or new industry-standard problems).
+  - After solving, add code to `recent_codes.txt` with `// Mock Test Problem: <problem>`.
+  - Run "update my notes" to process and get feedback (e.g., correctness, time complexity, comparison to prior solutions).
+- **Help**: Say "List commands" or "Help."
+  - Displays:
+    ```
+    Available Commands:
+    - "update my notes": Organize recent_codes.txt into folders, update logs and progress.md, commit to Git.
+    - "What should I practice today?" or "Suggest problems to solve": Recommend problems based on logs and progress.
+    - "Let's discuss <problem_name>": Discuss code, notes, and complexity for a problem.
+    - "Start a mock test": Suggest problems and provide feedback after submission.
+    - "List commands" or "Help": Show this list.
+    ```
+
+#### Mock Test Process
+- **Starting a Test**: Suggests problems from `progress.md` (unsolved) or new topics.
+- **Submitting Solutions**: Add to `recent_codes.txt` with `// Mock Test Problem: <problem>`.
+- **Feedback**: Analyzes solution for correctness, efficiency, and compares to prior solutions in the note base (e.g., "Your solution uses O(n^2); consider a hash map for O(n).").
+
 ### Explicit Instructions for Gemini CLI
-- **Do Not Modify the Code**: Preserve Joy's original code, including errors or style. Only organize and extract information.
-- **Append, Do Not Overwrite**: Always append to `notes.md`, `compact_version.md`, and `discussion.md` to preserve history.
-- **Create Logs Only When Necessary**: Log files are created only on days when code is added.
+- **Do Not Modify Code**: Preserve Joy's original code, including errors.
+- **Append, Do Not Overwrite**: Append to `notes.md`, `compact_version.md`, and `discussion.md`.
+- **Logs**: Create logs only when code is added.
+- **Progress**: Create `progress.md` if missing, analyze note base, and update after processing `recent_codes.txt`.
+- **Feedback**: Provide constructive feedback without modifying code.
 
 ## Additional Notes
-- **Version Control**: Git tracks changes, with commits made after processing.
-- **Manual Updates**: Joy manually updates `progress.md` for problem status.
+- **Version Control**: Git tracks changes with commits after processing.
+- **Manual Updates**: Joy may manually edit `progress.md` to adjust statuses.
 
 ## About the User
 - **Name**: Joy
