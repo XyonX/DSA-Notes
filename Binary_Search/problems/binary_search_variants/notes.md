@@ -1,0 +1,8 @@
+- Binary search is not just a search technique — it's also a tool used as a base in many advanced problems like lower_bound, upper_bound, first/last occurrence, etc.
+- The mid calculation: Instead of (l + r)/2, I should use `mid = l + (r - l)/2` to avoid overflow. I wasn't clear on this earlier but now I understand it's safer.
+- Binary search reduces the range by half each time, very efficient for sorted arrays.
+- Lower Bound: This is a modified version of binary search to find the first element that is >= target. I learned this is used in many problems like: First occurrence, Insert position in sorted array, Finding smallest index with some condition.
+- Insert position is just the index where we can insert the element to keep the array sorted — exactly what lowerBound gives us.
+- First Occurrence: Since lower bound gives the first index where arr[i] >= target, it directly gives us the first occurrence (if the element exists).
+- Last Occurrence: For last occurrence, I learned we can use upperBound and subtract 1. Because upperBound gives the index of first element > target.
+- Upper Bound: It finds the first index where arr[i] > target. Only small change from lower bound: condition is strictly greater.

@@ -16,6 +16,7 @@ The root folder is `DSA/`, which contains:
 - **`recent_codes.txt`**: A temporary file for code snippets (with or without metadata).
 - **`logs/`**: Daily logs of coding activities (e.g., `2025-07-19.md`).
 - **`progress.md`**: Tracks problem status (e.g., solved, attempted, unsolved), created or updated automatically.
+- **`update_status.json`**: A temporary file to track the progress of the "update my notes" command (created during processing and deleted upon completion).
 - **Topic Folders** (e.g., `Strings/`): Each contains:
   - **`problems/`**: Subfolders for each problem (e.g., `two_sum/`), with:
     - **`code.cpp`**: Solution code.
@@ -31,6 +32,7 @@ DSA/
 │   ├── 2025-07-19.md
 │   └── 2025-07-20.md
 ├── progress.md
+├── update_status.json (temporary)
 ├── Strings/
 │   ├── problems/
 │   │   ├── two_sum/
@@ -52,18 +54,44 @@ DSA/
 - **Notes Files**: `notes.md`.
 - **Log Files**: Date-based (e.g., `2025-07-19.md`).
 - **Progress File**: `progress.md` in the root directory.
+- **Status File**: `update_status.json` (temporary, used during processing).
 
 ## Gemini CLI's Role and Instructions
 
-### 1. Note Organization
+### 1. Note Organization with Checkpoint System
 When you say **"update my notes"**, Gemini CLI:
-- Processes `recent_codes.txt` (structured or unstructured).
+- Checks if `update_status.json` exists:
+  - If it exists, resumes processing from the last checkpoint by analyzing which snippets from `recent_codes.txt` have already been processed.
+  - If not, starts processing `recent_codes.txt` from the beginning.
+- Processes each snippet in `recent_codes.txt` (structured or unstructured).
 - Organizes code into topic/problem folders.
 - Appends notes to `notes.md`, `compact_version.md`, and `discussion.md`.
 - Logs activities in `logs/<today's date>.md`.
 - Creates or updates `progress.md` to reflect problem statuses.
-- Commits changes to Git.
-- Clears `recent_codes.txt`.
+- Commits changes to Git after all snippets are processed.
+- Clears `recent_codes.txt` and deletes `update_status.json` upon successful completion.
+
+#### Checkpoint System
+- **Purpose**: Ensures the update process can resume if interrupted (e.g., due to API limits or errors).
+- **How It Works**:
+  - Before processing each snippet, Gemini CLI updates `update_status.json` with the current state (e.g., which snippets have been processed, identified by unique hashes).
+  - If an interruption occurs (e.g., API limit error), the process pauses, and the status is saved.
+  - On the next "update my notes" command, it checks `update_status.json` and `recent_codes.txt` to resume from the last processed snippet.
+- **Status File Format** (example):
+  ```json
+  {
+    "processed_snippets": ["hash1", "hash2"],
+    "current_snippet": "hash3",
+    "status": "processing"
+  }
+  ```
+- **Idempotency**: Each snippet is identified by a unique hash (e.g., based on its content) to prevent duplicate processing.
+
+#### Handling API Limits
+- If an API limit is reached during processing, Gemini CLI:
+  - Saves the current state to `update_status.json`.
+  - Informs you that the process is paused and will resume later.
+  - You can retry the command after the API limit resets, and it will pick up where it left off.
 
 #### For Structured Code Dumps
 Include metadata:
@@ -125,7 +153,9 @@ For both structured and unstructured dumps:
     git commit -m "Added/Updated <topic>/<problem>"
     ```
 - **Clear `recent_codes.txt`**:
-  - Empty the file after processing.
+  - Empty the file only after all snippets are successfully processed.
+- **Delete `update_status.json`**:
+  - Remove the temporary status file upon completion.
 
 ### 2. Mentor Features
 Gemini CLI acts as a coding mentor, using `progress.md` and `logs/` to suggest practice and provide feedback.
@@ -159,11 +189,12 @@ Gemini CLI acts as a coding mentor, using `progress.md` and `logs/` to suggest p
 - **Feedback**: Analyzes solution for correctness, efficiency, and compares to prior solutions in the note base (e.g., "Your solution uses O(n^2); consider a hash map for O(n).").
 
 ### Explicit Instructions for Gemini CLI
-- **Do Not Modify Code**: Preserve Joy's original code, including errors.
+- **Doenerate or Overwrite**: Preserve Joy's original code, including errors.
 - **Append, Do Not Overwrite**: Append to `notes.md`, `compact_version.md`, and `discussion.md`.
 - **Logs**: Create logs only when code is added.
 - **Progress**: Create `progress.md` if missing, analyze note base, and update after processing `recent_codes.txt`.
 - **Feedback**: Provide constructive feedback without modifying code.
+- **Checkpoint System**: Use `update_status.json` to track and resume processing if interrupted.
 
 ## Additional Notes
 - **Version Control**: Git tracks changes with commits after processing.
