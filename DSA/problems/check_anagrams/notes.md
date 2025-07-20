@@ -1,3 +1,0 @@
-- logic was quite easy
-- what i have learned how to use array as map for string
-- how to work wiht string asccii and the 'a' subtraction
