@@ -16,3 +16,14 @@
 - first_non_repeating_character: solved
 - check_palindrome: solved
 - check_anagrams: solved
+
+## Python
+### Basics
+- if_else_weird_not_weird: solved
+- integer_division: solved
+- power_of_a_number: solved
+- leap_year: solved
+- string_creation_with_loop: solved
+### Numpy
+- polynomial_evaluation: solved
+- matrix_determinant: solved

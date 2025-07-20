@@ -1,0 +1,1 @@
+How to calculate the determinant of a matrix using `numpy.linalg.det`. Also shows how to create a matrix from user input.

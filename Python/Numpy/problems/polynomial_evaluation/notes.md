@@ -1,0 +1,1 @@
+How to evaluate a polynomial using `numpy.polyval`. Also demonstrates `split()` and `map()` for input processing.

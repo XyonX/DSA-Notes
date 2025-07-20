@@ -1,0 +1,1 @@
+Calculates the power of a number using the `pow()` function.

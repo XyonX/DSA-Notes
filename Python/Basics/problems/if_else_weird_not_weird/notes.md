@@ -1,0 +1,1 @@
+Basic python code for if-else logic and explanation of `if __name__ == '__main__'`.

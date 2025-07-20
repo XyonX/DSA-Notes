@@ -1,0 +1,1 @@
+Demonstrates integer division in Python using the `//` operator.
