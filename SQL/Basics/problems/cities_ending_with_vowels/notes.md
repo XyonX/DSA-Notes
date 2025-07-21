@@ -1,0 +1,1 @@
+This file contains a query to find all cities that end with a vowel.

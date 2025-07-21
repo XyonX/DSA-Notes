@@ -27,3 +27,20 @@
 ### Numpy
 - polynomial_evaluation: solved
 - matrix_determinant: solved
+
+## SQL
+### Basics
+- sample_data_insertion: solved
+- inner_join_example: solved
+- aggregate_function_count: solved
+- group_by_with_having: solved
+- order_by_with_limit: solved
+- case_statement: solved
+- station_schema: solved
+- cities_starting_with_vowels: solved
+- cities_ending_with_vowels: solved
+- cities_starting_and_ending_with_vowels: solved
+- cities_not_starting_with_vowels: solved
+- cities_not_ending_with_vowels: solved
+- cities_not_starting_or_ending_with_vowels: solved
+- cities_not_starting_and_ending_with_vowels: solved

@@ -1,0 +1,1 @@
+SELECT u.first_name , SUM(o.total) AS TOTAL_SPENT FROM users u JOIN orders o ON o.user_id=u.id GROUP BY u.id, u.first_name, u.last_name HAVING SUM(total)>1000;

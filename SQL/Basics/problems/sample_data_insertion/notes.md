@@ -1,0 +1,1 @@
+In this file, we are inserting sample data into the tables we created. This data will be used to test the queries we write later on.

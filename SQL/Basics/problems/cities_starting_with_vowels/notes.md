@@ -1,0 +1,1 @@
+This file contains a query to find all cities that start with a vowel.

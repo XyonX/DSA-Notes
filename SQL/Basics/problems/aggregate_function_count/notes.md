@@ -1,0 +1,1 @@
+This file contains an example of using the COUNT aggregate function to count the number of orders for each user.

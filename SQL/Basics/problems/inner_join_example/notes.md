@@ -1,0 +1,1 @@
+This file contains an example of an inner join to retrieve data from multiple tables.

@@ -1,0 +1,1 @@
+This file contains a query to find all cities that do not start with a vowel and do not end with a vowel.

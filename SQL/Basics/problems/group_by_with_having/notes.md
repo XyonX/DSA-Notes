@@ -1,0 +1,1 @@
+This file contains an example of using GROUP BY with HAVING to filter grouped data.

@@ -1,0 +1,1 @@
+This file contains an example of using a CASE statement to create conditional logic in a query.
