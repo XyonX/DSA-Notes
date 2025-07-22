@@ -118,10 +118,9 @@ When you say **"update my notes"**, Gemini CLI:
   - If `update_status.json` exists, it resumes processing from the last checkpoint.
   - If it does not exist, it creates a new `update_status.json` before starting.
 - Processes each snippet in `recent_codes.txt`.
-- Organizes code into the appropriate topic area, topic, and problem folders.
 - Analyzes the code for syntax errors and potential issues(from high level interview perspective -not production level quality is expected in notes).
-- Appends notes to `notes.md`, `compact_version.md`, and `discussion.md`.
-- Prompts you with options if critical issues are detected(NOT PRODCUTION LEVEL JUST IF THE CODE IS TOO WRONG AS ITS FOR INTERVIEW ADN CODING ROUND).
+- Prompts you with options if critical issues are detected.
+- Organizes code into the appropriate folders based on your input.
 - Generates or enhances notes.
 - Logs activities in `logs/<today's date>.md`.
 - Updates `progress.md`.

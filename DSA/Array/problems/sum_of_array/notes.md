@@ -1,0 +1,1 @@
+This is a basic problem to find the sum of all elements in an array.

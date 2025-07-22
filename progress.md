@@ -18,6 +18,18 @@
 - check_palindrome: solved
 - check_anagrams: solved
 
+### Array
+- sum_of_array: solved
+- find_max_element: solved
+- find_min_element: solved
+- contains_element: solved
+- reverse_array: solved
+- average_of_array: solved
+- range_of_array: solved
+- second_largest_element: solved
+- is_sorted: solved
+- move_zeros_to_end: solved
+
 ## Python
 ### Basics
 - if_else_weird_not_weird: solved

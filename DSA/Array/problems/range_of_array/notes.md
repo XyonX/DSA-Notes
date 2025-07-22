@@ -1,0 +1,1 @@
+This is a basic problem to find the range of an array (difference between max and min).

@@ -1,0 +1,1 @@
+This is a basic problem to find the average of all elements in an array.

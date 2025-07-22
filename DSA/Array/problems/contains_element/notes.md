@@ -1,0 +1,1 @@
+This is a basic problem to check if an array contains a specific element.

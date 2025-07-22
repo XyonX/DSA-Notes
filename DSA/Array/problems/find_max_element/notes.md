@@ -1,0 +1,1 @@
+This is a basic problem to find the maximum element in an array.
