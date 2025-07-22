@@ -1,0 +1,1 @@
+A smart implementation of operator overloading using a virtual add function in the base class.
