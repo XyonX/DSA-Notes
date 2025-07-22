@@ -1,0 +1,124 @@
+// Online C++ compiler to run C++ program online
+
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+//utility fucntion dont add in notes
+void display(vector<int>arr){
+    for(int i=0;i<arr.size();i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+
+// MEDIUM
+
+// 11. Find the median of an array.
+//SORT THE ARRAY FIRST
+// IF THE SIZE IS ODD TEH SIMPLY RETURN THE SIZE/2 INDEXED ELEMNT
+//IF THE SIZE IIS EVEN WE SEND THEAVG OF TWO MIDDLE ELEMNT BY ADDIGN THE SIZE/2 ANDSIZE/2-1 INDEXED ELEMTN THEN DOING THE AVVG
+float findMedian(vector<int>arr){
+    int n=arr.size();
+    sort(arr.begin(),arr.end());
+    if(arr.size()%2==0){
+        return (arr[n/2-1]+arr[n/2])/2.0;
+    }
+    return arr[n/2];
+}
+
+// 12. Find the mode of an array
+//MODE OF AN ARRAY MEANS THE ELEMTS THAT APPEARS MAX NUMBER OF TIME 
+//WE USE A MAP TO STRE THE DATA OF NUM OF APPEARANCE OF AN NUMBER IN AN ARRAY
+
+int findMode(vector<int>arr){
+    map<int,int>hmp;
+    for(int i=0;i<arr.size();i++){
+        hmp[arr[i]]++;
+    }
+    int maxOccur=0;
+    int el=0;
+    for(int i=0;i<arr.size();i++){
+        if(hmp[arr[i]]>maxOccur){
+            maxOccur=hmp[arr[i]];
+            el=arr[i];
+        }
+    }
+    return el;
+}
+
+// 13. Find the variance of an array.
+//wasnt feeling like implementing the similar math based problems
+//will do it later
+int varOfArray(vector<int>arr){
+    return 0;
+}
+
+// 14 Find the maximum subarray sum (Kadane’s algorithm).
+// the main logic of kadanes is to start from the beginnign when our sum becomes less than 0
+//as sum <0 there is no reason to add that so we start forming subarray from the scratch
+//we dont alswasy negelct negative we take 
+int kadanes(vector<int>arr){
+    int maxSum=0;
+    int sum=0;
+    //forthe starting of the 
+    int startIndex=-1;
+    int endIndex=-1;
+    for( int i=0;i<arr.size();i++){
+        if(sum==0){
+            startIndex=i;
+        }
+        sum+=arr[i];
+        
+        if(sum>maxSum){
+            maxSum=sum;
+            endIndex=i;
+        }
+        
+        if(sum<0){
+            sum=0;
+        }
+    }
+    return maxSum;
+}
+
+
+//this alogo is kind of opposite of kadnes
+//rather setting the sum to zero when we reach negative we make it zero when it goes to postive 
+
+int minSubarraySum(vector<int>arr){
+    int sum=0;
+    int minSum=arr[0];
+        //forthe starting of the 
+    int startIndex=-1;
+    int endIndex=-1;
+    for(int i=0;i<arr.size();i++){
+        if(sum==0){
+            startIndex=i;
+        }
+        sum+=arr[i];
+        if(sum<minSum){
+            minSum=sum;
+            endIndex=i;
+        }
+        if(sum>0){
+            sum=0;
+        }
+    }
+    return minSum;
+}
+
+int main() {
+vector<int>arr={1,2,0,3,0,4,5};
+vector<int>arr2={1,2,3,4,5,5,5,6,6};
+moveAllZeros(arr);
+display(arr);
+cout<<findMedian(arr2)<<endl;
+cout<<findMode(arr2)<<endl;
+
+
+
+return 0;
+}

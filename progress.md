@@ -19,6 +19,11 @@
 - check_anagrams: solved
 
 ### Array
+- find_median_of_array: solved
+- find_mode_of_array: solved
+- variance_of_array: attempted
+- kadanes_algorithm: solved
+- min_subarray_sum: solved
 - sum_of_array: solved
 - find_max_element: solved
 - find_min_element: solved
