@@ -40,6 +40,7 @@
 - move_zeros_to_end: solved
 - find_subarray_with_given_sum: solved
 - longest_substring_without_repeating_characters: solved
+- rotate_array_right: solved
 
 ## Python
 ### Basics
