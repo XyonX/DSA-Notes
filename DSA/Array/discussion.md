@@ -39,5 +39,10 @@ There are two common approaches to solving this problem:
 [LeetCode Problem: Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 
 ## rotate_array_right
+- This problem discusses array rotation to the right by `k` positions. Both a brute-force approach and an optimal in-place solution using the reversal algorithm are presented.
 
-- This code implements a right rotation of an array by `k` positions. It creates a new vector `res` and first adds the last `k` elements of the original array, followed by the first `n-k` elements.
+**Brute-Force Discussion:**
+This method involves creating a new array and copying elements in the desired rotated order. While straightforward, its main drawback is the additional space complexity of O(N), which can be significant for large arrays.
+
+**Optimal Solution (Reversal Algorithm) Discussion:**
+This in-place technique is highly efficient. It leverages the property that reversing parts of the array and then the whole array achieves the desired rotation. The three steps (reverse last k, reverse first n-k, reverse whole array) ensure that the elements are moved to their correct positions without requiring extra space. This makes it a preferred solution for competitive programming and real-world scenarios where memory optimization is crucial.

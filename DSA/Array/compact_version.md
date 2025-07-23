@@ -31,9 +31,4 @@
 - Notes: Find a contiguous subarray whose elements sum up to a given target value. Two approaches are implemented: sliding window (for positive numbers) and prefix sum with hashmap (for both positive and negative numbers).
 
 ## rotate_array_right
-
-- Notes: This code implements a right rotation of an array by `k` positions. It creates a new vector `res` and first adds the last `k` elements of the original array, followed by the first `n-k` elements.
-
-**Known Issues:**
-
-- This implementation creates a new array, which might not be optimal for very large arrays due to space complexity.
+- Notes: Implemented both a brute-force solution (O(N) time, O(N) space) and an optimal in-place solution using the reversal algorithm (O(N) time, O(1) space) for right array rotation.
