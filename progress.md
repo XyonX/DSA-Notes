@@ -17,6 +17,7 @@
 - first_non_repeating_character: solved
 - check_palindrome: solved
 - check_anagrams: solved
+- longest_substring_without_repeating_characters: solved
 
 ### Array
 - find_median_of_array: solved
@@ -38,6 +39,7 @@
 - is_sorted: solved
 - move_zeros_to_end: solved
 - find_subarray_with_given_sum: solved
+- longest_substring_without_repeating_characters: solved
 
 ## Python
 ### Basics
