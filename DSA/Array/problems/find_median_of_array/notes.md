@@ -1,3 +1,4 @@
-Sort the array first.
-If the size is odd, return the element at index size/2.
-If the size is even, return the average of the two middle elements at indices size/2 and size/2 - 1.
+Find the median of an array.
+SORT THE ARRAY FIRST
+IF THE SIZE IS ODD TEH SIMPLY RETURN THE SIZE/2 INDEXED ELEMNT
+IF THE SIZE IIS EVEN WE SEND THEAVG OF TWO MIDDLE ELEMNT BY ADDIGN THE SIZE/2 ANDSIZE/2-1 INDEXED ELEMTN THEN DOING THE AVVG

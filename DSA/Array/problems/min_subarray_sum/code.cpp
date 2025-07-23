@@ -1,6 +1,3 @@
-//this alogo is kind of opposite of kadnes
-//rather setting the sum to zero when we reach negative we make it zero when it goes to postive 
-
 int minSubarraySum(vector<int>arr){
     int sum=0;
     int minSum=arr[0];

@@ -24,6 +24,9 @@
 - variance_of_array: attempted
 - kadanes_algorithm: solved
 - min_subarray_sum: solved
+- max_sum_non_adjacent_elements: attempted
+- max_subarray_sum_min_length: solved
+- min_sum_max_length: solved
 - sum_of_array: solved
 - find_max_element: solved
 - find_min_element: solved

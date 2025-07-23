@@ -1,7 +1,3 @@
-// 14 Find the maximum subarray sum (Kadane’s algorithm).
-// the main logic of kadanes is to start from the beginnign when our sum becomes less than 0
-//as sum <0 there is no reason to add that so we start forming subarray from the scratch
-//we dont alswasy negelct negative we take 
 int kadanes(vector<int>arr){
     int maxSum=0;
     int sum=0;

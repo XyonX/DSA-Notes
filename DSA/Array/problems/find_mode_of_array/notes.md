@@ -1,3 +1,3 @@
-The mode of an array is the element that appears most frequently.
-This implementation uses a map to store the frequency of each element in the array.
-It then iterates through the map to find the element with the highest frequency.
+Find the mode of an array.
+MODE OF AN ARRAY MEANS THE ELEMTS THAT APPEARS MAX NUMBER OF TIME 
+WE USE A MAP TO STRE THE DATA OF NUM OF APPEARANCE OF AN NUMBER IN AN ARRAY

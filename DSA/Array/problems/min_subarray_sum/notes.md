@@ -1,3 +1,2 @@
-This algorithm is the opposite of Kadane's algorithm.
-Instead of resetting the sum to zero when it becomes negative, it resets the sum to zero when it becomes positive.
-This helps in finding the minimum subarray sum.
+Find the minimum subarray sum.
+This algorithm is kind of opposite of Kadane's. Rather than setting the sum to zero when it reaches negative, we make it zero when it goes to positive.

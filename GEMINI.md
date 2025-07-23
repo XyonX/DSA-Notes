@@ -120,6 +120,7 @@ When you say **"update my notes"**, Gemini CLI:
 - Processes each snippet in `recent_codes.txt`.
 - Organizes code into the appropriate topic area, topic, and problem folders.
 - Analyzes the code for syntax errors and potential issues(from high level interview perspective -not production level quality is expected in notes).
+- Look for the specific problem on leetcode , If the problem exist on leetcode add the leecode problem link in the notes md file too
 - Appends notes to `notes.md`, `compact_version.md`, and `discussion.md`.
 - Prompts you with options if critical issues are detected(NOT PRODCUTION LEVEL JUST IF THE CODE IS TOO WRONG AS ITS FOR INTERVIEW ADN CODING ROUND).
 - Generates or enhances notes.

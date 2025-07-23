@@ -1,3 +1,21 @@
+// Online C++ compiler to run C++ program online
+
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+//utility fucntion dont add in notes
+void display(vector<int>arr){
+    for(int i=0;i<arr.size();i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+}
+
+
+// MEDIUM
+
 // 11. Find the median of an array.
 //SORT THE ARRAY FIRST
 // IF THE SIZE IS ODD TEH SIMPLY RETURN THE SIZE/2 INDEXED ELEMNT

@@ -1,1 +1,3 @@
-Known Issues: The implementation is incomplete and returns 0. The author noted they would complete it later.
+Find the variance of an array.
+
+Known Issues: This problem was not fully implemented. Will do it later.
