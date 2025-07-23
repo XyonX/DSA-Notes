@@ -37,6 +37,7 @@
 - second_largest_element: solved
 - is_sorted: solved
 - move_zeros_to_end: solved
+- find_subarray_with_given_sum: solved
 
 ## Python
 ### Basics
