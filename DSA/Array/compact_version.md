@@ -32,3 +32,12 @@
 
 ## rotate_array_right
 - Notes: Implemented both a brute-force solution (O(N) time, O(N) space) and an optimal in-place solution using the reversal algorithm (O(N) time, O(1) space) for right array rotation.
+
+## migratory_birds
+- Notes: Find the most frequently sighted bird type. In case of a tie, return the smallest id.
+
+## bill_division
+- Notes: Calculate correct bill share for Anna and verify Brian's calculation.
+
+## sock_merchant
+- Notes: Count pairs of socks with matching colors using frequency map.

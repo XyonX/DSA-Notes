@@ -46,3 +46,12 @@ This method involves creating a new array and copying elements in the desired ro
 
 **Optimal Solution (Reversal Algorithm) Discussion:**
 This in-place technique is highly efficient. It leverages the property that reversing parts of the array and then the whole array achieves the desired rotation. The three steps (reverse last k, reverse first n-k, reverse whole array) ensure that the elements are moved to their correct positions without requiring extra space. This makes it a preferred solution for competitive programming and real-world scenarios where memory optimization is crucial.
+
+## migratory_birds
+- This problem involves finding the most frequently sighted bird type from an array of sightings. The solution uses a frequency map to count occurrences of each bird type, then iterates through the array to find the bird type with the highest frequency. In case of a tie, it returns the smallest id.
+
+## bill_division
+- This problem involves calculating the correct share for Anna in a bill split scenario. The solution sums all items except the one Anna didn't eat, divides by 2 to get her correct share, and compares with Brian's calculation. If they match, it outputs "Bon Appetit"; otherwise, it shows the difference.
+
+## sock_merchant
+- This problem involves counting pairs of socks with matching colors. The solution uses a frequency map to count occurrences of each sock color, then calculates the number of pairs by dividing each count by 2 and summing the results.

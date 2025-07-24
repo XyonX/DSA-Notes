@@ -41,6 +41,12 @@
 - find_subarray_with_given_sum: solved
 - longest_substring_without_repeating_characters: solved
 - rotate_array_right: solved
+- migratory_birds: solved
+- bill_division: solved
+- sock_merchant: solved
+
+### Sliding_Window
+- birthday_chocolate: solved
 
 ## Python
 ### Basics
