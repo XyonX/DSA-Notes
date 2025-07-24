@@ -39,8 +39,11 @@ WE GET TO KNOW THE BASIC JOIIN SYNTAX
 
 --Picks city names ending with non-vowel characters
 
---The [^AEIOUaeiou] part means “anything except a vowel”
+--The [^AEIOUaeiou] part means "anything except a vowel"
 
 --Anchored with $, so it matches only the final character
 
 --DISTINCT ensures no duplicates
+
+## second_highest_salary
+- Notes: Finding the second highest salary using multiple approaches: LIMIT/OFFSET, subqueries, and window functions (ROW_NUMBER, DENSE_RANK).

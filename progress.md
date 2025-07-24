@@ -69,6 +69,7 @@
 - cities_not_ending_with_vowels: solved
 - cities_not_starting_or_ending_with_vowels: solved
 - cities_not_starting_and_ending_with_vowels: solved
+- second_highest_salary: solved
 
 ## OOP
 ### Classes
