@@ -48,6 +48,13 @@
 ### Sliding_Window
 - birthday_chocolate: solved
 
+### Linked_List
+- create_linked_list: solved
+- display_linked_list: solved
+- reverse_linked_list: solved
+- detect_cycle_in_linked_list: solved
+- merge_two_sorted_linked_lists: solved
+
 ## Python
 ### Basics
 - if_else_weird_not_weird: solved

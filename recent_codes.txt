@@ -1,113 +1,111 @@
-Two children, Lily and Ron, want to share a chocolate bar. Each of the squares has an integer on it.
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
 
-Lily decides to share a contiguous segment of the bar selected such that:
+using namespace std;
 
-The length of the segment matches Ron's birth month, and,
-The sum of the integers on the squares is equal to his birth day.
-Determine how many ways she can divide the chocolate
-
-// so this is teh first unknow problems i did solved wiht slding window without anyone telling mme it can be solved using slding wondow
-// i was quite happy after this solution 
-
-int birthday(vector<int> s, int d, int m) {
-    
-    //D IS THE TARGET SUM
-    //M IS THELENGTH
-    
-    int l=0;
-    int sum=0;
-    int count=0;
-    for(int r=0;r<s.size();r++){
-        sum+=s[r];
-        
-        while(sum>d){
-            sum-=s[l];
-            l++;
-        }
-        if(sum==d){
-            if((r-l+1) ==m)count++;
-        }
-        
+struct node {
+    int data;
+    node* next;
+    node(int val){
+        data=val;
+        next=NULL;
     }
-    return count;
-    
-
-}
-
-//HACKER RANK MIGRATORY BIRDS
-
-//Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
-
-Example
-
-There are two each of types  and , and one sighting of type . Pick the lower of the two types seen twice: type .
+};
 
 
-
-int migratoryBirds(vector<int> arr) {
-
-    map<int,int>birdFreq;
+node *create (vector<int>arr){
+    node*head = new node(0);
+    node*temp=head;
     
     for(int i=0;i<arr.size();i++){
-        birdFreq[arr[i]]++;
+        node* n = new node(arr[i]);
+        temp->next=n;
+        temp=temp->next;
     }
-    
-    int maxFrequecy= INT_MIN;
-    int id =INT_MAX ;
-    
-    for( int i=0;i<arr.size(); i++){
-        int freq = birdFreq[arr[i]];
-        if(freq>maxFrequecy){
-            maxFrequecy=freq;
-            id=arr[i];
-        }else if (freq==maxFrequecy && arr[i] <id){
-            id=arr[i];
-        }
-    }
-    return id;
+    return head->next;
 }
 
-
-// i dont seem to like this porblems
-// i will do this later
-//hackerrank Day of the Programmer
-string dayOfProgrammer(int year) {
-
+void display(node*head){
+    node*temp=head;
+    while(temp){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
 }
 
-//HACKER RANK BILL DIVISION
-Two friends Anna and Brian, are deciding how to split the bill at a dinner. Each will only pay for the items they consume. Brian gets the check and calculates Anna's portion. You must determine if his calculation is correct.
-void bonAppetit(vector<int> bill, int k, int b) {
-    
-    int costOfItems=0;
-    for(int i=0;i<bill.size();i++){
-        if(i!=k)
-        costOfItems+=bill[i];
-    }
-    int herShare = costOfItems/2;
-    if (herShare==b){
-        cout<<"Bon Appetit"<<endl;
+node* reverse (node*head){
+    node*temp=head;
+    node*prev=NULL;
+    while(temp){
+        node*t=temp->next;
+        temp->next=prev;
+        prev=temp;
+        temp=t;
         
     }
-    else{
-        cout<<b-herShare;
-    }
-
+    return prev;
 }
 
 
-//hackerrank sales bu mach
-There is a large pile of socks that must be paired by color. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.
-int sockMerchant(int n, vector<int> ar) {
-    map<int,int>socksFreq;
+bool detectCycle(node*head){
+   node* slow =head;
+   node* fast =head;
     
-    for(int i=0;i<ar.size();i++){
-        socksFreq[ar[i]]++;
+    while(fast && fast->next){
+        slow=slow->next;
+        fast=fast->next->next;
+        if(fast==slow)return true;
+
     }
-    int numPairs=0;
+    return false;
+}
+
+node * mergeTwoSortedLinkedList(node* h1, node* h2){
     
-    for(auto it :socksFreq){
-        numPairs+= it.second /2;
+    node* head = new node(0);
+    node*temp=head;
+    
+    node*t1=h1;
+    node*t2=h2;
+    
+    while( t1 && t2){
+        
+        if(t1->data<t2->data){
+            node*n = new node(t1->data);
+            temp->next=n;
+            temp=temp->next;
+            t1=t1->next;
+            
+        }else{
+            node*n = new node(t2->data);
+            temp->next=n;
+            temp=temp->next;
+            t2=t2->next;
+        }
     }
-    return numPairs;
+    if(t1){
+        temp->next=t1;
+    }
+    if(t2){
+        temp->next=t2;
+    }
+    return head->next;
+    
+}
+
+int main() {
+ node *head = create({1,2,3,4,5});
+ display(head);
+ node*rh = reverse(head);
+ display(rh);
+ 
+ cout<<"has cycle : "<<detectCycle(head)<<endl;
+ node* r1=create({1,2,3});
+ node*r2=create({7,8,9,10});
+ node*ret = mergeTwoSortedLinkedList(r1,r2);
+ display(ret);
+
+    return 0;
 }

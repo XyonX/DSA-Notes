@@ -1,2 +1,2 @@
 @echo off
-start cmd /k gemini
+start cmd /k qwen
