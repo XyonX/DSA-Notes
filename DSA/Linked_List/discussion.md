@@ -18,8 +18,19 @@ Cycle detection is another important problem that uses the two-pointer technique
 ## Merge Two Sorted Linked Lists
 Merging two sorted linked lists is a common problem that tests the ability to manipulate multiple pointers simultaneously. The solution creates a new merged list by comparing nodes from both input lists and selecting the smaller one at each step.
 
+## Remove Nth Node From End
+Removing the nth node from the end of a linked list is a problem that demonstrates the power of the two-pointer technique. The key insight is to maintain a gap of n nodes between two pointers, so when the fast pointer reaches the end, the slow pointer is at the (n-1)th node from the end. This allows for efficient removal in a single pass.
+
+The implementation requires careful handling of edge cases:
+1. When n equals the size of the list (removing the head node)
+2. When the list is empty or has only one node
+3. When n is larger than the size of the list
+
+This problem is marked as "attempted" because while the solution works, more practice is needed to make the intuition clearer and handle edge cases more confidently.
+
 ## Key Takeaways
 1. Linked lists require careful pointer manipulation
 2. Dummy head nodes can simplify edge case handling
 3. Two-pointer techniques are powerful for solving linked list problems efficiently
 4. Understanding time and space complexity is crucial for evaluating solutions
+5. Edge case handling is critical for robust linked list implementations

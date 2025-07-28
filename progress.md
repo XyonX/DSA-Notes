@@ -55,6 +55,7 @@
 - reverse_linked_list: solved
 - detect_cycle_in_linked_list: solved
 - merge_two_sorted_linked_lists: solved
+- remove_nth_node_from_end: attempted
 
 ## Python
 ### Basics

@@ -19,3 +19,8 @@
 ## Merge Two Sorted Linked Lists
 - Merges two sorted linked lists into a single sorted linked list
 - Creates a dummy head node to simplify the merging process
+
+## Remove Nth Node From End
+- Removes the nth node from the end of a linked list
+- Uses two-pointer technique with proper edge case handling
+- Status: attempted (needs more practice with edge cases)
