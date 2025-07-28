@@ -1,6 +1,9 @@
 # Progress
 
-##DSA
+## DSA
+### Dynamic_Programming
+- climbing_stairs: solved
+
 ### Binary Search
 - binary_search_variants: solved
 

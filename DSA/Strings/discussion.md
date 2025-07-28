@@ -8,6 +8,8 @@
 - i did impkemented first whihc was wrokign for the ony same caps
 - later i have learned to use trhe tolower to make it work for any case
 - i later implemented the recursivce code to practicve my recursion skill
+- Added implementations for checking palindromes in arrays (both iterative and recursive)
+- Added alternative implementation for string palindrome checking
 
 ## first_non_repeating_character
 - its anotehr code to get the first char non repeating char

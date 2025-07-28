@@ -18,3 +18,36 @@ bool isP(int i, string& s){
     if(tolower(s[i])!= tolower(s[s.size()-i-1]))return false;
     return isP(i+1,s);
 }
+
+// Additional implementations from recent_codes.txt
+// Array palindrome checker
+bool isPalindrome(vector<int>arr){
+    for(int i=0;i<arr.size()/2;i++){
+        if(arr[i]!= arr[arr.size()-i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+// Recursive array palindrome checker
+bool isP(int i, vector<int>&arr){
+    if(i>arr.size()/2){
+        return true;
+    }
+    
+    if(arr[i] != arr[arr.size()-i-1])return false;
+    
+    return isP(i+1,arr);
+}
+
+// String palindrome checker (alternative implementation)
+bool isP(int i, string s){
+    if(i>=s.size()/2){
+        return true;
+    }
+    
+    if(s[i] != s[s.size()-i-1])return false;
+    
+    return isP(i+1,s);
+}
