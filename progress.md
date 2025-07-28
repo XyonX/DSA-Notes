@@ -47,6 +47,7 @@
 
 ### Sliding_Window
 - birthday_chocolate: solved
+- maximum_subarray_sum_size_k: solved
 
 ### Linked_List
 - create_linked_list: solved
