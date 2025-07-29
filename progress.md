@@ -3,6 +3,7 @@
 ## DSA
 ### Dynamic_Programming
 - climbing_stairs: solved
+- frog_jump: solved
 
 ### Binary Search
 - binary_search_variants: solved

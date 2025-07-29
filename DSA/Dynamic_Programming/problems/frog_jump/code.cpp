@@ -64,7 +64,7 @@ int frogJump(int i, vector<int>& height){
 }
 
 //meomoization verson
-int frogJump(int i, vector<int>& height,vetor<int>& dp){
+int frogJump(int i, vector<int>& height,vector<int>& dp){
 
     if (i==0 ){
         return 0;
@@ -77,7 +77,7 @@ int frogJump(int i, vector<int>& height,vetor<int>& dp){
     int costRight = frogJump(i-2,height)+abs(height[i]-height[i-2]);
     
     //we return the min of these two
-    int m = min(costLeft,costRight)
+    int m = min(costLeft,costRight);
     dp[i]=m;
     return m;
     
