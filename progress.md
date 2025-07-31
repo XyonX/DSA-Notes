@@ -1,6 +1,9 @@
 # Progress
 
 ## DSA
+### Matrix
+- matrix_operations: solved
+
 ### Dynamic_Programming
 - climbing_stairs: solved
 - frog_jump: solved
