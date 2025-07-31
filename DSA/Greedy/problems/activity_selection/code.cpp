@@ -6,7 +6,7 @@ Problem Explanation
 The Activity Selection Problem involves selecting the maximum number of activities that a single person (or resource) can perform, given a set of activities with their start and end times. The catch is that the activities must not overlap—meaning that the start time of one activity must be greater than or equal to the end time of the previously selected activity. This is a classic example of a problem solved using a greedy algorithm.
 Key Idea
 
-You’re given a list of activities, each with a start time and an end time.
+You're given a list of activities, each with a start time and an end time.
 Your goal is to pick as many activities as possible without any time conflicts.
 The greedy strategy is to always choose the activity that ends earliest, as this leaves the most time available for subsequent activities.
 
@@ -31,7 +31,7 @@ Constraints
 
 Number of Activities (n): Typically ranges from 1 to 10^4 or 10^5, so your solution should be efficient (e.g., O(n log n) is acceptable due to sorting).
 Start and End Times: Non-negative integers (e.g., 0 ≤ start < end ≤ 10^9).
-Input Order: Activities are not guaranteed to be sorted, so you’ll need to sort them in your implementation.
+Input Order: Activities are not guaranteed to be sorted, so you'll need to sort them in your implementation.
 
 
 Input Format
@@ -49,7 +49,7 @@ Expected Output
 A single integer: the maximum number of non-overlapping activities (e.g., 2 for the example above).
 
 Approach to Solve
-Here’s how you can solve this problem:
+Here's how you can solve this problem:
 
 Sort by End Time: Arrange the activities in ascending order of their end times. This ensures you can pick the earliest-finishing activity first.
 Greedy Selection:

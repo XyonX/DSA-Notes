@@ -1,6 +1,9 @@
 # Progress
 
 ## DSA
+### Greedy
+- activity_selection: solved
+
 ### Matrix
 - matrix_operations: solved
 - spiral_traversal: solved
