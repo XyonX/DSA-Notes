@@ -3,6 +3,7 @@
 ## DSA
 ### Greedy
 - activity_selection: solved
+- fractional_knapsack: solved
 
 ### Matrix
 - matrix_operations: solved

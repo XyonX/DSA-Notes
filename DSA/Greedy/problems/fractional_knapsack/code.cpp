@@ -23,12 +23,11 @@ Constraints:
 1 ≤ W ≤ 10^9 (knapsack capacity).
 
 
-
 Hint
 
 Compute the value-to-weight ratio (value/weight) for each item.
 Prioritize items with higher ratios.
-Handle fractions when the remaining capacity is less than an item’s weight.
+Handle fractions when the remaining capacity is less than an item's weight.
 
 OUTPUT 
 Discussion
@@ -56,26 +55,30 @@ struct Item {
 };
 
 bool compare(const Item& a,const Item&b){
-    return a.value/a.weight>b.value/b.weight;
+    // Fixed the comparison to use double division for accurate ratio comparison
+    double r1 = (double)a.value / a.weight;
+    double r2 = (double)b.value / b.weight;
+    return r1 > r2;
 }
 
 double fractionalKnapsack(int W, std::vector<Item>& items) {
-    // sort the item list based on he fractinal value
+    // sort the item list based on the fractional value (value/weight ratio)
     sort(items.begin(),items.end(),compare);
-    int remWeight =W;
-    int val=0;
-    // iterate over the soorted array and take the items
+    int remWeight = W;
+    double val = 0.0;  // Changed to double for fractional values
+    
+    // iterate over the sorted array and take the items
     for(int i=0;i<items.size();i++){
         Item item = items[i];
-        if(item.weight>remWeight){
-        int fracValue = (item.value/item.weight)*remWeight;
-        val+=fracValue;
-        break;
-        }else{
-            val+=item.value;
-            remWeight-=item.weight;
+        if(item.weight <= remWeight){
+            // Take the whole item
+            val += item.value;
+            remWeight -= item.weight;
+        } else {
+            // Take fraction of the item
+            val += item.value * ((double)remWeight / item.weight);
+            break;
         }
-     
     }
     return val;
 }
