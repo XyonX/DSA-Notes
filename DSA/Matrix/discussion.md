@@ -36,3 +36,25 @@ This code provides a comprehensive set of functions for working with 2D matrices
 - Implement input validation for all functions
 - Consider template-based implementation for different data types
 - Add unit tests for each function
+
+## spiral_traversal
+
+The spiral traversal problem involves visiting matrix elements in a spiral pattern starting from the top-left corner and moving inward in a clockwise direction.
+
+This approach uses four boundary pointers (top, bottom, left, right) to control the traversal direction and ensure we don't revisit elements. It's an elegant solution that works for both square and rectangular matrices.
+
+## transpose_matrix
+
+Matrix transpose is a fundamental operation that flips a matrix over its main diagonal. Two approaches are commonly used:
+
+1. **Extra Space Approach**: Creates a new matrix with swapped dimensions and copies elements appropriately. This works for any matrix shape.
+
+2. **In-Place Approach**: Swaps elements across the main diagonal without using additional space. This only works for square matrices.
+
+## rotate_matrix
+
+Rotating a matrix by 90 degrees clockwise can be efficiently achieved in two steps:
+1. Transpose the matrix (swap elements across the main diagonal)
+2. Reverse each row
+
+This approach works in O(n²) time with O(1) extra space, making it optimal for this problem.

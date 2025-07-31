@@ -3,6 +3,9 @@
 ## DSA
 ### Matrix
 - matrix_operations: solved
+- spiral_traversal: solved
+- transpose_matrix: solved
+- rotate_matrix: solved
 
 ### Dynamic_Programming
 - climbing_stairs: solved
