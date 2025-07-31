@@ -8,7 +8,7 @@
 
 ## kadanes_algorithm
 
-- Find the maximum subarray sum (Kadane’s algorithm).
+- Find the maximum subarray sum (Kadane's algorithm).
 
 ## min_subarray_sum
 
@@ -55,3 +55,6 @@ This in-place technique is highly efficient. It leverages the property that reve
 
 ## sock_merchant
 - This problem involves counting pairs of socks with matching colors. The solution uses a frequency map to count occurrences of each sock color, then calculates the number of pairs by dividing each count by 2 and summing the results.
+
+## generate_non_adjacent_subsequences
+- This problem involves generating all possible subsequences from an array where no two elements are adjacent in the original array. It demonstrates the use of recursion and backtracking to explore all valid combinations. The solution includes two implementations: one incorrect approach that tries to skip elements at odd indices, and a correct approach that properly handles non-adjacent element selection by skipping the next element when including the current one.

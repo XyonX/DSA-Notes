@@ -48,6 +48,7 @@
 - migratory_birds: solved
 - bill_division: solved
 - sock_merchant: solved
+- generate_non_adjacent_subsequences: solved
 
 ### Sliding_Window
 - birthday_chocolate: solved
