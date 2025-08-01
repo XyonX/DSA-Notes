@@ -58,3 +58,13 @@ This in-place technique is highly efficient. It leverages the property that reve
 
 ## generate_non_adjacent_subsequences
 - This problem involves generating all possible subsequences from an array where no two elements are adjacent in the original array. It demonstrates the use of recursion and backtracking to explore all valid combinations. The solution includes two implementations: one incorrect approach that tries to skip elements at odd indices, and a correct approach that properly handles non-adjacent element selection by skipping the next element when including the current one.
+
+## electronics_shop
+- This problem involves finding the maximum sum of one keyboard and one USB drive that doesn't exceed a given budget. The solution uses a brute force approach with some optimizations:
+  1. Sort keyboards in descending order and drives in ascending order
+  2. For each keyboard, iterate through drives:
+     - Calculate the cost of the combination
+     - If the cost exceeds the budget, break (since drives are sorted, further drives will also exceed)
+     - Keep track of the maximum valid cost found
+- Time complexity: O(n*m) in the worst case, where n is the number of keyboards and m is the number of drives
+- Space complexity: O(1) - only using a few variables

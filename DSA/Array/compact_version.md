@@ -44,3 +44,7 @@
 
 ## generate_non_adjacent_subsequences
 - Notes: Code to generate all subsequences with non-adjacent elements using recursion and backtracking. Known Issues: First implementation attempt has logical errors in handling adjacency.
+
+## electronics_shop
+- Notes: Find maximum sum of one keyboard and one USB drive within budget.
+- Uses brute force with sorting optimizations.

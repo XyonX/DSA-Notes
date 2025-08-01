@@ -26,6 +26,7 @@
 - find_digits: solved
 - sherlock_and_squares: solved
 - kangaroo_jump: solved
+- cat_and_mouse: solved
 
 ### Strings
 - first_non_repeating_character: solved
@@ -60,6 +61,7 @@
 - bill_division: solved
 - sock_merchant: solved
 - generate_non_adjacent_subsequences: solved
+- electronics_shop: solved
 
 ### Sliding_Window
 - birthday_chocolate: solved
