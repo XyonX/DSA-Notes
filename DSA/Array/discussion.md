@@ -68,3 +68,13 @@ This in-place technique is highly efficient. It leverages the property that reve
      - Keep track of the maximum valid cost found
 - Time complexity: O(n*m) in the worst case, where n is the number of keyboards and m is the number of drives
 - Space complexity: O(1) - only using a few variables
+
+## two_sum
+- This is a classic array problem where we need to find two numbers in an array that add up to a specific target. The optimal solution uses a hash map to store elements and their indices, allowing us to find the complement in O(1) time. This results in an overall time complexity of O(n) and space complexity of O(n).
+
+[LeetCode Problem: Two Sum](https://leetcode.com/problems/two-sum/)
+
+## three_sum
+- This problem extends the Two Sum problem to find triplets that sum to zero. The optimal approach involves sorting the array first and then using a two-pointer technique. For each element, we fix it and use two pointers to find pairs that sum to the negative of the fixed element. Careful handling of duplicates is essential to avoid duplicate triplets in the result.
+
+[LeetCode Problem: Three Sum](https://leetcode.com/problems/3sum/)

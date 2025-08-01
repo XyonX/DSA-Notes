@@ -62,6 +62,8 @@
 - sock_merchant: solved
 - generate_non_adjacent_subsequences: solved
 - electronics_shop: solved
+- two_sum: solved
+- three_sum: solved
 
 ### Sliding_Window
 - birthday_chocolate: solved

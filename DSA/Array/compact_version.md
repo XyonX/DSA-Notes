@@ -8,7 +8,7 @@
 
 ## kadanes_algorithm
 
-- Notes: Find the maximum subarray sum (Kadane’s algorithm).
+- Notes: Find the maximum subarray sum (Kadane's algorithm).
 
 ## min_subarray_sum
 
@@ -48,3 +48,9 @@
 ## electronics_shop
 - Notes: Find maximum sum of one keyboard and one USB drive within budget.
 - Uses brute force with sorting optimizations.
+
+## two_sum
+- Notes: Find indices of two numbers that add up to a target value. Uses a hash map for O(n) time complexity.
+
+## three_sum
+- Notes: Find all unique triplets that sum to zero. Uses sorting and two-pointer technique for O(n^2) time complexity.
