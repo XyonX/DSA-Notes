@@ -84,6 +84,10 @@
 - power_of_a_number: solved
 - leap_year: solved
 - string_creation_with_loop: solved
+### List_Comprehensions
+- 3d_coordinates_filter: solved
+### Sorting
+- runner_up_score: solved
 ### Numpy
 - polynomial_evaluation: solved
 - matrix_determinant: solved
