@@ -32,6 +32,7 @@
 - check_palindrome: solved
 - check_anagrams: solved
 - longest_substring_without_repeating_characters: solved
+- counting_valleys: solved
 
 ### Array
 - find_median_of_array: solved

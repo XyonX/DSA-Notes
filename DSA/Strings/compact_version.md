@@ -16,3 +16,9 @@
 ## first_non_repeating_character
 - Notes:
 - its anotehr code to get the first char non repeating char
+
+## counting_valleys
+- Notes:
+- Count valleys in a hiking path using altitude tracking
+- Increment valley count only when returning to sea level from below
+- Uses simple iteration with altitude counter

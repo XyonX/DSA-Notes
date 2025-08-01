@@ -13,3 +13,15 @@
 
 ## first_non_repeating_character
 - its anotehr code to get the first char non repeating char
+
+## counting_valleys
+- Problem involves tracking altitude changes during a hike
+- A valley is defined as a sequence of steps below sea level, starting with a 'D' and ending with a 'U'
+- Solution approach:
+  - Track current altitude (0 = sea level)
+  - For each step:
+    - 'U' increases altitude
+    - 'D' decreases altitude
+  - Only increment valley count when returning to sea level (altitude = 0) after being below it
+- Time complexity: O(n) where n is the number of steps
+- Space complexity: O(1) - only using a few variables
