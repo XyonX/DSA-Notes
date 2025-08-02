@@ -78,3 +78,9 @@ This in-place technique is highly efficient. It leverages the property that reve
 - This problem extends the Two Sum problem to find triplets that sum to zero. The optimal approach involves sorting the array first and then using a two-pointer technique. For each element, we fix it and use two pointers to find pairs that sum to the negative of the fixed element. Careful handling of duplicates is essential to avoid duplicate triplets in the result.
 
 [LeetCode Problem: Three Sum](https://leetcode.com/problems/3sum/)
+
+## majority_element
+- This problem involves finding the majority element in an array, which is defined as the element that appears more than ⌊n/2⌋ times. The solution implements the Boyer-Moore Majority Vote Algorithm, which is an efficient O(n) time and O(1) space approach. The algorithm works by maintaining a candidate for the majority element and a counter, updating them as we iterate through the array.
+
+## battle_of_warriors
+- This is a custom variation of the Majority Element problem presented in a story format about warrior clans. The solution uses the same Boyer-Moore Majority Vote Algorithm, where warriors from the same clan unite (increment counter) and warriors from different clans duel and fall (decrement counter). The clan with more than half the warriors will survive all duels.

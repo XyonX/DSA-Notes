@@ -54,3 +54,9 @@
 
 ## three_sum
 - Notes: Find all unique triplets that sum to zero. Uses sorting and two-pointer technique for O(n^2) time complexity.
+
+## majority_element
+- Notes: Find the majority element in an array using Boyer-Moore Majority Vote Algorithm.
+
+## battle_of_warriors
+- Notes: Custom implementation of Boyer-Moore Majority Vote Algorithm for a story-based problem about warrior clans.

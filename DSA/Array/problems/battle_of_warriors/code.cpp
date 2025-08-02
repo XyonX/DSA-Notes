@@ -1,92 +1,3 @@
-// Online C++ compiler to run C++ program online
-#include <iostream>
-#include<bits/stdc++.h>
-
-using namespace std;
-
-bool checkPranthesis(string s){
-    
-    stack<char>st;
-    
-    for(int i=0;i<s.size();i++){
-        char c=s[i];
-        if(c=='(' || c=='[' || c=='{'){
-            st.push(c);
-        }
-        else if(c==')' || c==']' || c=='}'){
-            if(st.empty())return false;
-            char ob=st.top();
-            st.pop();
-            if(ob == '(' and c==')')continue;
-            else if(ob == '[' and c==']')continue;
-            else if(ob == '{' and c=='}')continue;
-            else return false;
-        }else {
-            return false;
-        }
-    }
-    
-    if(!st.empty())return false;
-    return true;
-}
-
-
-int main() {
-cout<<checkPranthesis("({[]})");
-
-    return 0;
-}
-
-
-
-//boyer mooirie 
-class Solution {
-public:
-
-//the basic version
-    // int majorityElement(vector<int>& arr) {
-
-    //     map<int,int>freq;
-
-    //     for(int i=0;i<arr.size();i++){
-    //         freq[arr[i]]++;
-    //     }
-    //     int num=-1;
-    //     int max=INT_MIN;
-    //     for(int i=0;i<arr.size();i++){
-    //         if(freq[arr[i]]>max){
-    //             max=freq[arr[i]];
-    //             num=arr[i];
-    //             if(max>arr.size()/2){
-    //                 return num;
-    //             }
-    //         }
-    //     }
-    //     return num;
-        
-    // }
-
-
-//boyer moorie
-        int majorityElement(vector<int>& arr) {
-
-      int count=0;
-      int num=0;
-
-      for(int i=0;i<arr.size();i++){
-        int el=arr[i];
-        if(count==0)num=el;
-
-        if(el==num)count++;
-        else count--;
-
-      }
-      return num;
-        
-    }
-};
-
-
 //anothet custrom boyer moorie
 #include <iostream>
 #include <vector>
@@ -142,7 +53,6 @@ Clan values are integers.
 //here more power means if every warrior is occupied with eachj other 
 //there will be some warrior leftr who not in dual 
 ///we need to find out whic clan will be on top
-
 
 
 class Solution {

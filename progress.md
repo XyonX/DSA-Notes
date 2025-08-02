@@ -71,6 +71,8 @@
 - electronics_shop: solved
 - two_sum: solved
 - three_sum: solved
+- majority_element: solved
+- battle_of_warriors: solved
 
 ### Sliding_Window
 - birthday_chocolate: solved
@@ -83,6 +85,9 @@
 - detect_cycle_in_linked_list: solved
 - merge_two_sorted_linked_lists: solved
 - remove_nth_node_from_end: attempted
+
+### Stack
+- parenthesis_checker: solved
 
 ## Python
 ### Basics
