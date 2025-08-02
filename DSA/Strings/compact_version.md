@@ -22,3 +22,9 @@
 - Count valleys in a hiking path using altitude tracking
 - Increment valley count only when returning to sea level from below
 - Uses simple iteration with altitude counter
+
+## string_to_integer_atoi
+- Notes:
+- Implementation of custom atoi function to convert string to integer
+- Includes both iterative and recursive approaches
+- Handles whitespace, signs, and digit conversion

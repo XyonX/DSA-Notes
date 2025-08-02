@@ -25,3 +25,15 @@
   - Only increment valley count when returning to sea level (altitude = 0) after being below it
 - Time complexity: O(n) where n is the number of steps
 - Space complexity: O(1) - only using a few variables
+
+## string_to_integer_atoi
+- Implementation of the classic ATOI function to convert strings to integers
+- Two approaches implemented:
+  1. Iterative approach that processes the string character by character
+  2. Recursive approach that breaks down the problem into smaller subproblems
+- Key considerations:
+  - Handling leading whitespace
+  - Determining the sign of the number (+ or -)
+  - Converting valid digit characters to numeric values
+  - Stopping conversion when a non-digit character is encountered
+- This is a common interview problem that tests string manipulation and edge case handling

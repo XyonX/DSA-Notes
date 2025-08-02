@@ -34,6 +34,7 @@
 - check_anagrams: solved
 - longest_substring_without_repeating_characters: solved
 - counting_valleys: solved
+- string_to_integer_atoi: solved
 
 ### Array
 - find_median_of_array: solved
