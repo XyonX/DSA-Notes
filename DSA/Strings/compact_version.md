@@ -28,3 +28,9 @@
 - Implementation of custom atoi function to convert string to integer
 - Includes both iterative and recursive approaches
 - Handles whitespace, signs, and digit conversion
+
+## string_to_integer_atoi_recursive
+- Notes:
+- Pure recursive implementation of the atoi function
+- Handles whitespace, signs, digit conversion, and overflow
+- Demonstrates recursion with multiple state parameters
