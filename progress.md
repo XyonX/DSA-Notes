@@ -38,6 +38,9 @@
 
 ### Recursion
 - string_to_integer_atoi: solved
+- power_function: solved
+- good_number_checker: solved
+- count_good_numbers: solved
 
 ### Array
 - find_median_of_array: solved
