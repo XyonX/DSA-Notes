@@ -84,3 +84,12 @@ This in-place technique is highly efficient. It leverages the property that reve
 
 ## battle_of_warriors
 - This is a custom variation of the Majority Element problem presented in a story format about warrior clans. The solution uses the same Boyer-Moore Majority Vote Algorithm, where warriors from the same clan unite (increment counter) and warriors from different clans duel and fall (decrement counter). The clan with more than half the warriors will survive all duels.
+
+## max_profit
+- This problem, "Best Time to Buy and Sell Stock", is a classic array optimization problem. The goal is to find the maximum profit that can be achieved by buying a stock on one day and selling it on a different day in the future.
+
+Two approaches are commonly used:
+1. **Brute Force:** Check all possible buy-sell combinations using nested loops. Time complexity: O(n²).
+2. **Greedy Approach:** Keep track of the minimum price seen so far and calculate the maximum profit at each day. Time complexity: O(n). This is the optimal solution implemented in the code.
+
+[LeetCode Problem: Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)

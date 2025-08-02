@@ -73,6 +73,7 @@
 - three_sum: solved
 - majority_element: solved
 - battle_of_warriors: solved
+- max_profit: solved
 
 ### Sliding_Window
 - birthday_chocolate: solved
@@ -88,6 +89,9 @@
 
 ### Stack
 - parenthesis_checker: solved
+
+### Bit_Manipulation
+- single_number: solved
 
 ## Python
 ### Basics

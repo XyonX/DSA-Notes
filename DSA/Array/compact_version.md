@@ -60,3 +60,6 @@
 
 ## battle_of_warriors
 - Notes: Custom implementation of Boyer-Moore Majority Vote Algorithm for a story-based problem about warrior clans.
+
+## max_profit
+- Notes: Find maximum profit from buying and selling stock once. Implements both brute force and optimal greedy approaches.

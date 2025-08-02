@@ -1,191 +1,100 @@
-// Online C++ compiler to run C++ program online
-#include <iostream>
-#include<bits/stdc++.h>
+🧠 DSA Notes: Find Single Number Using XOR
+🔹 Problem Statement:
+Given a non-empty array of integers, where every element appears twice except one, find the element that appears only once.
 
-using namespace std;
+Constraints:
 
-bool checkPranthesis(string s){
-    
-    stack<char>st;
-    
-    for(int i=0;i<s.size();i++){
-        char c=s[i];
-        if(c=='(' || c=='[' || c=='{'){
-            st.push(c);
-        }
-        else if(c==')' || c==']' || c=='}'){
-            if(st.empty())return false;
-            char ob=st.top();
-            st.pop();
-            if(ob == '(' and c==')')continue;
-            else if(ob == '[' and c==']')continue;
-            else if(ob == '{' and c=='}')continue;
-            else return false;
-        }else {
-            return false;
-        }
-    }
-    
-    if(!st.empty())return false;
-    return true;
-}
+Must run in O(n) time
 
+Use only O(1) extra space
 
-int main() {
-cout<<checkPranthesis("({[]})");
+🔍 Key Insight: Use XOR
+XOR properties:
 
-    return 0;
-}
+a ^ a = 0 → same numbers cancel out
 
+a ^ 0 = a → XOR with 0 has no effect
 
+XOR is commutative and associative → order doesn't matter
 
-//boyer mooirie 
-class Solution {
-public:
+✅ So if we XOR all elements:
 
-//the basic version
-    // int majorityElement(vector<int>& arr) {
+Duplicates cancel each other
 
-    //     map<int,int>freq;
+Only the single element remains
 
-    //     for(int i=0;i<arr.size();i++){
-    //         freq[arr[i]]++;
-    //     }
-    //     int num=-1;
-    //     int max=INT_MIN;
-    //     for(int i=0;i<arr.size();i++){
-    //         if(freq[arr[i]]>max){
-    //             max=freq[arr[i]];
-    //             num=arr[i];
-    //             if(max>arr.size()/2){
-    //                 return num;
-    //             }
-    //         }
-    //     }
-    //     return num;
-        
-    // }
-
-
-//boyer moorie
-        int majorityElement(vector<int>& arr) {
-
-      int count=0;
-      int num=0;
-
-      for(int i=0;i<arr.size();i++){
-        int el=arr[i];
-        if(count==0)num=el;
-
-        if(el==num)count++;
-        else count--;
-
-      }
-      return num;
-        
-    }
-};
-
-
-//anothet custrom boyer moorie
-#include <iostream>
-#include <vector>
-using namespace std;
-
-
-//this is a customer version of Boyer-Moore:
-
-//QUESTION
-/*
-🧨 Custom Duel Problem: Battle of Warriors
-🏹 Problem Statement:
-There is a long line of warriors standing in a row. Each warrior belongs to a clan, represented by a number in an array warriors[]. Two warriors from different clans duel each other and both fall. But if two warriors from the same clan meet, they unite and get stronger.
-
-Your task is to determine the clan that will survive in the end after all possible duels.
-
-You may assume that there is always one clan that has more than half the total number of warriors.
-
-You must not use extra space (i.e., constant space).
-
-📥 Input:
-A vector warriors of integers (clan numbers), where each element represents the clan of the warrior at that position.
-
-📤 Output:
-Return the clan number that survives in the end (i.e., the majority clan).
-
-🧠 Example:
+📝 Dry Run Example 1:
 cpp
 Copy
 Edit
-Input: warriors = [3, 3, 4, 2, 4, 4, 2, 4, 4]
-Output: 4
-Explanation:
+Input: nums = [2, 3, 5, 3, 2]
 
-Clan 4 appears 5 times out of 9 → majority.
+Step-by-step XOR:
+res = 0
+res ^= 2 → 0 ^ 2 = 2  
+res ^= 3 → 2 ^ 3 = 1  
+res ^= 5 → 1 ^ 5 = 4  
+res ^= 3 → 4 ^ 3 = 7  
+res ^= 2 → 7 ^ 2 = 5
 
-After pairwise duels, 4 survives as the only remaining dominant clan.
+✅ Final Answer: 5
+📝 Dry Run Example 2:
+cpp
+Copy
+Edit
+Input: nums = [4, 1, 2, 1, 2]
 
-⛔ Constraints:
-1 <= warriors.length <= 10^5
+res = 0  
+res ^= 4 → 4  
+res ^= 1 → 5  
+res ^= 2 → 7  
+res ^= 1 → 6  
+res ^= 2 → 4
 
-Clan values are integers.
-
-*/
-
-
-//now outline the the idea 
-//we have  lot of warriors 
-//the warrios array contians the all the various warrious from differnt clas
-// hte aray store the clan id
-//now if dual happens between two both falls
-//now we need to find out whihc clas will have more power
-//here more power means if every warrior is occupied with eachj other 
-//there will be some warrior leftr who not in dual 
-///we need to find out whic clan will be on top
-
+✅ Final Answer: 4
 
 
 class Solution {
 public:
-    int survivingClan(vector<int>& warriors) {
-        int count=0;
-        int strongCamp=0;
-        
-        for(int i=0;i<warriors.size();i++){
-            int warriorCamp=warriors[i];
-            
-            //if the count becomnes zero 
-            //its kiund oif a reset 
-            //we stat with the current camid
-            
-            if(count==0){
-                strongCamp=warriorCamp;
-            }
-            //now if the current camp is same as the strongest warrior
-            //we add the count 
-            //if someelse camp we reduce
-            //so basicallu increase me we have added one more manppower to the team
-            //if we got warrior frmm anotehr  camp we ned to put down our strongest camp one membnet so that he can tackle that opppoisiton
-            
-            if(warriorCamp==strongCamp)
-            {
-                count++;
-            }else{
-                count--;
-            }
-            
+    int singleNumber(vector<int>& nums) {
+        int res=nums[0];
+        for(int i=1;i<nums.size();i++){
+            res^=nums[i];
         }
-        
-        return strongCamp;
+        return res;
     }
 };
 
 
-int main() {
-    Solution sol;
+class Solution {
+public:
 
-    vector<int> warriors = {3, 3, 4, 2, 4, 4, 2, 4, 4};
-    cout << "Surviving Clan: " << sol.survivingClan(warriors) << endl;
+//this soltuion is corect
+//but not effienct
+//and didntr passed all the test case in leetcode
+    // int maxProfit(vector<int>& prices) {
+    //     int maxProfit=0;
+    //     for(int i=0;i<prices.size();i++){
+    //         for(int j=i+1;j<prices.size();j++){
+    //             if(prices[j]-prices[i]>maxProfit){
+    //                 maxProfit=prices[j]-prices[i];
+    //             }
+                
+    //         }
+    //     }
+    //     return maxProfit;
+    // }
 
-    return 0;
-}
+
+//this one is a greedy solution and passed all the test case 
+//adn optimnal
+        int maxProfit(vector<int>& prices) {
+        int minPrice=prices[0];
+        int maxProfit=0;
+        for(int i=1;i<prices.size();i++){
+            maxProfit=max(maxProfit,prices[i]-minPrice);
+            minPrice=min(prices[i],minPrice);
+        }
+        return maxProfit;
+    }
+};
