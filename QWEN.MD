@@ -2,39 +2,49 @@
 
 ## Project Overview
 
-This project is designed to help Joy, a BTech CSE student, organize and manage coding notes and code across multiple areas, including Data Structures and Algorithms (DSA), Object-Oriented Programming (OOP), Python, and SQL. The primary objectives are:
+This project is designed to help Joy, a BTech CSE student, organize and manage notes and code across multiple areas, including coding topics (Data Structures and Algorithms (DSA), Object-Oriented Programming (OOP), Python, SQL), Quantitative Aptitude, and English improvement and grammar. The primary objectives are:
 
-- **Prepare for technical job interviews** by maintaining structured and accessible notes across various coding topics.
-- **Keep records for future reference** to revisit concepts and solutions in DSA, OOP, Python, and SQL.
-- **Practice coding skills** by documenting personal solutions and approaches in multiple programming languages.
-- **Support potential career switches** by providing a reliable reference of coding knowledge across different domains.
+- **Prepare for technical job interviews** by maintaining structured and accessible notes across various topics.
+- **Keep records for future reference** to revisit concepts, solutions, and notes.
+- **Practice skills** by documenting personal solutions, approaches, and learning materials.
+- **Support potential career switches** by providing a reliable reference of knowledge across different domains.
 
 Qwen CLI serves two key roles:
 
-1. **Automate note organization**: Processes code dumps from `recent_codes.txt`, organizes them into topic folders under the appropriate topic area, updates logs, creates or updates `progress.md`, and commits changes to Git.
-2. **Act as a coding mentor**: Provides guidance on what to practice, discusses specific problems or code snippets (including those in `recent_codes.txt`), conducts mock tests, and offers feedback on solutions across all supported topic areas.
+1. **Automate note organization**: Processes snippets from `recent_snippets.txt`, organizes them into topic folders under the appropriate topic area, updates logs, creates or updates `progress.md` for problem-based topics, and commits changes to Git.
+2. **Act as a mentor**: Provides guidance on what to practice, discusses specific problems, snippets, or notes (including those in `recent_snippets.txt`), conducts mock tests, and offers feedback across all supported topic areas.
 
 ## Folder Structure
 
 The root folder is `CodingBuddy/`, which contains:
 
-- **`recent_codes.txt`**: A temporary file for code snippets (with or without metadata).
-- **`logs/`**: Daily logs of coding activities (e.g., `2025-07-19.md`).
-- **`progress.md`**: Tracks problem status (e.g., solved, attempted, unsolved) across all topic areas, created or updated automatically.
+- **`recent_snippets.txt`**: A temporary file for code or text snippets (with or without metadata).
+- **`logs/`**: Daily logs of activities (e.g., `2025-07-19.md`).
+- **`progress.md`**: Tracks problem status (e.g., solved, attempted, unsolved) for problem-based topics (DSA, OOP, Python, SQL, QuantitativeAptitude), created or updated automatically.
 - **`update_status.json`**: A temporary file to track the progress of the "update my notes" command (created during processing and deleted upon completion).
-- **Topic Area Folders** (e.g., `DSA/`, `OOP/`, `Python/`, `SQL/`): Each contains:
-  - **Topic Folders** (e.g., `Strings/` under `DSA/`, `Classes/` under `OOP/`): Each contains:
-    - **`problems/`**: Subfolders for each problem (e.g., `two_sum/` under `DSA/Strings/`), with:
-      - **`code.<ext>`**: Solution code, where `<ext>` is based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL).
-      - **`notes.md`**: Problem-specific notes, including known issues if applicable.
-    - **`compact_version.md`**: Summarizes solutions for the topic.
-    - **`discussion.md`**: Detailed problem discussions for the topic.
+- **Topic Area Folders**:
+  - **Problem-based Topic Areas** (e.g., `DSA/`, `OOP/`, `Python/`, `SQL/`, `QuantitativeAptitude/`): Each contains:
+    - **Topic Folders** (e.g., `Strings/` under `DSA/`, `Arithmetic/` under `QuantitativeAptitude/`): Each contains:
+      - **`problems/`**: Subfolders for each problem (e.g., `two_sum/` under `DSA/Strings/`, `percentage/` under `QuantitativeAptitude/Arithmetic/`), with:
+        - **`content.<ext>`**: Solution or code, where `<ext>` is based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL, `txt` for QuantitativeAptitude).
+        - **`notes.md`**: Problem-specific notes, including known issues if applicable.
+      - **`compact_version.md`**: Summarizes solutions for the topic.
+      - **`discussion.md`**: Detailed problem discussions for the topic.
+  - **Note-based Topic Areas** (e.g., `English/`): Contains:
+    - **Topic Folders** (e.g., `Grammar/`, `Vocabulary/`): Each contains:
+      - **`notes.md`**: Collected notes for the topic.
+      - **`discussion.md`**: Detailed discussions or additional information for the topic.
+- **`Materials/`**: Contains study resources and personal documents, with subfolders such as:
+  - **`Books/`**: For storing books like DSA textbooks, aptitude guides, or English learning resources.
+  - **`PYQs/`**: For previous year questions from exams or placements.
+  - **`CompanyQuestions/`**: For company-specific placement or interview questions.
+  - **`PersonalDocs/`**: For personal documents like resume, marksheets, passport-size photos, etc.
 
 ### Example Structure
 
 ```
 CodingBuddy/
-├── recent_codes.txt
+├── recent_snippets.txt
 ├── logs/
 │   ├── 2025-07-19.md
 │   └── 2025-07-20.md
@@ -44,10 +54,10 @@ CodingBuddy/
 │   ├── Strings/
 │   │   ├── problems/
 │   │   │   ├── two_sum/
-│   │   │   │   ├── code.cpp
+│   │   │   │   ├── content.cpp
 │   │   │   │   └── notes.md
 │   │   │   └── reverse_string/
-│   │   │       ├── code.cpp
+│   │   │       ├── content.cpp
 │   │   │       └── notes.md
 │   │   ├── compact_version.md
 │   │   └── discussion.md
@@ -79,33 +89,54 @@ CodingBuddy/
 │   │   └── discussion.md
 │   └── Advanced/
 │       └── ...
-└── SQL/
-    ├── Queries/
-    │   ├── problems/
-    │   │   ├── select_basics/
-    │   │   │   ├── code.sql
-    │   │   │   └── notes.md
-    │   │   └── joins/
-    │   │       ├── code.sql
-    │   │       └── notes.md
-    │   ├── compact_version.md
-    │   └── discussion.md
-    └── Optimization/
-        └── ...
+├── SQL/
+│   ├── Queries/
+│   │   └── ...
+├── QuantitativeAptitude/
+│   ├── Arithmetic/
+│   │   ├── problems/
+│   │   │   ├── percentage/
+│   │   │   │   ├── content.txt
+│   │   │   │   └── notes.md
+│   │   │   └── profit_loss/
+│   │   │       ├── content.txt
+│   │   │       └── notes.md
+│   │   ├── compact_version.md
+│   │   └── discussion.md
+│   └── Algebra/
+│       └── ...
+├── English/
+│   ├── Grammar/
+│   │   ├── notes.md
+│   │   └── discussion.md
+│   ├── Vocabulary/
+│   │   ├── notes.md
+│   │   └── discussion.md
+│   └── Writing/
+│       ├── notes.md
+│       └── discussion.md
+├── Materials/
+│   ├── Books/
+│   ├── PYQs/
+│   ├── CompanyQuestions/
+│   └── PersonalDocs/
 ```
 
 ## File Naming Conventions
 
-- **Topic Area Folders**: Broad coding areas (e.g., `DSA`, `OOP`, `Python`, `SQL`).
-- **Topic Folders**: Specific topics within each area (e.g., `Strings` under `DSA`, `Classes` under `OOP`).
-- **Problem Folders**: Descriptive problem names (e.g., `two_sum` under `DSA/Strings`, `inheritance_example` under `OOP/Classes`).
-- **Code Files**: Named `code.<ext>`, where `<ext>` is:
+- **Topic Area Folders**: Broad areas (e.g., `DSA`, `OOP`, `Python`, `SQL`, `QuantitativeAptitude`, `English`).
+- **Topic Folders**: Specific topics within each area (e.g., `Strings` under `DSA`, `Arithmetic` under `QuantitativeAptitude`, `Grammar` under `English`).
+- **Problem Folders**: Descriptive problem names (e.g., `two_sum` under `DSA/Strings`, `percentage` under `QuantitativeAptitude/Arithmetic`).
+- **Content Files**: Named `content.<ext>` for problem-based topics, where `<ext>` is:
   - `cpp` for DSA and OOP.
   - `py` for Python.
   - `sql` for SQL.
-- **Notes Files**: `notes.md`, which may include a "Known Issues" section for attempted solutions.
+  - `txt` for QuantitativeAptitude.
+- **Notes Files**: 
+  - `notes.md` in problem folders for problem-based topics (e.g., `DSA/Strings/problems/two_sum/notes.md`).
+  - `notes.md` directly in topic folders for note-based topics (e.g., `English/Grammar/notes.md`), which may include a "Known Issues" section for attempted solutions in problem-based topics.
 - **Log Files**: Date-based (e.g., `2025-07-19.md`).
-- **Progress File**: `progress.md` in the root directory, with statuses like "solved", "attempted", or "unsolved".
+- **Progress File**: `progress.md` in the root directory, with statuses like "solved", "attempted", or "unsolved" for problem-based topics.
 - **Status File**: `update_status.json` (temporary, used during processing).
 
 ## Qwen CLI's Role and Instructions
@@ -117,17 +148,26 @@ When you say **"update my notes"**, Qwen CLI:
 - **Checks for `update_status.json`**:
   - If `update_status.json` exists, it resumes processing from the last checkpoint.
   - If it does not exist, it creates a new `update_status.json` before starting.
-- Processes each snippet in `recent_codes.txt`.
-- Organizes code into the appropriate topic area, topic, and problem folders.
-- Analyzes the code for syntax errors and potential issues(from high level interview perspective -not production level quality is expected in notes).
-- Look for the specific problem on leetcode , If the problem exist on leetcode add the leecode problem link in the notes md file too
-- Appends notes to `notes.md`, `compact_version.md`, and `discussion.md`.
-- Prompts you with options if critical issues are detected(NOT PRODCUTION LEVEL JUST IF THE CODE IS TOO WRONG AS ITS FOR INTERVIEW ADN CODING ROUND).
+- Processes each snippet in `recent_snippets.txt`.
+- Check progress if we have already done this problem earlier, if yes mark it as practiced too you can keep a count of number of times practiced and append the practice code to the original notes code file.
+- For structured snippets with metadata:
+  - Identifies the topic area as problem-based (e.g., `DSA`, `QuantitativeAptitude`) or note-based (e.g., `English`).
+  - For problem-based topics:
+    - Organizes into `topic_area/topic/problems/problem/content.<ext>` and `notes.md`.
+    - Uses appropriate `<ext>` (e.g., `cpp` for DSA, `txt` for QuantitativeAptitude).
+  - For note-based topics:
+    - Appends notes to `topic_area/topic/notes.md`, adding new sections with timestamps if applicable.
+- For unstructured snippets:
+  - Infers topic area, topic, and type (code or text) based on content (e.g., code patterns for DSA, mathematical expressions for QuantitativeAptitude, prose for English).
+- Analyzes the code for syntax errors and potential issues (from high-level interview perspective - not production-level quality is expected in notes).
+- Look for the specific problem on LeetCode, if the problem exists on LeetCode add the LeetCode problem link in the notes md file too.
+- Appends notes to `notes.md`, `compact_version.md`, and `discussion.md` for problem-based topics, or `notes.md` and `discussion.md` for note-based topics.
+- Prompts you with options if critical issues are detected (NOT PRODUCTION LEVEL JUST IF THE CODE IS TOO WRONG AS ITS FOR INTERVIEW AND CODING ROUND).
 - Generates or enhances notes.
 - Logs activities in `logs/<today's date>.md`.
-- Updates `progress.md`.
+- Updates `progress.md` for problem-based topics.
 - Commits changes to Git.
-- Clears `recent_codes.txt` and deletes `update_status.json` upon completion.
+- Clears `recent_snippets.txt` and deletes `update_status.json` upon completion.
 
 #### Checkpoint System
 
@@ -154,22 +194,40 @@ When you say **"update my notes"**, Qwen CLI:
 
 Include metadata:
 
-```cpp
+```
+// Type: <code|text>
 // Topic: <topic_area>/<topic>
-// Problem: <problem>
+// Problem: <problem> (for problem-based topics only)
 // Notes: <notes>
-<code>
+<snippet>
 // END OF SNIPPET
 ```
 
-**Example:**
+**Examples:**
 
-```cpp
-// Topic: OOP/Classes
-// Problem: inheritance_example
-// Notes: Demonstrates basic inheritance in C++
-class Parent { ... };
-class Child : public Parent { ... };
+```
+// Type: code
+// Topic: DSA/Strings
+// Problem: two_sum
+// Notes: Solution using hash map
+<cpp code>
+// END OF SNIPPET
+```
+
+```
+// Type: text
+// Topic: QuantitativeAptitude/Arithmetic
+// Problem: percentage
+// Notes: Formula for percentage increase
+<text solution>
+// END OF SNIPPET
+```
+
+```
+// Type: text
+// Topic: English/Grammar
+// Notes: Explanation of past perfect tense
+<grammar notes>
 // END OF SNIPPET
 ```
 
@@ -177,69 +235,80 @@ class Child : public Parent { ... };
 
 Qwen CLI will:
 
-- Parse code to infer topic area, topic, and problem.
+- Parse content to infer topic area, topic, and type (code or text).
 
 #### Code Analysis and User Prompts
 
 - Use language-specific patterns:
   - **OOP**: Look for class definitions, inheritance, etc.
-  - ** Tokyo**: Detect function definitions, list comprehensions, decorators, etc.
+  - **Python**: Detect function definitions, list comprehensions, decorators, etc.
   - **SQL**: Identify SQL keywords like `SELECT`, `INSERT`, `JOIN`, etc.
+  - **QuantitativeAptitude**: Recognize mathematical expressions or problem-solving text.
+  - **English**: Identify prose, grammar rules, or vocabulary lists.
 - Infer the appropriate topic area and topic based on these patterns.
-  Before adding code to notes:
-- **Analyzes the code** for syntax errors and potential issues.
-- **If issues are detected**:
-  - Prompts you with options:
-    1. Add the wrong code to notes as is (status: attempted).
-    2. Discuss and fix the code (use "Let's discuss <problem>" afterward).
-    3. Add a fixed version to notes (CLI suggests a correction).
-- **If no issues are detected**:
-  - Asks for confirmation:
-    1. Yes, add to notes as solved.
-    2. No, proceed with options to handle issues.
+- Before adding code to notes:
+  - **Analyzes the code** for syntax errors and potential issues.
+  - **If issues are detected**:
+    - Prompts you with options:
+      1. Add the wrong code to notes as is (status: attempted).
+      2. Discuss and fix the code (use "Let's discuss <problem>" afterward).
+      3. Add a fixed version to notes (CLI suggests a correction).
+  - **If no issues are detected**:
+    - Asks for confirmation:
+      1. Yes, add to notes as solved.
+      2. No, proceed with options to handle issues.
 
 #### Generating and Enhancing Notes
 
 - **When Notes Are Missing or Inadequate**:
-  - Generates concise notes describing the code, key learnings, and important aspects.
+  - Generates concise notes describing the snippet, key learnings, and important aspects.
 - **When Partial Notes Are Provided**:
   - Appends additional details to ensure completeness.
 - **For Attempted Solutions**:
-  - Includes a "Known Issues" section in `notes.md`.
+  - Includes a "Known Issues" section in `notes.md` for problem-based topics.
 
 #### Common Processing Steps
 
 For both structured and unstructured dumps:
 
-- **Determine File Extension**: Based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL).
+- **Determine File Extension**: Based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL, `txt` for QuantitativeAptitude).
 - **Create or Update Folders**:
-  - Create `topic_area`, `topic`, and `problems/<problem>/` folders if they don’t exist.
-- **Save the Code**:
-  - Write the `code` to `problems/<problem>/code.<ext>` (overwrite if exists).
+  - Create `topic_area`, `topic`, and `problems/<problem>/` folders if they don’t exist for problem-based topics.
+  - Create `topic_area` and `topic` folders for note-based topics.
+- **Save the Snippet**:
+  - For problem-based topics: Write the snippet to `problems/<problem>/content.<ext>` (overwrite if exists).
+  - For note-based topics: Append the snippet to `topic/notes.md` with a timestamped section (e.g., `### Added on 2025-08-04`).
 - **Append Notes**:
-  - Append extracted or provided `notes` to `problems/<problem>/notes.md`.
+  - For problem-based topics: Append extracted or provided `notes` to `problems/<problem>/notes.md`.
+  - For note-based topics: Append to `topic/notes.md`.
 - **Update Summaries and Discussions**:
-  - Append to `compact_version.md` in the topic folder:
-    ```
-    ## <problem>
-    - Notes: <notes>
-    ```
-  - Append to `discussion.md` in the topic folder:
-    ```
-    ## <problem>
-    - <notes>
-    ```
+  - For problem-based topics:
+    - Append to `compact_version.md` in the topic folder:
+      ```
+      ## <problem>
+      - Notes: <notes>
+      ```
+    - Append to `discussion.md` in the topic folder:
+      ```
+      ## <problem>
+      - <notes>
+      ```
+  - For note-based topics:
+    - Append to `discussion.md` in the topic folder:
+      ```
+      ## <topic>
+      - <notes>
+      ```
 - **Log the Activity**:
   - Update the daily log in `logs/<today's date>.md`:
     ```
-    - Added/Updated <topic_area>/<topic>/<problem>
+    - Added/Updated <topic_area>/<topic>/<problem> (for problem-based)
+    - Added/Updated <topic_area>/<topic> (for note-based)
     ```
 - **Handle progress.md**:
-
-  - If `progress.md` doesn’t exist, create it and analyze the entire note base to list all problems with a default status of "solved" (since code exists).
-  - If `progress.md` exists, update it to include new or updated problems from `recent_codes.txt` as "solved" and maintain existing statuses.
+  - If `progress.md` doesn’t exist, create it and analyze the entire note base to list all problems with a default status of "solved" (since content exists) for problem-based topics.
+  - If `progress.md` exists, update it to include new or updated problems from `recent_snippets.txt` as "solved" and maintain existing statuses.
   - Format:
-
     ```
     # Progress
 
@@ -262,52 +331,57 @@ For both structured and unstructured dumps:
     ### Queries
     - select_basics: solved
     - joins: attempted
-    ```
 
+    ## QuantitativeAptitude
+    ### Arithmetic
+    - percentage: solved
+    - profit_loss: attempted
+    ```
 - **Commit to Git**:
   - Commit changes with:
     ```
     git add .
-    git commit -m "Added/Updated <topic_area>/<topic>/<problem>"
+    git commit -m "Added/Updated <topic_area>/<topic>/<problem> or <topic>"
     ```
-- **Clear `recent_codes.txt`**:
+- **Clear `recent_snippets.txt`**:
   - Empty the file only after all snippets are successfully processed.
 - **Delete `update_status.json`**:
   - Remove the temporary status file upon completion.
 
 ### 2. Mentor Features
 
-Qwen CLI acts as a coding mentor, using `progress.md`, `logs/`, and `recent_codes.txt` to suggest practice, discuss code, and provide feedback.
+Qwen CLI acts as a mentor, using `progress.md`, `logs/`, and `recent_snippets.txt` to suggest practice, discuss snippets, and provide feedback.
 
 #### Available Commands
 
 - **Suggest Practice**: Say "What should I practice today?" or "Suggest problems to solve."
-  - Suggests problems based on recent activity and progress.
-- **Discuss Problem or Code**: Say "Let's discuss <topic_area>/<topic>/<problem>" or "Let's discuss the code in recent_codes.txt for <problem>."
-  - Retrieves and discusses the code from `recent_codes.txt` or organized folders.
+  - Suggests problems based on recent activity and progress for problem-based topics (e.g., QuantitativeAptitude problems) or topics to review for English.
+- **Discuss Problem or Code**: Say "Let's discuss <topic_area>/<topic>/<problem>" or "Let's discuss the code in recent_snippets.txt for <problem>."
+  - Retrieves and discusses the snippet from `recent_snippets.txt` or organized folders.
   - For "attempted" problems, focuses on identifying and fixing issues.
   - For "solved" problems, discusses the solution and relevant concepts.
+  - For English topics, discusses notes and offers grammar or professional English tips.
 - **Start Mock Test**: Say "Start a mock test."
-  - Suggests problems and provides feedback after submission.
+  - Suggests problems and provides feedback after submission (applicable to problem-based topics).
 - **Help**: Say "List commands" or "Help."
   - Displays available commands.
 
-#### Discussing Code in `recent_codes.txt`
+#### Discussing Code in `recent_snippets.txt`
 
-- When you say "Let's discuss the code in recent_codes.txt for <problem>," Qwen CLI:
-  - Searches `recent_codes.txt` for snippets related to `<problem>`.
+- When you say "Let's discuss the code in recent_snippets.txt for <problem>," Qwen CLI:
+  - Searches `recent_snippets.txt` for snippets related to `<problem>`.
   - If multiple snippets are found, asks you to specify which one to discuss.
   - Discusses the code, provides feedback, or answers questions based on the snippet.
-- When you ask any question about code in `recent_codes.txt` (e.g., "What does this line do in the two_sum code?"):
-  - Searches `recent_codes.txt` for the relevant snippet.
+- When you ask any question about code in `recent_snippets.txt` (e.g., "What does this line do in the two_sum code?"):
+  - Searches `recent_snippets.txt` for the relevant snippet.
   - Responds based on the content of that snippet.
 
 #### Mock Test Process
 
-- **Starting a Test**: Suggests problems from `progress.md` or new problems.
-- **Submitting Solutions**: Add to `recent_codes.txt` with `// Mock Test Problem: <topic_area>/<topic>/<problem>`.
+- **Starting a Test**: Suggests problems from `progress.md` or new problems (for problem-based topics).
+- **Submitting Solutions**: Add to `recent_snippets.txt` with `// Mock Test Problem: <topic_area>/<topic>/<problem>`.
 - **Feedback**:
-  - Searches `recent_codes.txt` for snippets with the mock test marker (e.g., `// Mock Test Problem: <topic_area>/<topic>/<problem>`).
+  - Searches `recent_snippets.txt` for snippets with the mock test marker (e.g., `// Mock Test Problem: <topic_area>/<topic>/<problem>`).
   - Analyzes the solution and provides feedback on correctness, efficiency, and topic-specific aspects.
 
 ### Explicit Instructions for Qwen CLI
@@ -315,21 +389,21 @@ Qwen CLI acts as a coding mentor, using `progress.md`, `logs/`, and `recent_code
 - **Do Not Generate or Overwrite**: Preserve original code unless a fixed version is approved.
 - **Append, Do Not Overwrite**: Append to notes and summaries.
 - **Logs**: Create logs when code is added, noting the status.
-- **Progress**: Update `progress.md` with statuses: "solved", "attempted", or "unsolved".
+- **Progress**: Update `progress.md` with statuses: "solved", "attempted", or "unsolved" for problem-based topics only.
 - **Feedback**: Provide constructive feedback without modifying code unless requested.
 - **Checkpoint System**: Use `update_status.json` to track and resume processing.
-- **File Extensions**: Save code with appropriate extensions.
-- **Inference**: Recognize patterns in unstructured code.
-- **Note Generation**: Generate concise notes, including "Known Issues" for attempted solutions.
-- **Discussing Code**: Retrieve and discuss code from `recent_codes.txt` or organized folders based on user queries, including any questions about the code.
+- **File Extensions**: Save snippets with appropriate extensions based on topic area.
+- **Inference**: Recognize patterns in unstructured snippets (e.g., code for DSA, math for QuantitativeAptitude, prose for English).
+- **Note Generation**: Generate concise notes, including "Known Issues" for attempted solutions in problem-based topics.
+- **Discussing Code**: Retrieve and discuss snippets from `recent_snippets.txt` or organized folders based on user queries, including any questions about the snippets.
 
 ## Additional Notes
 
 - **Version Control**: Git tracks changes with commits after processing.
-- **Manual Updates**: You may manually edit `progress.md` to adjust statuses.
+- **Manual Updates**: You may manually edit `progress.md` to adjust statuses or add files to `Materials/`.
 
 ## About the User
 
 - **Name**: Joy
 - **Background**: BTech CSE student
-- **Purpose**: Preparing for technical job interviews, keeping records, practicing coding skills, and supporting career switches.
+- **Purpose**: Preparing for technical job interviews, keeping records, practicing skills across coding, aptitude, and English, and supporting career switches.

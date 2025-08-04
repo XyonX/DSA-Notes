@@ -1,100 +1,66 @@
-🧠 DSA Notes: Find Single Number Using XOR
-🔹 Problem Statement:
-Given a non-empty array of integers, where every element appears twice except one, find the element that appears only once.
-
-Constraints:
-
-Must run in O(n) time
-
-Use only O(1) extra space
-
-🔍 Key Insight: Use XOR
-XOR properties:
-
-a ^ a = 0 → same numbers cancel out
-
-a ^ 0 = a → XOR with 0 has no effect
-
-XOR is commutative and associative → order doesn't matter
-
-✅ So if we XOR all elements:
-
-Duplicates cancel each other
-
-Only the single element remains
-
-📝 Dry Run Example 1:
-cpp
-Copy
-Edit
-Input: nums = [2, 3, 5, 3, 2]
-
-Step-by-step XOR:
-res = 0
-res ^= 2 → 0 ^ 2 = 2  
-res ^= 3 → 2 ^ 3 = 1  
-res ^= 5 → 1 ^ 5 = 4  
-res ^= 3 → 4 ^ 3 = 7  
-res ^= 2 → 7 ^ 2 = 5
-
-✅ Final Answer: 5
-📝 Dry Run Example 2:
-cpp
-Copy
-Edit
-Input: nums = [4, 1, 2, 1, 2]
-
-res = 0  
-res ^= 4 → 4  
-res ^= 1 → 5  
-res ^= 2 → 7  
-res ^= 1 → 6  
-res ^= 2 → 4
-
-✅ Final Answer: 4
+probability maths
 
 
-class Solution {
-public:
-    int singleNumber(vector<int>& nums) {
-        int res=nums[0];
-        for(int i=1;i<nums.size();i++){
-            res^=nums[i];
-        }
-        return res;
-    }
-};
+
+1.a box has 6 black , 4 red , 2 white and 3 blue shirt , whwn 2 shiirts are picked randomy , what is the probability that either both are white or both are blue
+
+ans=> 
+intuition->
+either both are whuite or both are blue so
+=> prbaility of 2 being white + proobability of 2 being blue
+=> probability of 2 being white = probalility of 1 being white * after pciking 1 probability of that being white
+=>  probability of 2 being white =total white/total ball *after total white /total ball = 2/15*1/14 
+
+=>  probability of 2 being blue = probalility of 1 being blue * after pciking 1 probability of that being blue
+=> probability of 2 being blue = total blue/total ball * after picking 1 bue  total white /total ball = 3/15*2/14
+
+=> answet = probalith of being 2 shirt eiher blue or white = probability of 2 beinng white or 2 being blue =probalith of being 2 shirt eiher blue or white = probability of 2 beinng white + 2 being blue=(2/15*1/14) +(3/15*2/14)
 
 
-class Solution {
-public:
 
-//this soltuion is corect
-//but not effienct
-//and didntr passed all the test case in leetcode
-    // int maxProfit(vector<int>& prices) {
-    //     int maxProfit=0;
-    //     for(int i=0;i<prices.size();i++){
-    //         for(int j=i+1;j<prices.size();j++){
-    //             if(prices[j]-prices[i]>maxProfit){
-    //                 maxProfit=prices[j]-prices[i];
-    //             }
-                
-    //         }
-    //     }
-    //     return maxProfit;
-    // }
+=>key points
+here we dont replace the shirt so tahts why we reduce the shit by 1
+
+2.a pot has 22 white ,, 6 black , 4 grey , 8 green balls , if one ball is picked randomly from the pot, waht is the probbility of it being black or ggreen
+ans=> easy to solve
+probability or it beig blakc or green = probability or being black + probality of it being green
+prob of it beig black = total blakc /totla = 6/20
+pro of it beig green = total green / total = 8/20
+probability or it beig blakc or green = 6/20 + 8/20 = 14/20 = 7/10
 
 
-//this one is a greedy solution and passed all the test case 
-//adn optimnal
-        int maxProfit(vector<int>& prices) {
-        int minPrice=prices[0];
-        int maxProfit=0;
-        for(int i=1;i<prices.size();i++){
-            maxProfit=max(maxProfit,prices[i]-minPrice);
-            minPrice=min(prices[i],minPrice);
-        }
-        return maxProfit;
-    }
-};
+
+3.There are 2 pots. One pot has 5 red and 3 green marbles. Other has 4 red and 2 green marbles. What is the probability of drawing a red marble?
+=> now to find the answer we need to consider two thign first the red can come from any of the pot 
+so the answer is =  finding red from either pot a or pot b
+probability of ball being rred = red from pot1 or red from pot2= probaltity of ball beig red from pot 1 +  probaltity of ball beig red from pot 2
+the porbbilit of the ball beig red from pot 1 = the pot being 1 and the ball being red = the probability of pot being pot1* ball being red from pot1 = 1/2*5/8
+the porbbilit of the ball beig red from pot 2 = the pot being 2 and the ball being red = the probability of pot being pot2* ball being red from pot2 = 1/2*4/6
+probability of ball being rred=(1/2*5/8)+(1/2*4/6)=31/48
+
+=>notes here the evetn is sequenctial for like beig the ball from pot 1 hete its a and evetn so the first ting is the point beig pot 1 then at the same time (and) the ball being red
+
+
+4.In a set of 30 game cards, 17 are white and rest are green. 4 white and 5 green are marked IMPORTANT. If a card is chosen randomly from this set, what is the possibility of choosing a green card or an ‘IMPORTANT’ card?
+
+=>choosing  green card or importent card = prb of car beign ggreen + probcar beig importent 
+we can solve the   answer in two way by doing a bit more lacuation like prob of card beiging gren = 13/30 now to calcuatlethe pro of card being imp we can remvoe the green card and do the cal like 13/30+4/5 or we can simpley  do 13/10+9/30 - 5/30(for hte imp we taking all the imp then removign the green impo card
+so ans = prob of car bing green + prob of card being imp= (13/30+9/30)-5/30= 17/30(5/30 is subtracted to eliiinate the diuble counting)
+
+5.A box has 6 black, 4 red, 2 white and 3 blue shirts. Find the probability of drawing 2 black shirts if they are picked randomly?
+prob of being 2 shirt being blac = firr 1 being black and seocnd 1 being black = prob of first one being black * pprob of second one being black = num /black /total * num black/total(after sub1 as e already choose one blacl)= 6/15*5/14 =1/7
+
+
+6.A box has 6 black, 4 red, 2 white and 3 blue shirts. What is the probability that 2 red shirts and 1 blue shirt get chosen during a random selection of 3 shirts from the box?
+ans=>this wuestion is really interesting 
+so we need tofingd the probability getting 2 red shirt and 1 blue shirt 
+now here is the twist , we an eiter get 2 red and 1 blue tis way like first one blue second one blue and tird one red or first one ble sencd one red and third one blue or varous otehr way
+as its or we will need to add the probability of thse 
+now hwat is tis how would you knw in how many way you can get 2 red ad 1 blue shirt , here comes the concet of permuation
+we have 3 elemnt in set {red, red,blue} or if we make a int rep {1,1,2} so in genral the permuation of 3 elemnt is 3! or 6 now here 2 are reperat so we didide by 2 so 3!/1! =3 way or the ways are 1 ,1,2 or ,1,2,1 or 2,1,1 now if we go turn to color it will be red ,red,blue or red ,blue ,red, or blue ,red,red 
+so we need to calcalte the probabilty of finding 2 red and 1 in blue this 3 order as eiithe any of them can take us to the answer so its an or operation so +
+so the ans =prob of getting 2 red and blue in tis order(red ,red,blue) + in thhis order (red ,blue ,red) + in tis order( blue ,red,red)
+for the probability in this order , (red ,red,blue) = 4/15 *3/14*3/13
+for the probability in this order , (red ,blue,red) = 4/15 *3/14*3/13
+for the probability in this order , (blue,red,red) = 3/15 *4/14*3/13
+now among of theese sny of the pat hwill take us  to the answe so he naswe is adding them = ( 4/15 *3/14*3/13)+(4/15 *3/14*3/13)+(3/15 *4/14*3/13)=18/455
