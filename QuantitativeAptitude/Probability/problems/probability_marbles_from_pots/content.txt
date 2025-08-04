@@ -1,0 +1,10 @@
+3. There are 2 pots. One pot has 5 red and 3 green marbles. Other has 4 red and 2 green marbles. What is the probability of drawing a red marble?
+
+=> Now to find the answer we need to consider two things - first the red can come from any of the pot 
+so the answer is = finding red from either pot a or pot b
+Probability of ball being red = red from pot1 or red from pot2 = probability of ball being red from pot 1 + probability of ball being red from pot 2
+The probability of the ball being red from pot 1 = the pot being 1 and the ball being red = the probability of pot being pot1 * ball being red from pot1 = 1/2*5/8
+The probability of the ball being red from pot 2 = the pot being 2 and the ball being red = the probability of pot being pot2 * ball being red from pot2 = 1/2*4/6
+Probability of ball being red = (1/2*5/8)+(1/2*4/6) = 31/48
+
+=> Notes: Here the event is sequential like being the ball from pot 1. It's an "and" event so the first thing is the point being pot 1 then at the same time (and) the ball being red

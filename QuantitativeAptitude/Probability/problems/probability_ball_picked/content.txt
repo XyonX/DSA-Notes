@@ -1,0 +1,7 @@
+2. A pot has 22 white, 6 black, 4 grey, 8 green balls. If one ball is picked randomly from the pot, what is the probability of it being black or green?
+
+Ans: Easy to solve
+Probability of it being black or green = probability of being black + probability of it being green
+Prob of it being black = total black / total = 6/20
+Prob of it being green = total green / total = 8/20
+Probability of it being black or green = 6/20 + 8/20 = 14/20 = 7/10

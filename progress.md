@@ -130,3 +130,12 @@
 ### Classes
 - polymorphism_example: solved
 - advanced_polymorphism: solved
+
+## QuantitativeAptitude
+### Probability
+- probability_shirts_picked: solved
+- probability_ball_picked: solved
+- probability_marbles_from_pots: solved
+- probability_game_cards: solved
+- probability_black_shirts: solved
+- probability_red_and_blue_shirts: solved

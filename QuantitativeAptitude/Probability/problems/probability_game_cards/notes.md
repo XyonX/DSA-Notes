@@ -1,0 +1,1 @@
+This problem demonstrates the principle of inclusion-exclusion in probability. When calculating the probability of the union of two events (green card OR important card), we add their individual probabilities and subtract the probability of their intersection (green AND important cards) to avoid double counting.

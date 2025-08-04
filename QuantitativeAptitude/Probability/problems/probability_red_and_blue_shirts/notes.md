@@ -1,0 +1,1 @@
+This problem demonstrates the application of permutations in probability calculations. When we're selecting multiple items and the order matters for our calculation, we need to consider all possible arrangements (permutations) of the desired outcome. Alternatively, this could also be solved using combinations, which would be a more direct approach for this type of problem.

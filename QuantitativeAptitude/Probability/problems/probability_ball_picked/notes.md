@@ -1,0 +1,1 @@
+This is a straightforward probability addition problem where we calculate the probability of mutually exclusive events.

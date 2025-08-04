@@ -1,0 +1,3 @@
+5. A box has 6 black, 4 red, 2 white and 3 blue shirts. Find the probability of drawing 2 black shirts if they are picked randomly?
+
+Prob of being 2 shirts being black = first 1 being black and second 1 being black = prob of first one being black * prob of second one being black = num black / total * num black / total (after sub 1 as we already choose one black) = 6/15*5/14 = 1/7

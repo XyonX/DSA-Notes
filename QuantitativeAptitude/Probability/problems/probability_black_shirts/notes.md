@@ -1,0 +1,1 @@
+This is another example of dependent probability where the outcome of the first event affects the probability of the second event. After picking one black shirt, there's one less black shirt and one less total shirt in the box.

@@ -1,0 +1,1 @@
+This problem involves conditional probability and the law of total probability. We consider the probability of selecting each pot (1/2 for each) and then the probability of drawing a red marble from that pot.

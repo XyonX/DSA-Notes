@@ -1,0 +1,12 @@
+1. A box has 6 black, 4 red, 2 white and 3 blue shirts. When 2 shirts are picked randomly, what is the probability that either both are white or both are blue?
+
+Ans: 
+Intuition -> Either both are white or both are blue so
+=> Probability of 2 being white + probability of 2 being blue
+=> Probability of 2 being white = probability of 1 being white * after picking 1 probability of that being white
+=> Probability of 2 being white = total white/total shirts * after picking 1 white / total shirts = 2/15*1/14 
+
+=> Probability of 2 being blue = probability of 1 being blue * after picking 1 probability of that being blue
+=> Probability of 2 being blue = total blue/total shirts * after picking 1 blue / total shirts = 3/15*2/14
+
+=> Answer = probability of being 2 shirts either blue or white = probability of 2 being white + 2 being blue = (2/15*1/14) + (3/15*2/14)

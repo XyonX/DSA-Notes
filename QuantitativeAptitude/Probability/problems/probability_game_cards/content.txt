@@ -1,0 +1,5 @@
+4. In a set of 30 game cards, 17 are white and rest are green. 4 white and 5 green are marked IMPORTANT. If a card is chosen randomly from this set, what is the possibility of choosing a green card or an 'IMPORTANT' card?
+
+=> Choosing green card or important card = prob of card being green + prob of card being important 
+We can solve the answer in two ways by doing a bit more calculation like prob of card being green = 13/30 now to calculate the prob of card being imp we can remove the green card and do the calc like 13/30+4/5 or we can simply do 13/30+9/30 - 5/30(for the imp we taking all the imp then removing the green impo card
+So ans = prob of card being green + prob of card being imp = (13/30+9/30)-5/30 = 17/30 (5/30 is subtracted to eliminate the double counting)
