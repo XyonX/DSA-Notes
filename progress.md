@@ -97,6 +97,8 @@
 
 ### Trees
 - tree_traversals: solved
+- leaf_count: solved
+- height_of_tree: solved
 
 ### Two_Pointers
 - container_with_most_water: attempted
