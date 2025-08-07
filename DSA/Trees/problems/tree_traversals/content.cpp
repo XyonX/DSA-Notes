@@ -1,6 +1,6 @@
 // Source: recent_codes.txt processed on 2025-08-07
 // Status: solved
-// Notes: Preorder, Inorder, Postorder traversal implementations on a perfect binary tree (1..7).
+// Notes: Preorder, Inorder, Postorder traversal implementations; plus leaf count and height.
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -37,6 +37,27 @@ void tree_po(node* n){
     cout << n->data;
 }
 
+int traverse(node* n){
+    if(n==NULL) return 0;
+    if(n->left==NULL && n->right==NULL) return 1;
+    return traverse(n->left) + traverse(n->right);
+}
+
+int numLeafNodes(node* root){
+    return traverse(root);
+}
+
+int traverse_2(node* root){
+    if(root==NULL) return 0;
+    int leftHeight = 1 + traverse_2(root->left);
+    int rightHeight = 1 + traverse_2(root->right);
+    return max(leftHeight, rightHeight);
+}
+
+int heightOfTree(node* root){
+    return traverse_2(root);
+}
+
 int main(){
     node* root = new node(1);
     root->left = new node(2);
@@ -55,5 +76,8 @@ int main(){
     cout << "Post order traversal outoput: ";
     tree_po(root);
     cout << '\n';
+
+    cout << "Number of leaf node: " << numLeafNodes(root) << '\n';
+    cout << "Hiehgt of tree : " << heightOfTree(root) << '\n';
     return 0;
 }

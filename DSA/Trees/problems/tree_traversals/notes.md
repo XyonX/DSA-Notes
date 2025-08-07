@@ -1,8 +1,9 @@
 # Tree Traversals
 
-Status: solved
+Status: solved (practiced x2)
 
 - Implemented recursive traversals: preorder (NLR), inorder (LNR), postorder (LRN).
+- Added utilities: number of leaf nodes and height of binary tree.
 - Sample tree built with nodes 1..7.
 - Outputs are printed without separators.
 - Time: O(n), Space: O(h) recursion stack.
