@@ -95,6 +95,9 @@
 - longest_substring_without_repeating_characters: solved
 - string_to_integer_atoi: solved
 
+### Trees
+- tree_traversals: solved
+
 ### Two_Pointers
 - container_with_most_water: attempted
 
