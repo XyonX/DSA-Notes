@@ -10,6 +10,10 @@
 
 - Find the maximum subarray sum (Kadane's algorithm).
 
+## sort_colors
+
+- Dutch National Flag problem to sort 0s, 1s, and 2s using three pointers (l, m, r). Current code is an attempted version with a comparison bug (`el=2`) and pointer handling detail after swapping with `r`.
+
 ## min_subarray_sum
 
 - Find the minimum subarray sum.

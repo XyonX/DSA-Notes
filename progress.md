@@ -47,6 +47,7 @@
 - find_mode_of_array: solved
 - variance_of_array: attempted
 - kadanes_algorithm: solved
+- sort_colors: attempted
 - min_subarray_sum: solved
 - max_sum_non_adjacent_elements: attempted
 - max_subarray_sum_min_length: solved
@@ -78,6 +79,9 @@
 ### Sliding_Window
 - birthday_chocolate: solved
 - maximum_subarray_sum_size_k: solved
+
+### Two_Pointers
+- container_with_most_water: attempted
 
 ### Linked_List
 - create_linked_list: solved

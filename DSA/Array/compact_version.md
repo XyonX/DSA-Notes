@@ -10,6 +10,10 @@
 
 - Notes: Find the maximum subarray sum (Kadane's algorithm).
 
+## sort_colors
+
+- Notes: Dutch National Flag (0s,1s,2s). Attempted; has comparison bug and pointer update nuances to fix.
+
 ## min_subarray_sum
 
 - Notes: Find the minimum subarray sum.
