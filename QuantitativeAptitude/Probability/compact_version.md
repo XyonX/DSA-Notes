@@ -17,3 +17,11 @@
 
 ## probability_red_and_blue_shirts
 - Notes: Calculate probability of selecting 2 red shirts and 1 blue shirt in any order using permutations
+## probability_transfer_box_black
+- Notes: Added solution and notes.
+
+## probability_sum_prime_two_dice
+- Notes: Added solution and notes.
+
+## probability_two_clubs_from_deck
+- Notes: Added solution and notes.

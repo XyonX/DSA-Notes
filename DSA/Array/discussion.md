@@ -97,3 +97,5 @@ Two approaches are commonly used:
 2. **Greedy Approach:** Keep track of the minimum price seen so far and calculate the maximum profit at each day. Time complexity: O(n). This is the optimal solution implemented in the code.
 
 [LeetCode Problem: Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+## kth_smallest_element
+- Discussed O(n log n) sort approach vs O(n log k) heap approach; included typical pitfalls and test coverage.

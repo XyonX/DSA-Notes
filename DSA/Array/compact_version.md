@@ -67,3 +67,5 @@
 
 ## max_profit
 - Notes: Find maximum profit from buying and selling stock once. Implements both brute force and optimal greedy approaches.
+## kth_smallest_element
+- Notes: Sort-based and max-heap approaches summarized.

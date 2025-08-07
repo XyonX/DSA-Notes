@@ -1,0 +1,67 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int  kth_smallest_better(vector<int>&arr,int k){
+  sort(arr.begin(),arr.end());
+  return arr[k-1];
+}
+
+int kth_smallest_optimal(vector<int>&arr,int k){
+  priority_queue<int>maxHeap;
+
+  for(int i=0;i<arr.size();i++){
+    maxHeap.push(arr[i]);
+    if(maxHeap.size()>k)maxHeap.pop();
+  }
+  return maxHeap.top();
+  
+}
+
+int main() {
+    {
+        vector<int> arr = {7, 10, 4, 3, 20, 15};
+        int k = 3;
+        cout << "Test 1 - Expected: 7, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    {
+        vector<int> arr = {7, 10, 4, 3, 20, 15};
+        int k = 4;
+        cout << "Test 2 - Expected: 10, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    {
+        vector<int> arr = {1};
+        int k = 1;
+        cout << "Test 3 - Expected: 1, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    {
+        vector<int> arr = {5, 5, 5, 5, 5};
+        int k = 3;
+        cout << "Test 4 - Expected: 5, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    {
+        vector<int> arr = {100, 200, 300, 400, 500};
+        int k = 5;
+        cout << "Test 5 - Expected: 500, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    {
+        vector<int> arr = {-1, -5, 0, 2, -3};
+        int k = 2;
+        cout << "Test 6 - Expected: -3, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    {
+        vector<int> arr = {2, 1, 2, 1, 2, 1};
+        int k = 4;
+        cout << "Test 7 - Expected: 2, Got: " << kth_smallest_optimal(arr, k) << endl;
+    }
+
+    return 0;
+}

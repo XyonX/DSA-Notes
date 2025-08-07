@@ -1,0 +1,10 @@
+1. A box has 5 black and 3 green shirts. One shirt is picked randomly and put in another box. The second box has 3 black and 5 green shirts. Now a shirt is picked from second box. What is the probability of it being a black shirt?
+
+ans=> this is a really interesting question , possibilies mnatters is porobabilities question so threre are 4 possible combination possible here , either we could get black fromthe first box or we could gt green for this two corresponding choice we could get eitehr black or green from the second blox 
+now our goal is tow find the probability to find the shirt being black now for that the first choice can be either black or green but the second one nneds to bne black only
+so dpendin the first wo choice we havbe two ways to get the black sirt eitehr case 1 or case 2 can give us blakc
+case1=getting balck from first nd then alsos balck from seecon
+case 1 prob = 5/8 *4/9=20/72
+case 2 = we can get the first shirt green but the secodn shirt balck
+case 2 prob = 3/8*3/9=9/72 
+so answ = case1+case2 = 20/72 + 9/72 =29/72

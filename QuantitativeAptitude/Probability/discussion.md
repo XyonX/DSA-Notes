@@ -17,3 +17,11 @@
 
 ## probability_red_and_blue_shirts
 - This problem demonstrates the application of permutations in probability calculations. When we're selecting multiple items and the order matters for our calculation, we need to consider all possible arrangements (permutations) of the desired outcome. Alternatively, this could also be solved using combinations, which would be a more direct approach for this type of problem.
+## probability_transfer_box_black
+- Discussed approach and final probability.
+
+## probability_sum_prime_two_dice
+- Discussed approach and final probability.
+
+## probability_two_clubs_from_deck
+- Discussed approach and final probability.
