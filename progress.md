@@ -28,6 +28,7 @@
 - range_of_array: solved
 - reverse_array: solved
 - rotate_array_right: solved
+- reverse_k_elements: solved
 - second_largest_element: solved
 - sock_merchant: solved
 - sort_colors: attempted
@@ -45,6 +46,9 @@
 ### Dynamic_Programming
 - climbing_stairs: solved
 - frog_jump: solved
+
+### Grid
+- unique_paths: solved
 
 ### Greedy
 - activity_selection: solved
