@@ -26,14 +26,13 @@ The root folder is `CodingBuddy/`, which contains:
   - **Problem-based Topic Areas** (e.g., `DSA/`, `OOP/`, `Python/`, `SQL/`, `QuantitativeAptitude/`): Each contains:
     - **Topic Folders** (e.g., `Strings/` under `DSA/`, `Arithmetic/` under `QuantitativeAptitude/`): Each contains:
       - **`problems/`**: Subfolders for each problem (e.g., `two_sum/` under `DSA/Strings/`, `percentage/` under `QuantitativeAptitude/Arithmetic/`), with:
-        - **`content.<ext>`**: Solution or code, where `<ext>` is based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL, `txt` for QuantitativeAptitude).
-        - **`notes.md`**: Problem-specific notes, including known issues if applicable.
+        - **`content.<ext>`**: Solution or code (only for code-oriented snippets; `<ext>` is based on the topic area, e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL; not used for text-oriented snippets like theory, MCQs, or QuantitativeAptitude).
+        - **`notes.md`**: Problem-specific notes, including solutions for text-oriented snippets, known issues if applicable, concepts, discussions, and small inline code snippets if relevant.
       - **`compact_version.md`**: Summarizes solutions for the topic.
       - **`discussion.md`**: Detailed problem discussions for the topic.
   - **Note-based Topic Areas** (e.g., `English/`): Contains:
     - **Topic Folders** (e.g., `Grammar/`, `Vocabulary/`): Each contains:
-      - **`notes.md`**: Collected notes for the topic.
-      - **`discussion.md`**: Detailed discussions or additional information for the topic.
+      - **`notes.md`**: Collected notes, discussions, and additional information for the topic (single file combining all content).
 - **`Materials/`**: Contains study resources and personal documents, with subfolders such as:
   - **`Books/`**: For storing books like DSA textbooks, aptitude guides, or English learning resources.
   - **`PYQs/`**: For previous year questions from exams or placements.
@@ -67,10 +66,10 @@ CodingBuddy/
 │   ├── Classes/
 │   │   ├── problems/
 │   │   │   ├── inheritance_example/
-│   │   │   │   ├── code.cpp
+│   │   │   │   ├── content.cpp
 │   │   │   │   └── notes.md
 │   │   │   └── polymorphism_example/
-│   │   │       ├── code.cpp
+│   │   │       ├── content.cpp
 │   │   │       └── notes.md
 │   │   ├── compact_version.md
 │   │   └── discussion.md
@@ -80,10 +79,10 @@ CodingBuddy/
 │   ├── Basics/
 │   │   ├── problems/
 │   │   │   ├── list_comprehension/
-│   │   │   │   ├── code.py
+│   │   │   │   ├── content.py
 │   │   │   │   └── notes.md
 │   │   │   └── decorators/
-│   │   │       ├── code.py
+│   │   │       ├── content.py
 │   │   │       └── notes.md
 │   │   ├── compact_version.md
 │   │   └── discussion.md
@@ -96,10 +95,8 @@ CodingBuddy/
 │   ├── Arithmetic/
 │   │   ├── problems/
 │   │   │   ├── percentage/
-│   │   │   │   ├── content.txt
 │   │   │   │   └── notes.md
 │   │   │   └── profit_loss/
-│   │   │       ├── content.txt
 │   │   │       └── notes.md
 │   │   ├── compact_version.md
 │   │   └── discussion.md
@@ -107,14 +104,11 @@ CodingBuddy/
 │       └── ...
 ├── English/
 │   ├── Grammar/
-│   │   ├── notes.md
-│   │   └── discussion.md
+│   │   └── notes.md
 │   ├── Vocabulary/
-│   │   ├── notes.md
-│   │   └── discussion.md
+│   │   └── notes.md
 │   └── Writing/
-│       ├── notes.md
-│       └── discussion.md
+│       └── notes.md
 ├── Materials/
 │   ├── Books/
 │   ├── PYQs/
@@ -127,14 +121,14 @@ CodingBuddy/
 - **Topic Area Folders**: Broad areas (e.g., `DSA`, `OOP`, `Python`, `SQL`, `QuantitativeAptitude`, `English`).
 - **Topic Folders**: Specific topics within each area (e.g., `Strings` under `DSA`, `Arithmetic` under `QuantitativeAptitude`, `Grammar` under `English`).
 - **Problem Folders**: Descriptive problem names (e.g., `two_sum` under `DSA/Strings`, `percentage` under `QuantitativeAptitude/Arithmetic`).
-- **Content Files**: Named `content.<ext>` for problem-based topics, where `<ext>` is:
+- **Content Files**: Named `content.<ext>` for code-oriented snippets in problem-based topics, where `<ext>` is:
   - `cpp` for DSA and OOP.
   - `py` for Python.
   - `sql` for SQL.
-  - `txt` for QuantitativeAptitude.
+  (Not used for text-oriented snippets like QuantitativeAptitude, theory/MCQs in DSA, etc.; content is embedded in `notes.md` instead.)
 - **Notes Files**: 
-  - `notes.md` in problem folders for problem-based topics (e.g., `DSA/Strings/problems/two_sum/notes.md`).
-  - `notes.md` directly in topic folders for note-based topics (e.g., `English/Grammar/notes.md`), which may include a "Known Issues" section for attempted solutions in problem-based topics.
+  - `notes.md` in problem folders for problem-based topics (e.g., `DSA/Strings/problems/two_sum/notes.md`). For text-oriented snippets, this single file includes solutions, concepts, discussions, known issues, and inline code if applicable.
+  - `notes.md` directly in topic folders for note-based topics (e.g., `English/Grammar/notes.md`), which includes all notes, discussions, and may have a "Known Issues" section if applicable.
 - **Log Files**: Date-based (e.g., `2025-07-19.md`).
 - **Progress File**: `progress.md` in the root directory, with statuses like "solved", "attempted", or "unsolved" for problem-based topics.
 - **Status File**: `update_status.json` (temporary, used during processing).
@@ -153,16 +147,17 @@ When you say **"update my notes"**, Qwen CLI:
 - For structured snippets with metadata:
   - Identifies the topic area as problem-based (e.g., `DSA`, `QuantitativeAptitude`) or note-based (e.g., `English`).
   - For problem-based topics:
-    - Organizes into `topic_area/topic/problems/problem/content.<ext>` and `notes.md`.
-    - Uses appropriate `<ext>` (e.g., `cpp` for DSA, `txt` for QuantitativeAptitude).
-  - For note-based topics:
-    - Appends notes to `topic_area/topic/notes.md`, adding new sections with timestamps if applicable.
+    - Organizes into `topic_area/topic/problems/problem/`.
+    - If type: code, saves to `content.<ext>` and `notes.md`.
+    - If type: text (e.g., theory, MCQs, QuantitativeAptitude), saves all content (solution, notes, concepts) to `notes.md` as sections, with small code snippets inline if present.
+- For note-based topics:
+    - Appends to `topic_area/topic/notes.md` as sections (e.g., notes, discussions) with timestamps if applicable.
 - For unstructured snippets:
   - Infers topic area, topic, and type (code or text) based on content (e.g., code patterns for DSA, mathematical expressions for QuantitativeAptitude, prose for English).
-- Analyzes the code for syntax errors and potential issues (from high-level interview perspective - not production-level quality is expected in notes).
+- Analyzes the content for errors and potential issues (from high-level interview perspective - not production-level quality is expected in notes). For code: check syntax; for text: check logical correctness.
 - Look for the specific problem on LeetCode, if the problem exists on LeetCode add the LeetCode problem link in the notes md file too.
-- Appends notes to `notes.md`, `compact_version.md`, and `discussion.md` for problem-based topics, or `notes.md` and `discussion.md` for note-based topics.
-- Prompts you with options if critical issues are detected (NOT PRODUCTION LEVEL JUST IF THE CODE IS TOO WRONG AS ITS FOR INTERVIEW AND CODING ROUND).
+- Appends to `notes.md`, `compact_version.md`, and `discussion.md` for problem-based topics, or `notes.md` for note-based topics.
+- Prompts you with options if critical issues are detected (NOT PRODUCTION LEVEL JUST IF THE CONTENT IS TOO WRONG AS ITS FOR INTERVIEW AND CODING ROUND).
 - Generates or enhances notes.
 - Logs activities in `logs/<today's date>.md`.
 - Updates `progress.md` for problem-based topics.
@@ -231,13 +226,22 @@ Include metadata:
 // END OF SNIPPET
 ```
 
+```
+// Type: text
+// Topic: DSA/DataStrcuture/Arrays
+// Problem: array_theory_mcq
+// Notes: Concepts on array rotation with MCQ examples
+<text with optional inline code>
+// END OF SNIPPET
+```
+
 #### For Unstructured Code Dumps
 
 Qwen CLI will:
 
 - Parse content to infer topic area, topic, and type (code or text).
 
-#### Code Analysis and User Prompts
+#### Content Analysis and User Prompts
 
 - Use language-specific patterns:
   - **OOP**: Look for class definitions, inheritance, etc.
@@ -245,13 +249,14 @@ Qwen CLI will:
   - **SQL**: Identify SQL keywords like `SELECT`, `INSERT`, `JOIN`, etc.
   - **QuantitativeAptitude**: Recognize mathematical expressions or problem-solving text.
   - **English**: Identify prose, grammar rules, or vocabulary lists.
+  - **DSA Theory/MCQ**: Look for explanatory text, questions, or short code examples.
 - Infer the appropriate topic area and topic based on these patterns.
-- Before adding code to notes:
-  - **Analyzes the code** for syntax errors and potential issues.
+- Before adding content to notes:
+  - **Analyzes the content** for syntax/logical errors and potential issues.
   - **If issues are detected**:
     - Prompts you with options:
-      1. Add the wrong code to notes as is (status: attempted).
-      2. Discuss and fix the code (use "Let's discuss <problem>" afterward).
+      1. Add the wrong content to notes as is (status: attempted).
+      2. Discuss and fix the content (use "Let's discuss <problem>" afterward).
       3. Add a fixed version to notes (CLI suggests a correction).
   - **If no issues are detected**:
     - Asks for confirmation:
@@ -271,12 +276,14 @@ Qwen CLI will:
 
 For both structured and unstructured dumps:
 
-- **Determine File Extension**: Based on the topic area (e.g., `cpp` for DSA and OOP, `py` for Python, `sql` for SQL, `txt` for QuantitativeAptitude).
+- **Determine File Handling**: Based on type (code or text) and topic area.
 - **Create or Update Folders**:
   - Create `topic_area`, `topic`, and `problems/<problem>/` folders if they don’t exist for problem-based topics.
   - Create `topic_area` and `topic` folders for note-based topics.
 - **Save the Snippet**:
-  - For problem-based topics: Write the snippet to `problems/<problem>/content.<ext>` (overwrite if exists).
+  - For problem-based topics:
+    - If type: code: Write the snippet to `problems/<problem>/content.<ext>` (overwrite if exists); append notes to `notes.md`.
+    - If type: text: Append the snippet to `problems/<problem>/notes.md` with sections (e.g., `### Solution`, `### Notes`); include small code inline in markdown if present.
   - For note-based topics: Append the snippet to `topic/notes.md` with a timestamped section (e.g., `### Added on 2025-08-04`).
 - **Append Notes**:
   - For problem-based topics: Append extracted or provided `notes` to `problems/<problem>/notes.md`.
@@ -294,11 +301,7 @@ For both structured and unstructured dumps:
       - <notes>
       ```
   - For note-based topics:
-    - Append to `discussion.md` in the topic folder:
-      ```
-      ## <topic>
-      - <notes>
-      ```
+    - Include discussions as sections within `notes.md` (e.g., `### Discussion`).
 - **Log the Activity**:
   - Update the daily log in `logs/<today's date>.md`:
     ```
@@ -388,14 +391,15 @@ Qwen CLI acts as a mentor, using `progress.md`, `logs/`, and `recent_snippets.tx
 
 - **Do Not Generate or Overwrite**: Preserve original code unless a fixed version is approved.
 - **Append, Do Not Overwrite**: Append to notes and summaries.
-- **Logs**: Create logs when code is added, noting the status.
+- **Logs**: Create logs when content is added, noting the status.
 - **Progress**: Update `progress.md` with statuses: "solved", "attempted", or "unsolved" for problem-based topics only.
-- **Feedback**: Provide constructive feedback without modifying code unless requested.
+- **Feedback**: Provide constructive feedback without modifying content unless requested.
 - **Checkpoint System**: Use `update_status.json` to track and resume processing.
-- **File Extensions**: Save snippets with appropriate extensions based on topic area.
-- **Inference**: Recognize patterns in unstructured snippets (e.g., code for DSA, math for QuantitativeAptitude, prose for English).
+- **File Handling**: Use `content.<ext>` only for code snippets; for text, embed in `notes.md`.
+- **Inference**: Recognize patterns in unstructured snippets (e.g., code for DSA, math for QuantitativeAptitude, prose for English, theory/MCQs for DSA subtopics).
 - **Note Generation**: Generate concise notes, including "Known Issues" for attempted solutions in problem-based topics.
-- **Discussing Code**: Retrieve and discuss snippets from `recent_snippets.txt` or organized folders based on user queries, including any questions about the snippets.
+- **Discussing Content**: Retrieve and discuss snippets from `recent_snippets.txt` or organized folders based on user queries, including any questions about the snippets.
+- **Backward Compatibility**: Handle existing files (e.g., content.txt in QuantitativeAptitude) without deletion; for new text snippets, use `notes.md`.
 
 ## Additional Notes
 

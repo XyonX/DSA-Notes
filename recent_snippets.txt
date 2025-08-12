@@ -1,0 +1,31 @@
+Circular Linked List
+A circular linked list is a linked list where the last node’s next points back to the head, forming a loop.
+
+Uses:
+
+Round-robin scheduling
+
+Circular buffers
+
+Repeatedly cycling through elements (e.g., multiplayer games)
+
+Difference from normal linked list:
+
+Normal list ends with null; circular list loops back to head
+
+Traversal in circular list can go on indefinitely without stoppingCircular Linked List
+A circular linked list is a linked list where the last node’s next points back to the head, forming a loop.
+
+Uses:
+
+Round-robin scheduling
+
+Circular buffers
+
+Repeatedly cycling through elements (e.g., multiplayer games)
+
+Difference from normal linked list:
+
+Normal list ends with null; circular list loops back to head
+
+Traversal in circular list can go on indefinitely without stopping
