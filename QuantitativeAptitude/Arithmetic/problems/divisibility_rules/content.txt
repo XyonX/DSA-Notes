@@ -1,6 +1,4 @@
-
-
-## **Divisibility Rules (Apti Quick Check)**
+## Divisibility Rules (Apti Quick Check)
 
 | Number  | Rule                                                                                              |
 | ------- | ------------------------------------------------------------------------------------------------- |
@@ -23,9 +21,7 @@
 | **75**  | Last **2 digits** are 00, 25, 50, or 75 **and** divisible by 3.                                   |
 | **100** | Last **2 digits** are 00.                                                                         |
 
----
-
-### **How to use the factor trick (like 45 example)**
+### How to use the factor trick (like 45 example)
 
 If a number **N** can be factored into smaller numbers **a × b**,
 then to be divisible by **N**, it must be divisible by **both a and b**.
@@ -37,12 +33,8 @@ Examples:
 * **12 = 3 × 4** → check **3-rule** and **4-rule**.
 * **18 = 2 × 9** → check **2-rule** and **9-rule**.
 
----
+### Pro tip for apti speed
 
-### **Pro tip for apti speed**
-
-* For **big numbers**, don’t actually divide — use last digits / sum of digits rule.
-* Always test the **easier factor** first (e.g., for 45, checking “ends in 0 or 5” is much faster than adding digits).
+* For **big numbers**, don't actually divide — use last digits / sum of digits rule.
+* Always test the **easier factor** first (e.g., for 45, checking "ends in 0 or 5" is much faster than adding digits).
 * If the easy check fails, you can skip the harder one entirely.
-
----

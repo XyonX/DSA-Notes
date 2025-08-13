@@ -1,1 +1,6 @@
-Notes update: add Kadane's (solved), Sort Colors (attempted), Container With Most Water (attempted); update summaries, progress, and logs for 2025-08-07  
+Added divisibility rules content to QuantitativeAptitude/Arithmetic
+
+- Created new Arithmetic topic in QuantitativeAptitude
+- Added divisibility_rules problem with comprehensive notes on divisibility rules for numbers 2-100
+- Included factor tricks and speed tips for aptitude tests
+- Updated progress tracking and created log entry

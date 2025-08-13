@@ -149,6 +149,9 @@
 - polymorphism_example: solved
 
 ## QuantitativeAptitude
+### Arithmetic
+- divisibility_rules: solved
+
 ### Probability
 - probability_ball_picked: solved
 - probability_black_shirts: solved
