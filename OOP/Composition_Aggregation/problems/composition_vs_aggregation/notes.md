@@ -1,10 +1,8 @@
-Alright — let’s compare **composition** and **aggregation** with code so you can see the difference clearly.
+# Composition vs Aggregation
 
----
+## 1. Composition - Strong "has-a" relationship
 
-## **1. Composition** — strong *has-a* relationship
-
-* Contained object’s lifetime is tied to the owner.
+* Contained object's lifetime is tied to the owner.
 * When the owner is destroyed, the part is destroyed too.
 
 ```cpp
@@ -36,11 +34,9 @@ int main() {
 }
 ```
 
----
+## 2. Aggregation - Weak "has-a" relationship
 
-## **2. Aggregation** — weak *has-a* relationship
-
-* The contained object is **passed in**; it’s not owned.
+* The contained object is **passed in**; it's not owned.
 * It can exist before and after the owner is destroyed.
 
 ```cpp
@@ -76,9 +72,7 @@ int main() {
 }
 ```
 
----
-
-### **Key Difference Table**
+## Key Difference Table
 
 | Feature             | Composition                 | Aggregation                     |
 | ------------------- | --------------------------- | ------------------------------- |
@@ -86,11 +80,7 @@ int main() {
 | Lifetime dependency | Part dies with owner        | Part can outlive owner          |
 | Implementation      | Part is a **member object** | Part is a **pointer/reference** |
 
----
+## Analogy
 
-If you like, I can give you a **1-line analogy** for remembering:
-
-> Composition = *“My heart is part of me.”*
-> Aggregation = *“I have a phone, but I can change it anytime.”*
-
-Do you want me to also cover **inheritance vs composition** so you know when to use each in design? That’s another common interview question.
+> Composition = *"My heart is part of me."*
+> Aggregation = *"I have a phone, but I can change it anytime."*
