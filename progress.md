@@ -42,6 +42,12 @@
 - virtual_inheritance: solved
 - inheritance_comparison: solved
 
+### InstanceStorage
+- instance_storage_pointer: solved
+
+### Casting
+- cpp_casting: solved
+
 ## Python
 ### Basics
 - list_comprehension: solved
