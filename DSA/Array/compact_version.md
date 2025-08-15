@@ -69,3 +69,6 @@
 - Notes: Find maximum profit from buying and selling stock once. Implements both brute force and optimal greedy approaches.
 ## kth_smallest_element
 - Notes: Sort-based and max-heap approaches summarized.
+
+## array_concepts_practiced_through_mock_test
+- Notes: Practiced fundamental array concepts through DSA mock test on 2025-08-15. Scored 21/30, identifying areas for improvement in understanding of data structures and algorithms fundamentals.

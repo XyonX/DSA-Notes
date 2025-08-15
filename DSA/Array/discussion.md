@@ -99,3 +99,15 @@ Two approaches are commonly used:
 [LeetCode Problem: Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 ## kth_smallest_element
 - Discussed O(n log n) sort approach vs O(n log k) heap approach; included typical pitfalls and test coverage.
+
+## array_concepts_practiced_through_mock_test
+- Practiced fundamental array concepts through DSA mock test on 2025-08-15
+- Scored 21/30, identifying areas for improvement in understanding of:
+  - Data structures used for implementing recursion (should be stack, not just any data structure)
+  - Time complexity of traversing a linked list (O(n), not O(log n))
+  - Stable sorting algorithms (Quick Sort is not stable)
+  - Auxiliary space complexity of merge sort (O(n), not O(log n))
+  - Time complexity of building a heap (O(n), not O(log n))
+  - Data structures for BFS (queue) and DFS (stack)
+  - Circular queue full condition ((rear + 1) % size == front)
+- Overall performance shows good understanding of basic DSA concepts with some areas needing refinement

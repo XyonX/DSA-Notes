@@ -31,6 +31,7 @@
 - second_largest_element: solved
 - sock_merchant: solved
 - sort_colors: solved
+- array_concepts_practiced_through_mock_test: practiced
 
 ## OOP
 ### Classes
