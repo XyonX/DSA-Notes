@@ -1,1 +1,1 @@
-Added merge sort implementation to DSA/Sorting topic
+Added single and double pointers concept to OOP/Pointers topic
