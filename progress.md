@@ -1,5 +1,9 @@
 # Progress
 
+## Fundamental
+### Pointers
+- single_double_pointers: solved
+
 ## DSA
 ### Array
 - average_of_array: solved
@@ -51,9 +55,6 @@
 
 ### InstanceStorage
 - instance_storage_pointer: solved
-
-### Pointers
-- single_double_pointers: solved
 
 ### Casting
 - cpp_casting: solved

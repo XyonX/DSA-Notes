@@ -1,10 +1,10 @@
 import os
 
-# Create the directory structure for pointer concepts
+# Create the directory structure for pointer concepts under Fundamental
 dirs = [
-    "C:/notes-vault/OOP/Pointers",
-    "C:/notes-vault/OOP/Pointers/problems",
-    "C:/notes-vault/OOP/Pointers/problems/single_double_pointers"
+    "C:/notes-vault/Fundamental/Pointers",
+    "C:/notes-vault/Fundamental/Pointers/problems",
+    "C:/notes-vault/Fundamental/Pointers/problems/single_double_pointers"
 ]
 
 for dir_path in dirs:
