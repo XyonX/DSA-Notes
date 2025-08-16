@@ -1,6 +1,1 @@
-Added divisibility rules content to QuantitativeAptitude/Arithmetic
-
-- Created new Arithmetic topic in QuantitativeAptitude
-- Added divisibility_rules problem with comprehensive notes on divisibility rules for numbers 2-100
-- Included factor tricks and speed tips for aptitude tests
-- Updated progress tracking and created log entry
+Added merge sort implementation to DSA/Sorting topic

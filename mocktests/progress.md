@@ -9,3 +9,6 @@
 
 ## OOP
 - oop_2025-08-15_medium_30_questions.md: Completed - Score: 24/30 - Difficulty: Medium
+
+## English
+- english_2025-08-16_medium_20_questions.md: Completed - Score: 11/20 - Difficulty: Medium - Evaluated
