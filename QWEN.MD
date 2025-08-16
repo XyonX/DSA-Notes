@@ -16,7 +16,7 @@ Qwen CLI serves two key roles:
 
 ## Folder Structure
 
-The root folder is `CodingBuddy/`, which contains:
+The root folder is `notes-vault/`, which contains:
 
 - **`recent_snippets.txt`**: A temporary file for code or text snippets (with or without metadata).
 - **`logs/`**: Daily logs of activities (e.g., `2025-07-19.md`).
@@ -45,7 +45,7 @@ The root folder is `CodingBuddy/`, which contains:
 ### Example Structure
 
 ```
-CodingBuddy/
+notes-vault/
 ├── recent_snippets.txt
 ├── logs/
 │   ├── 2025-07-19.md
