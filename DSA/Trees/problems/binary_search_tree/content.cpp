@@ -4,12 +4,12 @@
 
 using namespace std;
 
-//binar ysearch tree
-//the rule is any new wnode we insert if its smaller that the root node it goes to the neft note if its larget it goes right node
-//not only the left note any child not should haev smaller value fro mthe root node
+//binary search tree
+//the rule is any new node we insert if its smaller that the root node it goes to the left node if its larger it goes right node
+//not only the left node any child node should have smaller value from the root node
 
-//in normal tree the time cmplextiy to find an elemnt is o(n)
-//in bst we can do this in o(log n) time complexity as the hehighght is log n
+//in normal tree the time complexity to find an element is o(n)
+//in bst we can do this in o(log n) time complexity as the height is log n
 
 
 struct node{
@@ -22,7 +22,6 @@ struct node{
         right=NULL;
     }
 };
-
 
 
 class BST{

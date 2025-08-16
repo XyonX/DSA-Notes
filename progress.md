@@ -40,6 +40,9 @@
 ### Sorting
 - merge_sort: solved
 
+### Trees
+- binary_search_tree: solved
+
 ## OOP
 ### Classes
 - inheritance_example: solved
