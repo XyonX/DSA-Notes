@@ -52,6 +52,9 @@
 ### InstanceStorage
 - instance_storage_pointer: solved
 
+### Pointers
+- single_double_pointers: solved
+
 ### Casting
 - cpp_casting: solved
 
