@@ -37,14 +37,6 @@
 - sort_colors: solved
 - array_concepts_practiced_through_mock_test: practiced
 
-### Operating_System
-- os_roadmap: solved
-- os_basics: solved
-- os_processes_threads: solved
-- os_process_scheduling: solved
-- os_synchronization: solved
-- os_deadlocks: solved
-
 ### Sorting
 - merge_sort: solved
 
@@ -52,6 +44,14 @@
 - binary_search_tree: solved
 - level_order_traversal: solved
 - bst_deletion: solved
+
+## Operating_System
+- os_roadmap: solved
+- os_basics: solved
+- os_processes_threads: solved
+- os_process_scheduling: solved
+- os_synchronization: solved
+- os_deadlocks: solved
 
 ## OOP
 ### Classes
