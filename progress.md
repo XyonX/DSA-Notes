@@ -43,6 +43,7 @@
 ### Trees
 - binary_search_tree: solved
 - level_order_traversal: solved
+- bst_deletion: solved
 
 ## OOP
 ### Classes

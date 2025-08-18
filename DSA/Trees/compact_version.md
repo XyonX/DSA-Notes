@@ -6,3 +6,6 @@
 
 ## level_order_traversal
 - Notes: Implementation of level order traversal (BFS) for a binary tree using a queue. Time complexity O(n), space complexity O(w) where w is maximum width.
+
+## bst_deletion
+- Notes: Implementation of deletion in a Binary Search Tree. Handles three cases: leaf node, node with one child, and node with two children (using inorder successor). Time complexity O(log n) average, O(n) worst case.

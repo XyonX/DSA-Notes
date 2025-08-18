@@ -16,3 +16,17 @@
 - Time complexity is O(n) where n is the number of nodes, and space complexity is O(w) where w is the maximum width of the tree.
 - Possible improvements: Add proper memory management for dynamically allocated nodes, initialize pointers to nullptr in the node constructor.
 - LeetCode link: Binary Tree Level Order Traversal (https://leetcode.com/problems/binary-tree-level-order-traversal/)
+
+## bst_deletion
+- Implementation of deletion in a Binary Search Tree. Handles three cases: leaf node, node with one child, and node with two children (using inorder successor).
+- The `deleteNode` function recursively searches for the node to delete and then handles the deletion based on the node's children.
+- Time complexity is O(log n) on average for a balanced tree, but can be O(n) in the worst case for a skewed tree.
+- Possible improvements: Add proper memory management for dynamically allocated nodes, consider iterative implementation to avoid deep recursion.
+- LeetCode link: Delete Node in a BST (https://leetcode.com/problems/delete-node-in-a-bst/)
+
+## bst_deletion
+- Implementation of deletion in a Binary Search Tree.
+- Handles three cases: leaf node, node with one child, and node with two children (using inorder successor).
+- Time complexity O(log n) average, O(n) worst case.
+- Possible improvements: Add proper memory management for dynamically allocated nodes.
+- LeetCode link: Delete Node in a BST (https://leetcode.com/problems/delete-node-in-a-bst/)
