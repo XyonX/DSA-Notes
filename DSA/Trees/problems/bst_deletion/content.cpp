@@ -63,7 +63,7 @@ Node* deleteNode(Node*root , int key){
         else{
             //Both the child present
             //find the inorder successor of the right sub tree]
-            Node*temp=minValueNode(root);
+            Node*temp=minValueNode(root->right); // Fix: Use root->right instead of root
             root->data=temp->data;
             root->right=deleteNode(root->right,temp->data);
             return root;
@@ -76,7 +76,7 @@ Node* deleteNode(Node*root , int key){
     
     
     
-    
+
 }
 
 // Helper for inorder traversal (to verify BST before/after)
