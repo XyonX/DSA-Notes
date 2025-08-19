@@ -63,3 +63,40 @@ These are common in initial screening rounds; I've included options, correct ans
     Explanation: Real-Time OS processes data with strict timing constraints, used in embedded systems.
 
 These questions cover ~80% of basics asked in MCQ rounds or initial interviews. Practice by explaining them in your own words, and refer to resources like GeeksforGeeks or InterviewBit for more drills.
+
+
+## TYPES OF OS
+
+
+Here are the main types of operating systems
+### 1. **Batch Operating System**
+- Processes jobs in batches without user interaction
+- Jobs are collected, grouped, and processed sequentially
+- No direct communication between user and computer during execution
+- Example: Early mainframe systems for payroll processing
+
+### 2. **Time-Sharing Operating System**
+- Allows multiple users to share CPU time simultaneously
+- Rapidly switches between users giving each small time slices
+- Provides interactive response to users
+- Example: UNIX, Linux
+
+### 3. **Multiprogramming/Multitasking Operating System**
+- Multiprogramming: Keeps multiple programs in memory at once, improving CPU utilization
+- Multitasking: Allows a single user to run multiple programs concurrently
+- CPU switches between processes to give appearance of simultaneous execution
+- Example: Windows, macOS, modern Linux distributions
+
+### 4. **Real-Time Operating System (RTOS)**
+- Designed to respond to events in a deterministic time frame
+- Hard real-time: Critical deadlines must be met (e.g., medical devices)
+- Soft real-time: Occasional deadline misses acceptable (e.g., multimedia)
+- Example: VxWorks, QNX
+
+### 5. **Distributed Operating System**
+- Manages multiple independent computers as a single system
+- Resources are shared across machines
+- Provides high availability and fault tolerance
+- Example: LOCUS, Amoeba
+
+These main categories represent different approaches to resource management and user interaction in operating systems.
