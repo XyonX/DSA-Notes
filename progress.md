@@ -37,6 +37,9 @@
 - sort_colors: solved
 - array_concepts_practiced_through_mock_test: practiced
 
+### Graph
+- bfs_traversal: solved
+
 ### Sorting
 - merge_sort: solved
 

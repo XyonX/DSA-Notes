@@ -1,3 +1,8 @@
-Added Binary Search Tree implementation to DSA/Trees/problems/binary_search_tree
-Created notes, compact version, and discussion files for the BST implementation
-Updated progress.md to include the new problem
+Added Graph topic with BFS traversal implementation
+
+- Created Graph directory under DSA
+- Implemented BFS traversal algorithm with queue
+- Added content.cpp with the solution
+- Created notes.md with explanation, complexity analysis, and possible improvements
+- Updated compact_version.md and discussion.md in Graph directory
+- Updated progress.md to include the new problem
