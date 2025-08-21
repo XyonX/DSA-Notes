@@ -74,6 +74,7 @@
 
 ### Casting
 - cpp_casting: solved
+- oop_concepts_practiced_through_mock_test: practiced
 
 ## Python
 ### Basics
