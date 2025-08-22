@@ -6,6 +6,8 @@ Most Asked Questions from OS Process Scheduling
 
 Based on common patterns from interview experiences at product-based companies like Google, Amazon, Microsoft, and others (aggregated from resources like GeeksforGeeks, InterviewBit, PrepInsta, and Sanfoundry), here are the most frequently asked questions on Process Scheduling in Operating Systems (OS). These focus on scheduling objectives, algorithms, types, and related concepts. Questions often test understanding of efficiency metrics (e.g., waiting time, turnaround time) and trade-offs (e.g., starvation in priority scheduling). I've included descriptive and MCQ formats with concise answers/explanations, drawn from real interview reports.
 
+
+
 #### Descriptive Questions
 1. **What is process scheduling in OS? Why is it needed?**  
    Process scheduling is the OS mechanism to select and allocate CPU to processes from the ready queue to maximize efficiency. It's needed for multitasking, fair resource allocation, and optimizing metrics like CPU utilization, throughput, turnaround time, waiting time, and response time.

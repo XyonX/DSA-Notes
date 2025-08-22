@@ -70,5 +70,23 @@
 ## kth_smallest_element
 - Notes: Sort-based and max-heap approaches summarized.
 
+## running_sum
+- Notes: Compute running sum of array elements in O(n) time using prefix sum approach.
+
+## largest_altitude
+- Notes: Find the highest altitude reached given net gains between points. Uses prefix sum approach with O(n) time and O(1) space.
+
+## pivot_index
+- Notes: Find leftmost pivot index where sum of left elements equals sum of right elements. Uses prefix and suffix sum arrays with O(n) time and space.
+
+## range_sum_query
+- Notes: Efficient range sum queries using prefix sums. Constructor O(n) time, queries O(1) time with O(n) space.
+
+## subarray_sum_equal_k
+- Notes: Count subarrays with sum equal to k using prefix sum and hashmap approach. O(n) time and space complexity.
+
+## contiguous_array
+- Notes: Find longest contiguous subarray with equal number of 0s and 1s. Transforms problem to zero-sum subarray using prefix sum and hashmap.
+
 ## array_concepts_practiced_through_mock_test
 - Notes: Practiced fundamental array concepts through DSA mock test on 2025-08-15. Scored 21/30, identifying areas for improvement in understanding of data structures and algorithms fundamentals.

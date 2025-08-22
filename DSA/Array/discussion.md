@@ -100,6 +100,36 @@ Two approaches are commonly used:
 ## kth_smallest_element
 - Discussed O(n log n) sort approach vs O(n log k) heap approach; included typical pitfalls and test coverage.
 
+## running_sum
+- This problem involves computing the running sum (prefix sum) of an array. The solution iterates through the array once, accumulating the sum at each position and storing it in a result vector. This is a fundamental array operation that serves as building block for more complex problems like range sum queries and subarray sum problems.
+
+[LeetCode Problem: Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
+
+## largest_altitude
+- This problem is a variation of the running sum problem where we need to find the maximum value in the prefix sum array. The solution computes the running sum while keeping track of the maximum value encountered. This demonstrates how prefix sum concepts can be extended to solve related optimization problems.
+
+[LeetCode Problem: Find the Highest Altitude](https://leetcode.com/problems/find-the-highest-altitude/)
+
+## pivot_index
+- This problem involves finding a pivot index where the sum of elements to the left equals the sum of elements to the right. The solution uses prefix and suffix sum arrays to efficiently check each index. This problem demonstrates the power of prefix sums in solving array partitioning problems. An optimized version exists that uses O(1) space by computing the total sum first and then using a single pass with prefix sums.
+
+[LeetCode Problem: Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
+
+## range_sum_query
+- This problem demonstrates the classic prefix sum approach for efficient range sum queries. The solution precomputes prefix sums in the constructor, allowing each query to be answered in O(1) time. This is an excellent example of space-time tradeoff where we invest O(n) space upfront to achieve O(1) query time. This pattern is fundamental and can be extended to 2D arrays for matrix range sum queries.
+
+[LeetCode Problem: Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/)
+
+## subarray_sum_equal_k
+- This problem is a sophisticated application of prefix sums combined with hashmap. The key insight is that if we have seen a prefix sum `sum - k` before, then the subarray between those indices sums to `k`. This approach efficiently counts all valid subarrays in O(n) time, which is much better than the O(n²) brute force solution. This technique is fundamental for solving many subarray-related problems and demonstrates the power of combining multiple data structures.
+
+[LeetCode Problem: Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
+
+## contiguous_array
+- This problem demonstrates clever problem transformation and the application of prefix sums with hashmap. By converting 0s to -1, the problem of finding equal numbers of 0s and 1s becomes finding subarrays with sum 0. This is an excellent example of how problem transformation can simplify complex problems. The solution uses the same fundamental technique as subarray sum problems but applies it to a different domain.
+
+[LeetCode Problem: Contiguous Array](https://leetcode.com/problems/contiguous-array/)
+
 ## array_concepts_practiced_through_mock_test
 - Practiced fundamental array concepts through DSA mock test on 2025-08-15
 - Scored 21/30, identifying areas for improvement in understanding of:

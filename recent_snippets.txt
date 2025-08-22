@@ -1,0 +1,133 @@
+//RUNNING SUME LEETCODE 1480
+
+class Solution {
+public:
+    vector<int> runningSum(vector<int>& nums) {
+        int sum=0;
+        vector<int>res;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+            res.push_back(sum);
+        }
+        return res;
+    }
+};
+
+//LEETCODE 1732 FIND HIGHEST ALTITUDE
+class Solution {
+public:
+    int largestAltitude(vector<int>& gain) {
+        int maxAlt=0;
+        int alt=0;
+        for(int i=0;i<gain.size();i++){
+            alt=alt+gain[i];
+            maxAlt=max(alt,maxAlt);
+        }
+        return maxAlt;
+    }
+};
+
+//pivot index leetcode 724
+class Solution {
+public:
+
+    vector<int> prefixSum(vector<int>&arr){
+        vector<int>res;
+        int sum=0;
+        for(int i=0;i<arr.size();i++){
+            sum+=arr[i];
+            res.push_back(sum);
+        }
+        return res;
+    }
+    vector<int>suffixSum(vector<int>&arr){
+        int sum=0;
+        vector<int>res(arr.size(),0);
+        for(int i=arr.size()-1;i>=0;i--){
+            sum+=arr[i];
+            res[i]=sum;
+
+        }
+        return res;
+    }
+    int pivotIndex(vector<int>& nums) {
+        vector<int>pSum=prefixSum(nums);
+        vector<int>sSum=suffixSum(nums);
+        for(int i=0;i<nums.size();i++){
+            if(pSum[i]==sSum[i])return i;
+        }
+        return -1;
+    }
+};
+
+//RANGE SUM QUERY leetcode 303
+class NumArray {
+public:
+
+    vector<int>pSum;
+    NumArray(vector<int>& nums) {
+        int sum=0;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+            pSum.push_back(sum);
+        }
+        
+    }
+    
+    int sumRange(int left, int right) {
+        if(left==0)return pSum[right];
+        return pSum[right]-pSum[left-1];
+    }
+};
+
+/**
+ * Your NumArray object will be instantiated and called as such:
+ * NumArray* obj = new NumArray(nums);
+ * int param_1 = obj->sumRange(left,right);
+ */
+
+//SUBARRAY SUM EQUAL K LEET CODE 560
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        long long  sum=0;
+        map<long long,int>pSumFreq;
+        pSumFreq[0] = 1;
+        int count=0;
+        for(int i=0;i<nums.size();i++){
+            sum+=nums[i];
+            int comp = sum-k;
+            if(pSumFreq.find(comp)!=pSumFreq.end())
+            {
+                count=count+pSumFreq[comp];
+            }
+
+            pSumFreq[sum]++;
+        }
+        return count;
+    }
+};
+
+//contigious array leetcode 525
+class Solution {
+public:
+    int findMaxLength(vector<int>& nums) {
+        int sum=0;
+        int maxLength=0;
+        map<int,int>prefixSum;
+        prefixSum[0] = -1;
+
+        for(int i=0;i<nums.size();i++){
+           sum += (nums[i] == 1 ? 1 : -1);
+
+
+            if(prefixSum.find(sum)!=prefixSum.end()){
+                maxLength=max(maxLength,i-prefixSum[sum]);
+            }
+            if(prefixSum.find(sum)==prefixSum.end())
+            prefixSum[sum]=i;
+
+        }
+        return maxLength;
+    }
+};

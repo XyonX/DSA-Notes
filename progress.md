@@ -20,6 +20,7 @@
 - is_sorted: solved
 - kadanes_algorithm: solved
 - kth_smallest_element: solved
+- largest_altitude: solved
 - longest_substring_without_repeating_characters: solved
 - majority_element: solved
 - max_profit: solved
@@ -29,12 +30,17 @@
 - min_subarray_sum: solved
 - min_sum_max_length: solved
 - move_zeros_to_end: solved
+- pivot_index: solved
 - range_of_array: solved
+- range_sum_query: solved
 - reverse_array: solved
 - rotate_array_right: solved
+- running_sum: solved
 - second_largest_element: solved
 - sock_merchant: solved
 - sort_colors: solved
+- subarray_sum_equal_k: solved
+- contiguous_array: solved
 - array_concepts_practiced_through_mock_test: practiced
 
 ### Graph
