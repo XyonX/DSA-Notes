@@ -1,154 +1,86 @@
-
 #include <bits/stdc++.h>
-
 using namespace std;
 
-// Define the structure of a tree node
-struct Node {
-    int data;
-    Node* left;
-    Node* right;
-
-    Node(int val) {
-        data = val;
-        left = nullptr;
-        right = nullptr;
-    }
-};
-
-// Sample function: Level Order Traversal
-//for printing
-void levelOrder(Node* root) {
-    if (!root) return;
-
-    queue<Node*> q;
-    q.push(root);
-
-    while (!q.empty()) {
-        Node* curr = q.front();
-        q.pop();
-        cout << curr->data << " ";
-
-        if (curr->left) q.push(curr->left);
-        if (curr->right) q.push(curr->right);
+// Simple DFS (prints each node when first visited)
+void dfs(int u, const vector<vector<int>>& adj, vector<int>& visited) {
+    if (visited[u]) return;
+    visited[u] = 1;
+    cout << u << ' ';
+    for (int v : adj[u]) {
+        dfs(v, adj, visited);
     }
 }
-
-
-int height(Node*root,int & maxDia){
-    if (root==NULL)return 0;
-    
-    int lh=height(root->left,maxDia);
-    int rh=height(root->right,maxDia);
-    
-    maxDia=max(maxDia,lh+rh);
-    
-    return 1+max(lh,rh);
-}
-
-//diameater of binary tree
-int treeDia(Node*root ){
-    int td=0;
-    height(root,td);
-    return td;
-}
-
-
-//longest common ancestor of bt
-Node* lca(Node*root, Node*n1,Node*n2){
-    //if nullwe retun the null or if we reach any end of the asked node we return that
-    if (root ==nullptr || root ==n1 || root ==n2)return root;
-
-    Node* lr = lca(root->left,n1,n2);
-    Node* rr = lca(root->right,n1,n2);
-    //fount right
-    
-    if(lr==NULL)return rr;
-    //fount left
-    else if(rr ==NULL)return lr;
-    //found both
-    else return root;
-    
-    
-}
-
-
-//algo to check if a bt is bst
-bool isBst(Node*root,long min, long max){
-    if (root==nullptr)return true;
-    
-    if(root->data >= max || root->data <=min)return false;
-
-    return isBst(root->left,min,root->data) && isBst(root->right,root->data,max);
-}
-
-void testIsBST() {
-    // ✅ Valid BST:
-    //         10
-    //        /  \
-    //       5   15
-    //          /  \
-    //         12  20
-    Node* bstRoot = new Node(10);
-    bstRoot->left = new Node(5);
-    bstRoot->right = new Node(15);
-    bstRoot->right->left = new Node(12);
-    bstRoot->right->right = new Node(20);
-
-    cout << "BST Check (Valid): " << (isBst(bstRoot, LONG_MIN, LONG_MAX) ? "True" : "False") << endl;
-
-    // ❌ Invalid BST:
-    //         10
-    //        /  \
-    //       5   8   ← violates BST rule
-    Node* nonBstRoot = new Node(10);
-    nonBstRoot->left = new Node(5);
-    nonBstRoot->right = new Node(8);
-
-    cout << "BST Check (Invalid): " << (isBst(nonBstRoot, LONG_MIN, LONG_MAX) ? "True" : "False") << endl;
-}
-
 
 int main() {
-    // Constructing a sample binary tree:
-    //         1
-    //        / \
-    //       2   3
-    //      / \
-    //     4   5
+    // Example directed graph with 9 nodes: 0..8
+    // ASCII diagram (two components)
+    //
+    // Component A:
+    //  0 ──► 1 ──► 3 ──► 5
+    //  │               ▲
+    //  │               │
+    //  └──► 2 ──► 4 ───┘
+    //               │
+    //               └──► 6
+    //
+    // Edges:
+    //  0 -> 1, 2
+    //  1 -> 3
+    //  2 -> 4
+    //  3 -> 5
+    //  4 -> 5, 6
+    //  5 -> 2          (creates a cycle 2 -> 4 -> 5 -> 2)
+    //  6 -> (none)
+    //
+    // Component B:
+    //  7 ──► 8
+    //
+    // Note:
+    // - This is a DIRECTED graph. For undirected graphs, add edges both ways.
 
-    Node* root = new Node(1);
-    Node* n2 = new Node(2);
-    Node* n3 = new Node(3);
-    Node* n4 = new Node(4);
-    Node* n5 = new Node(5);
+    int n = 9;
+    vector<vector<int>> adj(n);
 
-    root->left = n2;
-    root->right = n3;
-    n2->left = n4;
-    n2->right = n5;
+    // Build edges for Component A
+    adj[0] = {1, 2};
+    adj[1] = {3};
+    adj[2] = {4};
+    adj[3] = {5};
+    adj[4] = {5, 6};
+    adj[5] = {2};
+    // adj[6] = {}; // implicit empty
 
-    cout << "Level Order Traversal: ";
-    levelOrder(root);
-    cout << endl;
+    // Build edges for Component B
+    adj[7] = {8};
+    // adj[8] = {}; // implicit empty
 
-    int td = treeDia(root);
-    cout << "Tree Diameter: " << td << endl;
+    // 1) Run DFS from a chosen start node
+    {
+        vector<int> visited(n, 0);
+        int start = 0;
+        cout << "DFS starting from node " << start << ": ";
+        dfs(start, adj, visited);
+        cout << "\n";
+        // Expected order (given adjacency above): 0 1 3 5 2 4 6
+        // (Order can vary if you change adjacency list ordering)
+    }
 
-    // Test LCA
-    Node* result = lca(root, n4, n5);
-    if (result)
-        cout << "LCA of " << n4->data << " and " << n5->data << " is: " << result->data << endl;
-    else
-        cout << "LCA not found." << endl;
-
-    result = lca(root, n4, n3);
-    if (result)
-        cout << "LCA of " << n4->data << " and " << n3->data << " is: " << result->data << endl;
-        
-        
-    testIsBST();
+    // 2) Run DFS over the whole graph to cover disconnected components
+    {
+        vector<int> visited(n, 0);
+        int comp = 0;
+        cout << "Full graph DFS by components:\n";
+        for (int u = 0; u < n; ++u) {
+            if (!visited[u]) {
+                cout << "Component " << (++comp) << ": ";
+                dfs(u, adj, visited);
+                cout << "\n";
+            }
+        }
+        // Expected:
+        // Component 1: 0 1 3 5 2 4 6
+        // Component 2: 7 8
+    }
 
     return 0;
 }
-

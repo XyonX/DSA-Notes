@@ -67,6 +67,7 @@
 
 ### Graph
 - bfs_traversal: solved
+- dfs_traversal: solved
 
 ### Trees
 - binary_search_tree: solved
