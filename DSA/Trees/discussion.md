@@ -30,3 +30,48 @@
 - Time complexity O(log n) average, O(n) worst case.
 - Possible improvements: Add proper memory management for dynamically allocated nodes.
 - LeetCode link: Delete Node in a BST (https://leetcode.com/problems/delete-node-in-a-bst/)
+
+## diameter_of_binary_tree
+- Calculates the diameter of a binary tree (longest path between any two nodes) using a height function.
+- The solution uses a helper function to calculate the height of each subtree while updating the maximum diameter found so far.
+- Time complexity is O(n) where n is the number of nodes, as we visit each node once.
+- Space complexity is O(h) where h is the height of the tree due to the recursion stack.
+- LeetCode link: Diameter of Binary Tree (https://leetcode.com/problems/diameter-of-binary-tree/)
+
+## lowest_common_ancestor
+- Finds the lowest common ancestor of two nodes in a binary tree using recursion.
+- The solution recursively searches for the nodes and returns the current node if it matches one of the target nodes or if it's the LCA.
+- Time complexity is O(n) where n is the number of nodes, as we might visit all nodes in the worst case.
+- Space complexity is O(h) where h is the height of the tree due to the recursion stack.
+- LeetCode link: Lowest Common Ancestor of a Binary Tree (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+## validate_bst
+- Validates if a binary tree is a valid binary search tree by checking node values against a valid range.
+- The solution uses a helper function that checks if each node's value is within a valid range, which is updated for each child node.
+- Time complexity is O(n) where n is the number of nodes, as we visit each node once.
+- Space complexity is O(h) where h is the height of the tree due to the recursion stack.
+- LeetCode link: Validate Binary Search Tree (https://leetcode.com/problems/validate-binary-search-tree/)
+
+## diameter_of_binary_tree
+- Calculates the diameter of a binary tree (longest path between any two nodes) using a height function.
+- The approach uses a helper function to calculate the height of each subtree while updating the maximum diameter found so far.
+- Time complexity is O(n) where n is the number of nodes, as we visit each node once.
+- Space complexity is O(h) where h is the height of the tree due to the recursion stack.
+- Possible improvements: Consider an iterative approach to avoid deep recursion in very unbalanced trees.
+- LeetCode link: Diameter of Binary Tree (https://leetcode.com/problems/diameter-of-binary-tree/)
+
+## lowest_common_ancestor
+- Finds the lowest common ancestor of two nodes in a binary tree using recursion.
+- The approach recursively searches for the target nodes and returns the current node if it matches one of the targets or if it's the LCA.
+- Time complexity is O(n) where n is the number of nodes, as we might visit all nodes in the worst case.
+- Space complexity is O(h) where h is the height of the tree due to the recursion stack.
+- Possible improvements: Consider an iterative approach using parent pointers stored in a map.
+- LeetCode link: Lowest Common Ancestor of a Binary Tree (https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+## validate_bst
+- Validates if a binary tree is a valid binary search tree by checking node values against a valid range.
+- The approach uses a helper function that checks if each node's value is within a valid range, which is updated for each child node.
+- Time complexity is O(n) where n is the number of nodes, as we visit each node once.
+- Space complexity is O(h) where h is the height of the tree due to the recursion stack.
+- Possible improvements: Consider an iterative approach using a stack.
+- LeetCode link: Validate Binary Search Tree (https://leetcode.com/problems/validate-binary-search-tree/)

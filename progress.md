@@ -75,6 +75,9 @@
 - leaf_count: solved
 - level_order_traversal: solved
 - tree_traversals: solved
+- diameter_of_binary_tree: solved
+- lowest_common_ancestor: solved
+- validate_bst: solved
 
 ### Sorting
 - merge_sort: solved
