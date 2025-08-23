@@ -42,17 +42,63 @@
 - subarray_sum_equal_k: solved
 - contiguous_array: solved
 - array_concepts_practiced_through_mock_test: practiced
+- sum_of_array: solved
+- three_sum: solved
+- two_sum: solved
+- variance_of_array: solved
+
+### Arrays
+### Strings
+- check_anagrams: solved
+- check_palindrome: solved
+- chessboard_color: solved
+- counting_valleys: solved
+- first_non_repeating_character: solved
+- longest_substring_without_repeating_characters: solved
+- string_to_integer_atoi: solved
+
+### Linked_List
+- create_linked_list: solved
+- detect_cycle_in_linked_list: solved
+- display_linked_list: solved
+- merge_two_sorted_linked_lists: solved
+- remove_nth_node_from_end: solved
+- reverse_linked_list: solved
 
 ### Graph
 - bfs_traversal: solved
 
+### Trees
+- binary_search_tree: solved
+- bst_deletion: solved
+- height_of_tree: solved
+- leaf_count: solved
+- level_order_traversal: solved
+- tree_traversals: solved
+
 ### Sorting
 - merge_sort: solved
 
-### Trees
-- binary_search_tree: solved
-- level_order_traversal: solved
-- bst_deletion: solved
+### Two_Pointers
+- container_with_most_water: solved
+
+### Sliding_Window
+- birthday_chocolate: solved
+- maximum_subarray_sum_size_k: solved
+
+### Backtracking
+- sudoku_solver: solved
+
+### Dynamic_Programming
+- climbing_stairs: solved
+- frog_jump: solved
+- grid_unique_paths_recursive: solved
+
+### Binary_Search
+- binary_search_variants: solved
+
+### Stack
+- parenthesis_checker: solved
 
 ## Operating_System
 - os_roadmap: solved
