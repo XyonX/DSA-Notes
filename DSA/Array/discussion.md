@@ -141,3 +141,28 @@ Two approaches are commonly used:
   - Data structures for BFS (queue) and DFS (stack)
   - Circular queue full condition ((rear + 1) % size == front)
 - Overall performance shows good understanding of basic DSA concepts with some areas needing refinement
+
+## trapping_rainwater
+- The trapping rainwater problem is a classic array manipulation problem that involves calculating how much water can be trapped between bars of different heights after raining.
+
+The key insight is that for each position, the amount of water that can be trapped depends on the minimum of the maximum heights to its left and right. Specifically, water at position i = min(leftMax[i], rightMax[i]) - height[i] (if positive).
+
+Two main approaches are commonly used:
+
+1. **Prefix/Suffix Arrays Approach:** This approach precomputes the maximum height to the left of each position (prefix max) and the maximum height to the right of each position (suffix max). Then, for each position, we calculate the trapped water using the formula above. This approach has O(n) time complexity and O(n) space complexity.
+
+2. **Two-Pointer Approach:** This is a more space-efficient approach that uses two pointers moving from both ends toward the center. It maintains the maximum heights seen so far from both sides and calculates trapped water on the fly. This approach has O(n) time complexity and O(1) space complexity.
+
+The problem demonstrates several important concepts:
+- Prefix and suffix computations
+- Space-time tradeoffs
+- Two-pointer technique
+- Problem decomposition (breaking down the problem into smaller, manageable parts)
+
+Applications of this problem pattern include:
+- Terrain analysis and flood modeling
+- Financial analysis (calculating potential gains/losses)
+- Resource allocation problems
+- Image processing (histogram-based operations)
+
+[LeetCode Problem: Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)

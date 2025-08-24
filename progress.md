@@ -46,6 +46,7 @@
 - three_sum: solved
 - two_sum: solved
 - variance_of_array: solved
+- trapping_rainwater: solved
 
 ### Arrays
 ### Strings
@@ -68,6 +69,7 @@
 ### Graph
 - bfs_traversal: solved
 - dfs_traversal: solved
+- number_of_provinces: solved
 
 ### Trees
 - binary_search_tree: solved

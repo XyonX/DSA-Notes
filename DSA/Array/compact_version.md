@@ -90,3 +90,6 @@
 
 ## array_concepts_practiced_through_mock_test
 - Notes: Practiced fundamental array concepts through DSA mock test on 2025-08-15. Scored 21/30, identifying areas for improvement in understanding of data structures and algorithms fundamentals.
+
+## trapping_rainwater
+- Notes: Calculate trapped rainwater between bars of different heights. Uses prefix and suffix maximum arrays. Time complexity O(n), space complexity O(n).

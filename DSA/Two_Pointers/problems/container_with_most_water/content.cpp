@@ -1,63 +1,56 @@
-// Container With Most Water - Attempted versions as provided (incorrect logic)
+// CONTAINER WITH MOST WATER - Correct Solution
+#include <iostream>
 #include <bits/stdc++.h>
+
 using namespace std;
 
-class SolutionAttempt1 {
-public:
-    int maxArea(vector<int>& height) {
-        int maxLength=0;
-        int length=0;
-        int minHeight=height[0];
-        int maxArea=0;
-        for(int i=1;i<height.size();i++){
-            int heightDiff=height[i]-minHeight;
-            length++;
-            maxLength=max(length,maxLength);
-            maxArea=max(maxArea,minHeight*length);
-            if(heightDiff<0){
-                minHeight=height[i];
-                length=0;
-            }
+// CONTAINER WITH MOST WATER - Correct Implementation
+int maxArea(vector<int>& height) {
+    if(height.size()==0 || height.size()==1) return 0;
+    int l = 0;
+    int r = height.size() - 1;
+    int maxArea = INT_MIN;
+    while(l < r) {
+        int area = min(height[l], height[r]) * (r - l);
+        maxArea = max(area, maxArea);
+        
+        if(height[l] < height[r]) {
+            l++;
+        } else {
+            r--;
         }
-        return maxArea;
     }
-};
+    return maxArea;
+}
 
-// Partial/incomplete alternative attempt with prefix/suffix helpers (syntax errors kept as-is per instruction)
-class SolutionAttempt2 {
-public:
-    vector<int> prefixMax(vector<int>&arr){
-        vector<int>res;
-        int maxHeight=0
-        for(int  i=0;i<arr.size();i++){
-            res.push_back(maxHeight);
-            max=max(maxHeight,arr[i]);
-        }
-        return res;
-    }
-    vector<int>suffixMax(vector<int>&arr){
-        vector<int>res(arr.size(),0);
-        int maxHeight=0;
-        for(int i=arr.size()-1;i>=0;i--){
-            res[i]=maxHeight;
-            max=max(maxHeight,arr[i])
-        }
-    }
+void runTests() {
+    vector<pair<vector<int>, int>> tests = {
+        {{1,8,6,2,5,4,8,3,7}, 49},       // Classic case
+        {{1,1}, 1},                      // Minimal case
+        {{4,3,2,1,4}, 16},               // Symmetric peaks
+        {{1,2,1}, 2},                    // Narrow valley
+        {{1,2,4,3}, 4},                  // Increasing then dip
+        {{0,0,0,0}, 0},                  // All zero
+        {{10000, 0, 10000}, 20000},      // Max height edge case
+        {{1,2,3,4,5,6,7,8,9,10}, 25},    // Increasing sequence
+        {{10,9,8,7,6,5,4,3,2,1}, 25},    // Decreasing sequence
+        {{1}, 0},                        // Single element
+        {{}, 0}                          // Empty input
+    };
 
-    int maxArea(vector<int>& height) {
-        int maxWater=0;
-        vector<int>pm=prefixMax(height);
-        vector<int>sm=suffixMax(height);
-        int a
-        for(int i=0;i<height.size();i++){
-            int leftMax=pm[i]
+    for (int i = 0; i < tests.size(); ++i) {
+        int result = maxArea(tests[i].first);
+        if (result == tests[i].second) {
+            cout << "Test " << i + 1 << " passed.
+";
+        } else {
+            cout << "Test " << i + 1 << " failed. Expected " << tests[i].second << ", got " << result << ".
+";
         }
     }
-};
+}
 
-int main(){
-    vector<int> h = {1,8,6,2,5,4,8,3,7};
-    SolutionAttempt1 s1;
-    cout << s1.maxArea(h) << endl;
+int main() {
+    runTests();
     return 0;
 }
