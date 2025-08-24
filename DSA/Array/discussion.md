@@ -166,3 +166,40 @@ Applications of this problem pattern include:
 - Image processing (histogram-based operations)
 
 [LeetCode Problem: Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+
+## product_of_array_except_self
+- This problem requires calculating the product of all array elements except the current element, without using division. The key insight is that for each position, the result is the product of all elements to its left multiplied by the product of all elements to its right.
+
+The optimal approach uses a two-pass technique:
+1. First pass (left to right): Calculate prefix products and store in result array
+2. Second pass (right to left): Calculate suffix products and multiply with existing prefix products
+
+This approach achieves O(n) time complexity and O(1) extra space complexity (not counting the output array). The problem demonstrates the power of breaking down a complex calculation into simpler components and using the output array for intermediate storage to optimize space.
+
+[LeetCode Problem: Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/)
+
+## merge_intervals
+- This problem involves merging overlapping intervals in an array. The key insight is to first sort the intervals by their start times, then iterate through them and merge overlapping ones.
+
+The algorithm works as follows:
+1. Sort intervals by start time
+2. Initialize result with the first interval
+3. For each subsequent interval:
+   - If it overlaps with the last interval in result (current start ≤ last end), merge them
+   - Otherwise, add it as a new interval to the result
+
+This approach has O(n log n) time complexity due to sorting and O(1) extra space complexity. The problem demonstrates the importance of sorting in interval problems and the greedy approach to merging overlapping intervals.
+
+[LeetCode Problem: Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+
+## search_in_rotated_sorted_array
+- This problem involves searching for a target in a rotated sorted array. The key insight is that in a rotated sorted array, at any midpoint, at least one half (left or right) is always sorted.
+
+The algorithm uses a modified binary search:
+1. At each step, determine which half is sorted
+2. Check if the target lies within the sorted half
+3. If yes, search in that half; otherwise, search in the other half
+
+This approach maintains O(log n) time complexity and O(1) space complexity. The problem demonstrates how to adapt classic algorithms to handle modified input structures and how to leverage the properties of the data structure to maintain efficiency.
+
+[LeetCode Problem: Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)

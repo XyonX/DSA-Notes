@@ -93,3 +93,12 @@
 
 ## trapping_rainwater
 - Notes: Calculate trapped rainwater between bars of different heights. Uses prefix and suffix maximum arrays. Time complexity O(n), space complexity O(n).
+
+## product_of_array_except_self
+- Notes: Calculate product of array elements except self. Uses prefix and suffix products with O(1) extra space. Time complexity O(n).
+
+## merge_intervals
+- Notes: Merge overlapping intervals. Uses sorting and greedy approach. Time complexity O(n log n).
+
+## search_in_rotated_sorted_array
+- Notes: Search for target in rotated sorted array. Uses modified binary search. Time complexity O(log n).

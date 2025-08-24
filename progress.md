@@ -47,6 +47,9 @@
 - two_sum: solved
 - variance_of_array: solved
 - trapping_rainwater: solved
+- product_of_array_except_self: solved
+- merge_intervals: solved
+- search_in_rotated_sorted_array: solved
 
 ### Arrays
 ### Strings
