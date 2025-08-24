@@ -11,6 +11,23 @@ void dfs(int u, const vector<vector<int>>& adj, vector<int>& visited) {
     }
 }
 
+
+//problem of number of provinces
+//the problem same and connected com and number of islands
+int numProvinces(vector<vector<int>>&adj,vector<int>&visited){
+    
+    int count=0;
+    for(int i=0;i<adj.size();i++){
+        if(visited[i])continue;
+        else{
+            dfs(i,adj,visited);
+            count++;
+        }
+        
+    }
+    return count;
+}
+
 int main() {
     // Example directed graph with 9 nodes: 0..8
     // ASCII diagram (two components)
